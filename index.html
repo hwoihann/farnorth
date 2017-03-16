@@ -8,6 +8,6 @@ title: Hwoihann's blog!
 <p> My post list: </p>
 <ul>
 	{% for post in site.posts %}
-		<li>{{ post.data | date_to_string }} <a href="{{site.baseurl }} {{ post.url }}"> {{ post.title }} </a> </li>
+		<li><a href="{{site.baseurl }} {{ post.url }}"> {{ post.title }} </a> </li>
 	{% endfor %}
 </ul>
