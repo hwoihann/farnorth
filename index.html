@@ -1,12 +1,13 @@
 ---
 layout: default
-<!-- title: test title -->
+title: Hwoihann's blog!
 ---
 <h1>Hello jekyll</h1>
-<p>This is the index page</p>
+<h2> {{ page.title }} </h2>
+<p>This is the index page for latest posts</p>
 <p> My post list: </p>
 <ul>
 	{% for post in site.posts %}
-		<li><a href="{{site.baseurl }} {{ post.url }}"> {{ post.title }} </a> </li>
+		<li>{{ post.data | date_to_string }} <a href="{{site.baseurl }} {{ post.url }}"> {{ post.title }} </a> </li>
 	{% endfor %}
 </ul>
