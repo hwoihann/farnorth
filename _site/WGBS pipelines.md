@@ -1,16 +1,3 @@
----
-layout: default
-title: WGBS analysis
----
-
-<h2>{{ page.title }}</h2>
-
-<p>WGBS analysis</p>
-
-<p>{{ page.date | date_to_string }}</p>
-
-
-
 项目地址： Week 11
 
 [TOC]
@@ -145,7 +132,7 @@ STRAND (forward or reverse strand)
 SEQ 
 QUAL
 
-~~~
+```
 #!!+===========================================================
 # mapping using BISMARK, extracting using methpipe:
 ##============================================================
@@ -161,7 +148,7 @@ to-mr -o 4_methPipe/IVF.mr -m bismark 2_bismark_se/IVF.bam
 to-mr -o 4_methPipe/SCNT_kdm4d.mr -m bismark 2_bismark_se/SCNT_kdm4d.bam 
 to-mr -o 4_methPipe/SCNT.mr -m bismark 3_bismark_SAM/SCNT.bam
 to-mr -o 4_methPipe/SCNT.mr -m bismark 2_bismark_pe/SCNT.bam
-~~~
+```
 
 2. bsrate (bisulfite conversion rate), methcounts
 The methcounts program takes the mapped reads and produces the methylation level at each genomic cytosine, with the option to produce only levels for CpG-context cytosines. 
@@ -177,7 +164,7 @@ methcounts
 
 
 
-~~~
+```
 ## remove duplicated reads:: map identical genomic regions
 cd 4_methPipe
 
@@ -210,13 +197,13 @@ grep CpG SCNT_kdm4d.meth > SCNT_kdm4d_CpG.meth
 symmetric-cpgs -o SCNT_CpG.destranded.meth SCNT_CpG.meth
 symmetric-cpgs -o IVF_CpG.destranded.meth IVF_CpG.meth
 symmetric-cpgs -o SCNT_kdm4d_CpG.destranded.meth SCNT_kdm4d_CpG.meth
-~~~
+```
 经过methcounts获得methfile
 
 
 3. UCSC visualization (extract 5x CpG)
         
-        ~~~
+        ```
         ## extract 5x CpG sites in SCNT and IVF blastocysts (0-based, destranded, sorted)
         
         ##compare with old data
@@ -252,14 +239,14 @@ symmetric-cpgs -o SCNT_kdm4d_CpG.destranded.meth SCNT_kdm4d_CpG.meth
         
         2>&1 | tee ../5_rp_Bismark_bedgraph/rp_extractor_SCNT.txt
         然后就上传吧
-        ~~~
+        ```
 
  4. 根据获得的meth文件，汇总甲基化信息
-        ~~~
+        ```
         ### Generate statistics
         levels -o 4_methPipe/stats/stat_oldIVF_CpG.txt 4_methPipe/CpG_IVF_150203.meth
         levels -o 4_methPipe/stats/stat_oldSCNT_kdm4d_CpG.txt 4_methPipe/CpG_SCNT_150203.meth
-        ~~~
+        ```
         
         报告内容和官方说明：
         >SITES: 1000000
@@ -297,11 +284,11 @@ symmetric-cpgs -o SCNT_kdm4d_CpG.destranded.meth SCNT_kdm4d_CpG.meth
 ---
 
 5. HMR detection
-~~~
+```
 ### HMRs Hypo methylated regions ###
 hmr -partial -o result/methpipe/hmr/CpG_IVF_150203.hmr 4_methPipe/CpG_IVF_150203.meth
 hmr -partial -o result/methpipe/hmr/CpG_SCNT_150203.hmr 4_methPipe/CpG_SCNT_150203.meth
-~~~
+```
 
 _It also computes average methylation in three different ways, described in Schultz et al. (2012). This program should provide flexibility to compare methylation data with publications that calculate averages different ways and illustrate the variability of the statistic depending on how it is calculated._
  The hmr program uses a hidden Markov model (HMM) approach using a Beta-Binomial distribution to describe methylation levels at individual sites while accounting for the number of reads informing those levels. hmr automatically learns the average methylation levels inside and outside the HMRs, and also the average size of those HMRs(根据read数为基准，使用基于beta二项分布的HMM计算每个位点的甲基化水平，自动计算HMR内外的平均甲基化水平和HMR的平均长度)
@@ -319,11 +306,11 @@ _疑问_：一个文件对应一个训练参数？那么训练参数可以适用
 
 The output will be in BED format, and the indicated strand (always positive) is not informative. The name column in the output will just assign a unique name to each HMR, and the score column indicates how many CpGs exist inside the HMR. Each time the hmr is run it requires parameters for the HMM to use in identifying the HMRs. __We usually train these HMM parameters on the data being analyzed, since the parameters depend on the average methylation level and variance of methylation level__; the variance observed can also depend on the coverage. However, in some cases it might be desirable to use the parameters trained on one data set to find HMRs in another. __The option -p indicates a file in which the trained parameters are written, and the argument -P indicates a file containing parameters (as produced with the -p option on a previous run) to use__: 
 
-~~~
+```
 文档例子
 $ hmr -p Human_ESC.hmr.params -o Human_ESC.hmr Human_ESC.meth
 $ hmr -P Human_ESC.hmr.params -o Human_NHFF_ESC_params.hmr Human_NHFF.meth
-~~~
+```
 
 In the above example, the parameters were trained on the ESC methylome, stored in the file Human ESC.hmr.params and then used to find HMRs in the NHFF methylome.  This is useful if a particular methylome seems to have very strange methylation levels through much of the genome, and the HMRs would be more comparable with those from some other methylome if the model were not trained on that strange methylome. 
 
@@ -334,15 +321,15 @@ __hmr -partial__
 The hmr program also has the option of directly identifying partially methylated regions (PMRs), not to be confused with partially methylated domains (see below). __These are contiguous intervals where the methylation level at individual sites is close to 0.5.__ This should also not be confused with regions that
 have allele-specific methylation (ASM) or regions with alternating high and low methylation levels at nearby sites. Regions with ASM are almost always among the PMRs, but most PMRs are not regions of ASM. The hmr program is run with the same input but a different optional argument to find PMRs: 
 
-~~~
+```
 $ hmr -partial -o Human_ESC.pmr Human_ESC.meth
-~~~
+```
 
 __Partial methylation in cancer samples (AKA PMDs)__
 Huge genomic blocks with abnormal hypomethylation have been extensively observed in human cancer methylomes and more recently in extraembryonic tissues like the placenta. These domains are characterized by enrichment in intergenic regions or Lamina associated domains (LAD), which are usually hypermethylated in normal tissues. Partially methylated domains (PMDs) are not homogeneously hypomethylated as in the case of HMRs, and contain focal hypermethylation at specific sites. PMDs are large domains with sizes ranging from 10 kb to over 1 Mb. Hidden Markov Models can also identify these larger domains. The program pmd is provided for their identification, and can be run as follows:
-~~~
+```
 $ pmd -o Human_ESC.pmd Human_ESC.meth
-~~~
+```
 
 5. Differential Methylation
 两种算法：
@@ -350,17 +337,17 @@ $ pmd -o Human_ESC.pmd Human_ESC.meth
 2. beta-binomial regression: 适用于样本多的数据集？（radmeth）
 __所以说这也是一个变因__
 
-~~~
+```
 ### DMRs ###
 methdiff -o result/dmr/CpG_IVF_SCNT_150202.methdiff methpipe/CpG_IVF_150203.meth methpipe/CpG_SCNT_150203.meth
 
 dmr result/dmr/CpG_IVF_SCNT_150202.methdiff result/hmr/CpG_IVF_150203.hmr methpipe/CpG_SCNT_150203.hmr methpipe/DMR_IVF_high_150203.dmr methpipe/DMR_SCNT_high_150203.dmr
-~~~
+```
 
 
 
 
-~~~
+```
 ### Computing the average methylation level in a genomic interval ###
 LC_ALL=C sort -k 1,1 -k 3,3n -k 2,2n -k 6,6 -o methpipe/CpG_IVF_150203.meth.sorted methpipe/CpG_IVF_150203.meth
 LC_ALL=C sort -k 1,1 -k 3,3n -k 2,2n -k 6,6 -o methpipe/CpG_SCNT_150203.meth.sorted methpipe/CpG_SCNT_150203.meth
@@ -369,7 +356,7 @@ roimethstat -P -o methpipe/DMR_IVF_high_IVFmethlevel_150203.txt methpipe/DMR_IVF
 roimethstat -P -o methpipe/DMR_IVF_high_SCNTmethlevel_150203.txt methpipe/DMR_IVF_high_150203.dmr methpipe/CpG_SCNT_150203.meth.sorted
 roimethstat -P -o methpipe/DMR_SCNT_high_IVFmethlevel_150203.txt methpipe/DMR_SCNT_high_150203.dmr methpipe/CpG_IVF_150203.meth.sorted
 roimethstat -P -o methpipe/DMR_SCNT_high_SCNTmethlevel_150203.txt methpipe/DMR_SCNT_high_150203.dmr methpipe/CpG_SCNT_150203.meth.sorted
-~~~
+```
 
 
 ### 3.2 bismark 
@@ -379,10 +366,10 @@ https://rawgit.com/FelixKrueger/Bismark/master/Docs/Bismark_User_Guide.html#bism
 项目实例：~/Project_scnt/WGBS_new
 description: 送去公司测序的样本reads后部分太长质量差需要先经过cut， 再用trimgalore优化剪切reads以达到较好的mapping效果
 
-~~~
+```
 #trim_galore  切除read2 的3'end质量差的base:--three_prime_clip_R1 100 从3'end开始切100bp
 trim_galore SCNT1_2.fq -o SE/0_trim --fastqc -o 1_fastqc/se_trim -q 30 --three_prime_clip_R1 100
-~~~
+```
 
 read2 不使用PE而用SE时，bismark设置参数 --non_directional， 否则mapping不了
 >The sequencing library was constructed in a non strand-specific manner, alignments to all four bisulfite strands will be reported. 
@@ -390,9 +377,9 @@ read2 不使用PE而用SE时，bismark设置参数 --non_directional， 否则ma
 the original top (OT) or bottom (OB) strands in parallel and report these alignments. This is the recommended option for strand-specific libraries). Default: OFF
 来源： https://github.com/FelixKrueger/Bismark/tree/master/Docs
 
-~~~
+```
 bismark --bowtie2 -N 1 -p 4 --non_directional /nethome/Shared/annotation/genomes/mm9/Bismark_bowtie2index SE/0_trim/SCNT1_2_trimmed.fq -o ./2_bismark/se_trim 
-~~~
+```
 
 Bismark methylation extractor
 

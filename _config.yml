@@ -1,2 +1,28 @@
-encoding: utf-8
-theme: jekyll-theme-slate
+title: Hwoihann's Research Life
+description: Bioinformatics~
+
+#url: http://brianmaierjr.github.com/long-haul
+baseurl: ""
+paginate_path: "blog/page:num/"
+permalink: blog/:title/
+
+markdown: kramdown
+highlighter: rouge
+gems: [jekyll-paginate]
+paginate: 5
+
+navigation:
+ - title: Home
+   url: /index.html
+ - title: About
+   url: /about
+ - title: Contact
+   url: /contact
+
+social:
+   github: hwoihann
+#   twitter: brianmaierjr
+#   facebook: brianmaierjr
+   email: hwoihannwong@yeah.net
+
+google_analytics: "UA-58263416-1"
