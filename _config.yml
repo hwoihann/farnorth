@@ -4,7 +4,7 @@ description: Bioinformatics~
 #url: http://brianmaierjr.github.com/long-haul
 baseurl: ""
 paginate_path: "blog/page:num/"
-permalink: blog/:title/
+permalink: blog/:month-:year/:title.html
 
 markdown: kramdown
 highlighter: rouge
