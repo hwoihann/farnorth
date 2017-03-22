@@ -4,16 +4,12 @@ title: WGBS analysis
 ---
 
 <h2>{{ page.title }}</h2>
-
 <p>WGBS analysis</p>
-
 <p>{{ page.date | date_to_string }}</p>
 
 
 
 项目地址： Week 11
-
-[TOC]
 
 # 基本概念
 __Methylation levels：每个位点甲基化水平的无偏估计: ratio of methylated reads to all reads covering a given site.__
