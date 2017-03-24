@@ -5,9 +5,36 @@
     <description>Bioinformatics~</description>
     <link>/</link>
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>2017-03-19 16:57:19 +0800</pubDate>
-    <lastBuildDate>2017-03-19 16:57:19 +0800</lastBuildDate>
+    <pubDate>2017-03-24 22:43:14 +0800</pubDate>
+    <lastBuildDate>2017-03-24 22:43:14 +0800</lastBuildDate>
     <generator>Jekyll v</generator>
+    
+      
+      <item>
+        <title>信·偶感</title>
+        <description>&lt;p&gt;今天蒋会寄信给我。虽然信没到，但是却知道她的信会过来，真是好发达好发达的通讯。回想小初高12年，大学5年，读书读了这么久，自己可否在别人身上留下了什么痕迹？很多东西得靠久长相处的时日才能转化为自己的血肉，比如我还记得老大特殊的绑鞋带的方法和写小说画漫画的热情（似乎是当年带老大入的奇幻坑？），蒋写的很多博客，以及她们推荐的《镜》和新华书城的夏日空调，周老师家补课的炙热和求根公式的应用、郦老师家看红楼梦的神奇。原来那段在中考失利后想渐渐淡忘的故事在我心头还是那么的鲜明深刻。或许是日常的温暖吧。那时候的读书，仅仅是做题、背课文的日复一日吧。高中的岁月，我似乎不是那么地在意与人的交往，更多的是乡间游走和爬城市广场的山。也是那个时候，似乎开始学会自言自语，和自我对话呐？Research的过程，也是生活的过程吧，其实二者都贯穿着很清晰的脉络：update, upgrade. Keep learning, keep trying!&lt;/p&gt;
+
+&lt;p&gt;断断续续听着《孤独六讲》，在实验室坐一天，早出晚归能够看到车来人往，人人都在说话，却没人在听。我们不敢说出孤独，是因为怕得不到回应吗？前阵子和师姐聊聊心底事，反而觉得更若有所失，或许就是闲的过头了些。好吧好吧，老板都说要push了，也不好意思再写下去。再看看CNS的catalogue和abstract啦！晚安一个。&lt;/p&gt;
+
+&lt;p&gt;或许是三月让人伤春吧，深夜在表哥家的客厅里码字书写心情划水也是从未有过。~&lt;/p&gt;
+
+</description>
+        
+          <description>&lt;p&gt;今天蒋会寄信给我。虽然信没到，但是却知道她的信会过来，真是好发达好发达的通讯。回想小初高12年，大学5年，读书读了这么久，自己可否在别人身上留下了什么痕迹？很多东西得靠久长相处的时日才能转化为自己的血肉，比如我还记得老大特殊的绑鞋带的方法和写小说画漫画的热情（似乎是当年带老大入的奇幻坑？），蒋写的很多博客，以及她们推荐的《镜》和新华书城的夏日空调，周老师家补课的炙热和求根公式的应用、郦老师家看红楼梦的神奇。原来那段在中考失利后想渐渐淡忘的故事在我心头还是那么的鲜明深刻。或许是日常的温暖吧。那时候的读书，仅仅是做题、背课文的日复一日吧。高中的岁月，我似乎不是那么地在意与人的交往，更多的是乡间游走和爬城市广场的山。也是那个时候，似乎开始学会自言自语，和自我对话呐？Research的过程，也是生活的过程吧，其实二者都贯穿着很清晰的脉络：update, upgrade. Keep learning, keep trying!&lt;/p&gt;
+
+&lt;p&gt;断断续续听着《孤独六讲》，在实验室坐一天，早出晚归能够看到车来人往，人人都在说话，却没人在听。我们不敢说出孤独，是因为怕得不到回应吗？前阵子和师姐聊聊心底事，反而觉得更若有所失，或许就是闲的过头了些。好吧好吧，老板都说要push了，也不好意思再写下去。再看看CNS的catalogue和abstract啦！晚安一个。&lt;/p&gt;
+
+&lt;p&gt;或许是三月让人伤春吧，深夜在表哥家的客厅里码字书写心情划水也是从未有过。~&lt;/p&gt;
+
+</description>
+        
+        <pubDate>2017-03-22 00:00:00 +0800</pubDate>
+        <link>blog/03-2017/Oh%2C+late+March+night.html</link>
+        <guid isPermaLink="true">blog/03-2017/Oh%2C+late+March+night.html</guid>
+        
+        
+      </item>
+      
     
       
       <item>
@@ -83,14 +110,10 @@
       <item>
         <title>WGBS analysis</title>
         <description>&lt;h2&gt;WGBS analysis&lt;/h2&gt;
-
 &lt;p&gt;WGBS analysis&lt;/p&gt;
-
 &lt;p&gt;25 Feb 2017&lt;/p&gt;
 
 &lt;p&gt;项目地址： Week 11&lt;/p&gt;
-
-&lt;p&gt;[TOC]&lt;/p&gt;
 
 &lt;h1 id=&quot;section&quot;&gt;基本概念&lt;/h1&gt;
 &lt;p&gt;&lt;strong&gt;Methylation levels：每个位点甲基化水平的无偏估计: ratio of methylated reads to all reads covering a given site.&lt;/strong&gt;
@@ -523,14 +546,10 @@ Such these observational features in conjunction with other forms of genome-wide
 </description>
         
           <description>&lt;h2&gt;WGBS analysis&lt;/h2&gt;
-
 &lt;p&gt;WGBS analysis&lt;/p&gt;
-
 &lt;p&gt;25 Feb 2017&lt;/p&gt;
 
 &lt;p&gt;项目地址： Week 11&lt;/p&gt;
-
-&lt;p&gt;[TOC]&lt;/p&gt;
 
 &lt;h1 id=&quot;section&quot;&gt;基本概念&lt;/h1&gt;
 &lt;p&gt;&lt;strong&gt;Methylation levels：每个位点甲基化水平的无偏估计: ratio of methylated reads to all reads covering a given site.&lt;/strong&gt;
