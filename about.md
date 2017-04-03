@@ -5,7 +5,6 @@ title: About Hwoihann
 
 <div class="post">
 	<h1 class="pageTitle">About Hwoihann</h1>
-	<img src="{{ '/assets/BingWallpaper-2016-10-15.jpg' | prepend: site.baseurl }}" alt=""> 
 	<p>此刻的我充满对生活的爱。</p>
 	<h2>Key words</h2>
 	<ul>
@@ -13,8 +12,8 @@ title: About Hwoihann
   		<li>临安的山们</li>
   		<li>GTD!</a></li>
   		<li>考研中</li>
-  		<li>内向、棱角分明</li>
-  		<li>Countdown <a href="https://www.timeanddate.com/countdown/to?iso=20171231T235959&p0=501&msg=End+of+2017+&font=cursive">Formspree</a></li>
-		<li>脑图<a href="http://naotu.baidu.com/file/203e99179566f8d8cf5bd0eb563130a3">Formspree</a></li>
+  		<li>内向&敏感&棱角分明</li>
+  		<li> <a href="https://www.timeanddate.com/countdown/to?iso=20171231T235959&p0=501&msg=End+of+2017+&font=cursive">Countdown</a></li>
+		<li> <a href="http://naotu.baidu.com/file/203e99179566f8d8cf5bd0eb563130a3">脑图</a></li>
   	</ul>
 </div>
