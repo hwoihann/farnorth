@@ -1,16 +1,16 @@
 ---
 layout: default
-title: About Hwoihann
+title: About
 ---
 
 <div class="post">
-	<h1 class="pageTitle">About Hwoihann</h1>
-	<p>此刻的我充满对生活的爱。</p>
+	<h1 class="pageTitle">About</h1>
+	<p>当下。生活。爱。</p>
 	<h2>Key words</h2>
 	<ul>
 		<li>后摇</li>
   		<li>临安的山们</li>
-  		<li>GTD!</a></li>
+  		<li>GTD!</li>
   		<li>考研中</li>
   		<li>内向&敏感&棱角分明</li>
   		<li> <a href="https://www.timeanddate.com/countdown/to?iso=20171231T235959&p0=501&msg=End+of+2017+&font=cursive">Countdown</a></li>
