@@ -1,5 +1,5 @@
-title: Hwoihann's Research Life
-description: Bioinformatics~
+title: Hwoihann's Research in Life
+description: 不时遐思之
 
 #url: http://brianmaierjr.github.com/long-haul
 baseurl: ""
@@ -19,8 +19,6 @@ navigation:
 
 social:
    github: hwoihann
-#   twitter: brianmaierjr
-#   facebook: brianmaierjr
    email: hwoihannwong@yeah.net
 
 google_analytics: "UA-58263416-1"
