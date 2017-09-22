@@ -1,26 +1,41 @@
-title: Hwoihann's Research about Life
-description: 不时遐思之
+# Dependencies
+markdown:         kramdown
+highlighter:      rouge
 
-#url: http://brianmaierjr.github.com/long-haul
-baseurl: ""
-paginate_path: "blog/page:num/"
-permalink: blog/:month-:year/:title.html
+# Setup
+title:            2ndLearn
+tagline:          '日常部'
+description:      '<a href="http://hwoihann.github.io/landing" target="_blank" style="color:grey25;font-weight:bold">Be A LifeHacker</a>之日常'
+url:              https://hwoihann.github.io
+baseurl:          # the optional subpath of your site, e.g. "/blog"
+                  # NB: This applies to all pages in your Jekyll site.
+                  # If you want to move just the blog index pages but keep
+                  # other pages at root, see the paginate_path and
+                  # sidebar_blog_link below.
 
-markdown: kramdown
-highlighter: rouge
-gems: [jekyll-paginate]
-paginate: 5
+author:
+  name:           'Hwoihann Wong'
+  url:            https://twitter.com/hwoihann16
 
-navigation:
- - title: Home
-   url: /index.html
- - title: About
-   url: /about
+paginate:         5
+paginate_path:    '/blog/page:num'
+                    # Or '/blog/page:num' if you want to move your index pages
 
-social:
-   github: hwoihann
-   email: hwoihannwong@yeah.net
+plugins:
+  - jekyll-feed
+  - jekyll-gist
+  - jekyll-paginate
 
-google_analytics: "UA-58263416-1"
+# Custom vars
+sidebar_home_link:  true
+# sidebar_blog_link:  '/blog'   # By default, your home page is your blog
+                                # page. If you change your paginate_path,
+                                # set this to the root of the paginate_path
+                                # to enable a separate blog link.
+github:
+  repo:             https://github.com/hwoihann
 
-theme: jekyll-theme-modernist
+google_analytics: UA-106742711-1
+disqus:
+  shortname: [hwoihann-disqus-com]
+

@@ -1,6 +1,11 @@
 ---
 layout: default
 title: 说与做
+categories:
+  - rituals
+Tags:
+  - actionRetro
+  - mindset
 ---
 
  - 一个小小的开始和总结
