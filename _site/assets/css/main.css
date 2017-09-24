@@ -28,7 +28,7 @@ main, article, section {
   display: block; }
 
 a {
-  color: #3BA300;
+  color: #159BB8;
   text-decoration: none; }
   a:hover, a:focus {
     text-decoration: underline; }
@@ -70,11 +70,11 @@ button, input[type="submit"] {
   cursor: pointer;
   background: transparent;
   border-color: #e5e5e5;
-  color: #3BA300;
+  color: #159BB8;
   transition: color 0.6s ease-in-out, border-color 0.6s ease-in-out, background 0.6s ease-in-out; }
   button:hover, input[type="submit"]:hover {
-    background: #3BA300;
-    border-color: #3BA300;
+    background: #159BB8;
+    border-color: #159BB8;
     color: white;
     box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.16); }
 
@@ -164,7 +164,7 @@ a svg, .icon svg {
   width: auto; }
 
 a svg {
-  fill: #3BA300; }
+  fill: #159BB8; }
 
 .icon {
   vertical-align: middle; }
@@ -488,8 +488,8 @@ pre {
 */
 body {
   color: rgba(255, 255, 255, 0.75);
-  background-color: #202020;
-  background-image: linear-gradient(to bottom, #323232, #0e0e0e);
+  background-color: #268bd2;
+  background-image: linear-gradient(to bottom, #3f9cdc, #2177b4);
   display: flex;
   flex-direction: column;
   min-width: 100vw;
@@ -725,7 +725,7 @@ h2.post-title, h2.page-title {
     color: #999;
     white-space: nowrap; }
   .posts-list li a:hover {
-    color: #3BA300;
+    color: #159BB8;
     text-decoration: none; }
     .posts-list li a:hover small {
       color: inherit; }
@@ -807,7 +807,7 @@ button.disqus-load {
   white-space: nowrap;
   opacity: 0.75; }
   .tags-list a .tag-count {
-    background: #3BA300;
+    background: #159BB8;
     color: rgba(255, 255, 255, 0.8);
     margin-left: 0.25em;
     border-radius: 1000px;
@@ -859,7 +859,7 @@ main, article, section {
   display: block; }
 
 a {
-  color: #3BA300;
+  color: #159BB8;
   text-decoration: none; }
   a:hover, a:focus {
     text-decoration: underline; }
@@ -901,11 +901,11 @@ button, input[type="submit"] {
   cursor: pointer;
   background: transparent;
   border-color: #e5e5e5;
-  color: #3BA300;
+  color: #159BB8;
   transition: color 0.6s ease-in-out, border-color 0.6s ease-in-out, background 0.6s ease-in-out; }
   button:hover, input[type="submit"]:hover {
-    background: #3BA300;
-    border-color: #3BA300;
+    background: #159BB8;
+    border-color: #159BB8;
     color: white;
     box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.16); }
 
@@ -995,7 +995,7 @@ a svg, .icon svg {
   width: auto; }
 
 a svg {
-  fill: #3BA300; }
+  fill: #159BB8; }
 
 .icon {
   vertical-align: middle; }
@@ -1319,8 +1319,8 @@ pre {
 */
 body {
   color: rgba(255, 255, 255, 0.75);
-  background-color: #016f20;
-  background-image: linear-gradient(to bottom, #01922a, #014c16);
+  background-color: #4877FF;
+  background-image: linear-gradient(to bottom, #6c92ff, #245cff);
   display: flex;
   flex-direction: column;
   min-width: 100vw;
@@ -1553,7 +1553,7 @@ h2.post-title, h2.page-title {
     color: #999;
     white-space: nowrap; }
   .posts-list li a:hover {
-    color: #3BA300;
+    color: #159BB8;
     text-decoration: none; }
     .posts-list li a:hover small {
       color: inherit; }
@@ -1635,7 +1635,7 @@ button.disqus-load {
   white-space: nowrap;
   opacity: 0.75; }
   .tags-list a .tag-count {
-    background: #3BA300;
+    background: #159BB8;
     color: rgba(255, 255, 255, 0.8);
     margin-left: 0.25em;
     border-radius: 1000px;

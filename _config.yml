@@ -3,9 +3,9 @@ markdown:         kramdown
 highlighter:      rouge
 
 # Setup
-title:            2ndLearn
-tagline:          '日常部'
-description:      '<a href="http://hwoihann.github.io/landing" target="_blank" style="color:grey25;font-weight:bold">Be A LifeHacker</a>之日常'
+description:       Be A lifeHacker 修炼篇
+tagline:          '修炼篇'
+title:      	  '<a href="http://hwoihann.github.io" target="_blank" style="color:grey25; font-size:4">2<font size=8><sup>nd</sup></font> Learn</a>'
 url:              https://hwoihann.github.io
 baseurl:          # the optional subpath of your site, e.g. "/blog"
                   # NB: This applies to all pages in your Jekyll site.
@@ -35,7 +35,7 @@ sidebar_home_link:  true
 github:
   repo:             https://github.com/hwoihann
 
-google_analytics: UA-106742711-1
+google_analytics: UA-106933099-1 
 disqus:
-  shortname: [hwoihann-disqus-com]
+  shortname: [hwoihann-github-io-farnorth]
 
