@@ -5,11 +5,9 @@ sidebar_link: true
 ---
 
 <p class="message">
-女汉子一枚，粗中有细，不善言谈，笑点诡异。幸时代开放、家庭自由放养，自认略不失个性。幼时受外祖父母照顾长于江南丘陵，溜猫逗狗，田间地里无所不能，深爱故乡。
+Hello!
 
-今旅居临安学习生活，平日做些科研生活，勉强能捣鼓些代码和数据。受应试教育之害至今未找到热爱并愿意为之付诸生命的事儿。喜爬西湖群山并于山尖食肉包；羽毛球和乒乓球初阶爱好者，欲重拾长跑爱好，多多参加马拉松。
+This blog is used for logging my endeavors in research, including summaries, the knowledge I got from study and communication with others and also some intresting insights of my future career. Hope the dots I met along this road could finally connect some beautiful sentences:).
+
+For this moment, I'm a graduate with the major of bioinformatics, working in Life Science Institute, Zhejiang University. Also I'm a freshman editor for <a href="vip.biotrainee.com">biotranee, 生信菜鸟团<\a>
 </p>
-
-最近比较喜欢这句话～
->“爱人不亲，反其仁；治人不治，反其智；礼人不答，反其敬——行有不得者皆反求诸己，其身正而天下归之。诗云：‘永言配命，自求多福。’” 
-——孟子
