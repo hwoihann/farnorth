@@ -1,3 +1,13 @@
+---
+
+layout: post
+title: "NGS基础概念之depth and coverage"
+categories: definition
+tags: [bismark, methpipe, WGBS]
+
+---
+
+
 # 基本概念
 __Methylation levels：位点甲基化水平的无偏估计__
 Although individual methyl groups can either be present or absent on a cytosine, current WGBS data is not from single cells, and we therefore refer to a methylation ‘‘level’’ for each cytosine, interpreted as the fraction of molecules in the underlying cell population that have the methyl mark on the corresponding cytosine.
