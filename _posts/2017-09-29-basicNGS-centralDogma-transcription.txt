@@ -1,7 +1,7 @@
 ---
 
 layout: post
-title: NGS与转录
+title: NGS与中心法则之转录
 category: definition
 tags: [中心法则, NGS基础, 菜鸟团周推]
 
