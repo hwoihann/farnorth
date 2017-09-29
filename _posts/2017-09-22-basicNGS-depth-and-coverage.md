@@ -1,10 +1,9 @@
 ---
 
 layout: post
-title: "NGS基础概念之depth and coverage"
+title: NGS基础概念之depth and coverag
 categories: definition
 tags: [测序常识, NGS基础概念, 生信菜鸟团周推]
-
 
 ---
 
