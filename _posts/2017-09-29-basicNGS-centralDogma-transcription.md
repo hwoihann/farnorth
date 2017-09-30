@@ -4,6 +4,8 @@ layout: page
 title: NGS与转录
 category: definition
 tags: [中心法则, NGS基础, 菜鸟团周推]
+excerpt: "[转录（Transcription）](https://en.wikipedia.org/wiki/Transcription_(biology)) 是遗传信息由DNA转换到RNA的过程，即信使RNA（mRNA）以及非编码RNA（tRNA、rRNA等）的合成步骤。在NGS的促进下，研究转录和转录调控的技术有了极大的扩展，以一个空前的速度发展着。"
+last_modified_at: 2017-09-30T9:30:31-11:30
 
 ---
 
