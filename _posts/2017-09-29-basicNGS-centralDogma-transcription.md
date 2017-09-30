@@ -67,7 +67,7 @@ last_modified_at: 2017-09-30T9:30:31-11:30
 
 
 
->![][NGS4TransReg](http://owxb9z5ea.bkt.clouddn.com/17-9-29/71714242.jpg)
+>![](http://owxb9z5ea.bkt.clouddn.com/17-9-29/71714242.jpg)
 Next-generation sequencing applications in studies of transcriptional regulation. Applications in red make use mainly of the quantification of abundance, whereas applications in blue make use of sequence-based observations.
 
 ## NGS分析手段
