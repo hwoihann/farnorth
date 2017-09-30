@@ -3,7 +3,7 @@
 layout: post
 title: "WGBS analysis summary"
 categories: definition
-excerpt_seperator: <!--more-->
+excerpt_separator: "<!--more-->"
 tags: [bismark, methpipe, WGBS]
 
 ---
