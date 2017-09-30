@@ -1,7 +1,7 @@
 ---
 
 layout: post
-title: NGS基础概念之depth and coverag
+title: NGS基础概念之depth and coverage
 categories: definition
 tags: [测序常识, NGS基础概念, 生信菜鸟团周推]
 
@@ -9,8 +9,8 @@ tags: [测序常识, NGS基础概念, 生信菜鸟团周推]
 
 
 NGS基础概念-depth and coverage
-#理解
-##depth 测序深度
+# 理解
+## depth 测序深度
 __测序深度__是指测序得到的总碱基数与待测基因组大小的比值，可以理解为基因组中每个碱基被测序到的平均次数。测序深度 = reads长度 × 比对的reads数目 / 参考序列长度。假设一个基因大小为2M，测序深度为10X，那么获得的总数据量为20M。
 
 可以根据我们的研究目的来选择相应的测序深度:
@@ -22,7 +22,7 @@ __测序深度__是指测序得到的总碱基数与待测基因组大小的比�
 
 如果测序样本是混样，例如，癌组织样本（癌细胞的细胞异质性很大），BSA分析中的群体混合池样本。那么在保证30X的测序深度的基础上，如果经费许可50X的测序深度更佳，以保证对混合池中低频变异的检测成功率（例如，新出现或即将消亡的癌细胞突变）。
 
-##coverage 测序覆盖度
+## coverage 测序覆盖度
 __覆盖度__是指测序获得的序列占整个基因组的比例。指的是基因组上至少被检测到1次的区域，占整个基因组的比例。当然，有些文章中也会将测序深度称为Coverage，容易给我们带来混淆。因此，我们还是需要根据语境来推断Coverage的意思。
 
 我们假设基因组大小为G, 假定每次测序可从基因组任何位置上随机检测一个碱基。那么对于基因组上某一个固定碱基位置，在一次测序中，该位置被命中的概率为P （P=1/G）。我们将试验重复n次，相当于产生了n个碱基（n=c*G, c为测序深度）。
@@ -30,13 +30,13 @@ __覆盖度__是指测序获得的序列占整个基因组的比例。指的是�
 
 由于基因组中的高GC、重复序列等复杂结构的存在，测序最终拼接组装获得的序列往往无法覆盖有所的区域，这部分没有获得的区域就称为Gap。例如一个细菌基因组测序，覆盖度是98%，那么还有2%的序列区域是没有通过测序获得的。
 
-##两者关系？
+## 两者关系？
 测序深度与基因组覆盖度之间是一个正相关的关系，而测序带来的错误率或变异检测（例如，SNP）假阳性结果会随着测序深度的提升而下降。在图2中可以看到当测序深度达到10x时基因组的覆盖度已接近饱和（左图）。但在测序深度达到10X的时候，SNP的检测率却没有达到饱和。
 ![](http://mmbiz.qpic.cn/mmbiz/6kvRq2WRXpiaNhZ3TRr6fxoK59BEibL0cq66O6VIDj5j4BSjDtDKGfsHBbaZHXwPU0nUNVJB1EziczYjbophich7Fw/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1)
 
 
 
-#举例
+# 举例
 
 对长100bp的目标区域进行捕获测序：采用单端测序，每个read长5bp；总共得到了200个reads；把所有的reads比对到目标区域后，100bp的目标区域中有98bp的位置至少有1个read覆盖到，换言之，剩余的2bp没有1个read覆盖。则
 
@@ -46,10 +46,10 @@ __覆盖度__是指测序获得的序列占整个基因组的比例。指的是�
 覆盖度: 98 / 100 × 100% = 98%
 我们说这次测序的覆盖度为98%。
 
-#应用
+# 应用
 在临床panel检测遗传病时，首先要看一下质控，待测的基因是否捕获到？有多少区域大于10X? 很多时候基因检测机构并不提供这么具体的信息，可能会笼统的说XX%覆盖，平均深度是XXX，平均深度对于具体的基因并没有实际意义，另外在科研全外显子测序时，销售可能会说10G数据量，平均100X测序深度，实际结果到底是真是假很难说? 如果我们自己学会分析就可以亲自检验啦。
 
-##代码
+## 代码
 
 ` java -Xmx30g -jar /yourGATKFILE/GenomeAnalysisTK.jar-T DepthOfCoverage -R /reference_genome_dir/ucsc.hg19.fasta -o result_name -Ibam.list -L target.bed --omitDepthOutputAtEachBase --omitIntervalStatistics -ct1 -ct 10 -ct 20 `
 Sequencing depth and coverage: key considerations in genomic analyses
@@ -61,7 +61,7 @@ GATK 的DepthOfCoverage，-R需要输入你的reference genome，bam.list为待�
 最后再补充一点，NGS所说的10G数据并不是说测序文件在硬盘上的大小为10G，1G代表10亿个碱基，10G代表100亿个碱基。
 
 
-#其他资料：
+# 其他资料：
  - 简单视频：https://v.qq.com/x/page/h0367nyz2le.html
         主要介绍如何从suredesign网站下载外显子捕获区域、从ucsc的table browser下载外显子区域，通过GATK的子工具DepthOfCoverage计算覆盖度、大于10X区域比例，大于20X区域比例 
 
