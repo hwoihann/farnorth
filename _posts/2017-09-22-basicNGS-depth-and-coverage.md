@@ -1,11 +1,16 @@
 ---
 
-layout: post
+layout: page
 title: NGS基础概念之depth and coverage
 categories: definition
-tags: [测序常识, NGS基础概念, 生信菜鸟团周推]
+tags: [测序常识, NGS基础, 菜鸟团周推]
+excerpt_separator: "<!--more-->"
+last_modified_at: 2017-09-30T9:30:31-11:30
 
 ---
+
+
+
 
 
 NGS基础概念-depth and coverage
@@ -67,9 +72,7 @@ GATK 的DepthOfCoverage，-R需要输入你的reference genome，bam.list为待�
 
  - 进阶：使用R按照指定宽度计算覆盖率: https://www.plob.org/article/7123.html
 
-2014: Sequencing depth and coverage: key considerations in genomic analyses
-
-https://www.nature.com/nrg/journal/v15/n2/pdf/nrg3642.pdf
+ - 2014: Sequencing depth and coverage: key considerations in genomic analyses https://www.nature.com/nrg/journal/v15/n2/pdf/nrg3642.pdf
 
 ---
 参考资料
