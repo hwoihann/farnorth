@@ -7,7 +7,7 @@ excerpt_separator: "<!--more-->"
 tags: [bismark, methpipe, WGBS]
 
 ---
-# 前言
+
 年初接触了WGBS数据分析，粗浅总结一下，有待修补:full_moon_with_face:。WGBS数据是精确到每个位点的深度测序，数据量因此也很大，动辄就上百个G，但是分析起来却很有意思。有了各种genomic features就可以探索很多事。
 <!--more-->
 
