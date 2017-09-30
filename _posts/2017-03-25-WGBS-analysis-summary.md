@@ -1,12 +1,15 @@
 ---
 
 layout: post
-title: "NGS基础概念之depth and coverage"
+title: "WGBS analysis summary"
 categories: definition
+excerpt_seperator: <!--more-->
 tags: [bismark, methpipe, WGBS]
 
 ---
-
+# 前言
+年初接触了WGBS数据分析，粗浅总结一下，有待修补:full_moon_with_face:。WGBS数据是精确到每个位点的深度测序，数据量因此也很大，动辄就上百个G，但是分析起来却很有意思。有了各种genomic features就可以探索很多事。
+<!--more-->
 
 # 基本概念
 __Methylation levels：位点甲基化水平的无偏估计__
