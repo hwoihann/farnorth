@@ -9,7 +9,6 @@ last_modified_at: 2017-09-30T9:30:31-11:30
 
 ---
 
-# 前言
 
 "[转录（Transcription）](https://en.wikipedia.org/wiki/Transcription_(biology)) 是遗传信息由DNA转换到RNA的过程，即信使RNA（mRNA）以及非编码RNA（tRNA、rRNA等）的合成步骤。在NGS的促进下，研究转录和转录调控的技术有了极大的扩展，以一个空前的速度发展着。"
 
