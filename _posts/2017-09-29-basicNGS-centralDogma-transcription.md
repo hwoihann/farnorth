@@ -1,25 +1,23 @@
 ---
 
-layout: post
-title: NGS与中心法则之转录
+layout: page
+title: NGS与转录
 category: definition
 tags: [中心法则, NGS基础, 菜鸟团周推]
 
 ---
-#前言
-[转录（Transcription）][web1]是遗传信息由DNA转换到RNA的过程，即信使RNA（mRNA）以及非编码RNA（tRNA、rRNA等）的合成步骤。转录中，一个基因会被读取、复制为mRNA；这个过程由RNA聚合酶（RNA polymerase）和转录因子（transcription factor）所共同完成。两个真核生物转录必备基础名词：
- - [顺式调控元件][web2]，Cis-regulatory elements (CREs) ：增强或抑制其附近基因转录活性的非编码区域。通常是转录因子结合位点（TFBS）: promoter,  enhancers, silencers, and insulators. 
- - [反式作用因子][web3]：能够特异结合顺式作用元件的因子，多数为蛋白质，如RNA聚合酶，能和RNA聚合酶结合稳定转录起始复合物的蛋白质等。
+
+# 前言
+======
+[转录（Transcription）](https://en.wikipedia.org/wiki/Transcription_(biology)) 是遗传信息由DNA转换到RNA的过程，即信使RNA（mRNA）以及非编码RNA（tRNA、rRNA等）的合成步骤。转录中，一个基因会被读取、复制为mRNA；这个过程由RNA聚合酶（RNA polymerase）和转录因子（transcription factor）所共同完成。两个真核生物转录必备基础名词：
+ - [顺式元件](https://en.wikipedia.org/wiki/Cis-regulatory_element)，Cis-regulatory elements (CREs) ：增强或抑制其附近基因转录活性的非编码区域。通常是转录因子结合位点（TFBS）: promoter,  enhancers, silencers, and insulators. 
+ - [反式因子](https://en.wikipedia.org/wiki/Trans-regulatory_element)，Trans-regulatory elements：能够特异结合顺式元件的因子，多数为蛋白质，如RNA聚合酶，能和RNA聚合酶结合稳定转录起始复合物的蛋白质等。
 
 ![transcription](https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/MRNA.svg/758px-MRNA.svg.png)
-[web1]: https://en.wikipedia.org/wiki/Transcription_(biology)    "Transcription" 
-[web2]: https://en.wikipedia.org/wiki/Cis-regulatory_element  "cis" 
-[web3]: https://en.wikipedia.org/wiki/Trans-regulatory_element "trans" 
 
 
-
-
-#1. 转录和转录调控
+# 1. 转录和转录调控
+======
 
 转录组即某个物种或特定细胞在某一功能状态下产生的所有RNA的总和，可以揭示基因组序列中哪些序列能够表达，而且还能揭示在何时何处表达，以及转录活跃程度。
 
@@ -37,13 +35,14 @@ tags: [中心法则, NGS基础, 菜鸟团周推]
 
 
 
-#2. 转录与NGS
+# 2. 转录与NGS
+======
 
 转录组测序的分析流程大致可以分成三类，包括基因组比对（Genome mapping）、转录组比对（Transcriptome mapping）、转录组组装（Reference-free assembly。其中第三种主要是用于分析没有参考基因组和基因注释的物种，应用场合较少且不适合新手入门。对于人、小鼠、大鼠等模式物种，通常用前两种方法进行分析。
 
 转录组测序一般是在你有了一部分生理生化的实验结果，如表型差异、生理指标发生明显变化或有效物质含量出现明显差异等等，在这个基础上你可能会问自己，这些现象内在的机制如何。所以，转录组测序核心回答的是那些基因组存在表达差异，这些存在差异的基因都涉及什么功能，是如何发挥作用的。可以根据实验的目的确定需要转录组测序还是表达谱测序。
 
-##转录组测序和表达谱测序的区别
+## 转录组测序和表达谱测序的区别
 
  1. 转录组测序 RNA-seq（Transcriptome）
     - 定义： 通过RNA测序，既想得到样本中序列的信息，又需要对序列的表达进行定量和分析。
@@ -58,23 +57,29 @@ tags: [中心法则, NGS基础, 菜鸟团周推]
     - 对此类产品的分析要求仅仅是：将测序得到的数据比对到参考序列上，然后计算参考序列的在样本中的对应表达，而不需要去分析参考序列在样本中是否发生了序列变化（可变剪切、基因融合、SNP等）。一般单个样本的测序量2~3G足够，同时单末端测序（single End）和双末端测序（paired End）的数据均可以分析。
 
 
-#3. 转录调控与NGS
+# 3. 转录调控与NGS
+======
 
 ##常用的转录调控测量技术
 参考上文提及的转录因子的调控路径，2012 Shirley Liu 的[Minireview: Applications of Next-Generation Sequencing on Studies of Nuclear Receptor Regulation and Function](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3458226/) 总结得很好，主要有Gene Expression Profiling, Transcription Factor Cistrome Mapping, Epigenome Profiling, Interactions in Three Dimensions, 也直接上图表示：
 
 
 
-![][NGS4TransReg](http://owxb9z5ea.bkt.clouddn.com/17-9-29/71714242.jpg)
-(Next-generation sequencing applications in studies of transcriptional regulation. Applications in red make use mainly of the quantification of abundance, whereas applications in blue make use of sequence-based observations.)
+>![][NGS4TransReg](http://owxb9z5ea.bkt.clouddn.com/17-9-29/71714242.jpg)
+Next-generation sequencing applications in studies of transcriptional regulation. Applications in red make use mainly of the quantification of abundance, whereas applications in blue make use of sequence-based observations.
 
-##NGS分析手段
+## NGS分析手段
 
 对于可以直接参考HOMER提供的教程，学会了就能分析`ChIP-Seq, GRO-Seq, RNA-Seq, DNase-Seq, Hi-C and numerous other types of functional genomics sequencing data sets`。
 入门应不成问题，官网在此<http://homer.ucsd.edu/homer>。
 
-#总结
+# 总结
 转录是在DNA和蛋白质之间传递信息的关键，调控途径多样，分析手段因此也层出不穷，多结合生物学背景，多看文献，才能想到idea再找数据去分析，光会用却不明白相关关系还是不行的。
-最后，上一个Homer，住大家国庆快乐，中秋快乐～
+最后，上一个Homer，住大家国庆快乐，中秋快乐 :metal: ～
 ![](http://owxb9z5ea.bkt.clouddn.com/17-9-29/5863002.jpg)
+
+
+
+
+
 
