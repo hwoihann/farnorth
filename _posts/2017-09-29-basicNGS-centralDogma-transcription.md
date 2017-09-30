@@ -8,7 +8,7 @@ tags: [中心法则, NGS基础, 菜鸟团周推]
 ---
 
 # 前言
-======
+
 [转录（Transcription）](https://en.wikipedia.org/wiki/Transcription_(biology)) 是遗传信息由DNA转换到RNA的过程，即信使RNA（mRNA）以及非编码RNA（tRNA、rRNA等）的合成步骤。转录中，一个基因会被读取、复制为mRNA；这个过程由RNA聚合酶（RNA polymerase）和转录因子（transcription factor）所共同完成。两个真核生物转录必备基础名词：
  - [顺式元件](https://en.wikipedia.org/wiki/Cis-regulatory_element)，Cis-regulatory elements (CREs) ：增强或抑制其附近基因转录活性的非编码区域。通常是转录因子结合位点（TFBS）: promoter,  enhancers, silencers, and insulators. 
  - [反式因子](https://en.wikipedia.org/wiki/Trans-regulatory_element)，Trans-regulatory elements：能够特异结合顺式元件的因子，多数为蛋白质，如RNA聚合酶，能和RNA聚合酶结合稳定转录起始复合物的蛋白质等。
@@ -17,7 +17,7 @@ tags: [中心法则, NGS基础, 菜鸟团周推]
 
 
 # 1. 转录和转录调控
-======
+
 
 转录组即某个物种或特定细胞在某一功能状态下产生的所有RNA的总和，可以揭示基因组序列中哪些序列能够表达，而且还能揭示在何时何处表达，以及转录活跃程度。
 
@@ -36,7 +36,7 @@ tags: [中心法则, NGS基础, 菜鸟团周推]
 
 
 # 2. 转录与NGS
-======
+
 
 转录组测序的分析流程大致可以分成三类，包括基因组比对（Genome mapping）、转录组比对（Transcriptome mapping）、转录组组装（Reference-free assembly。其中第三种主要是用于分析没有参考基因组和基因注释的物种，应用场合较少且不适合新手入门。对于人、小鼠、大鼠等模式物种，通常用前两种方法进行分析。
 
@@ -58,7 +58,7 @@ tags: [中心法则, NGS基础, 菜鸟团周推]
 
 
 # 3. 转录调控与NGS
-======
+
 
 ##常用的转录调控测量技术
 参考上文提及的转录因子的调控路径，2012 Shirley Liu 的[Minireview: Applications of Next-Generation Sequencing on Studies of Nuclear Receptor Regulation and Function](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3458226/) 总结得很好，主要有Gene Expression Profiling, Transcription Factor Cistrome Mapping, Epigenome Profiling, Interactions in Three Dimensions, 也直接上图表示：
