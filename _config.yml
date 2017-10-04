@@ -34,7 +34,10 @@ sidebar_home_link:  true
                                 # to enable a separate blog link.
 github:
   repo:             https://github.com/hwoihann
-
+  
+plugins:
+  - jemoji
+  
 google_analytics: UA-106933099-1 
 disqus:
   shortname: [hwoihann-github-io-farnorth]
