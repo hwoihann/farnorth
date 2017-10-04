@@ -23,7 +23,7 @@
 */
 
 body {
-  color: rgba(255,255,255,.75);
+  color:  $sidebar-font-color;
   background-color: $sidebar-bg-color;
   background-image: linear-gradient(
     to bottom,
@@ -43,13 +43,13 @@ body {
     font-family: "Abril Fatface", serif;
     font-weight: normal;
     font-size: $large-font-size;
-    color: rgba(255,255,255,.75);
+    color:  $sidebar-font-color;
     margin-top: 0;
     margin-bottom: $heading-spacing;
 
     a {
       color: inherit;
-      &:hover { color: $sidebar-font-color; }
+      &:hover { color: #fff; }
     }
 
     .back-arrow { margin-right: 0.5rem; }
