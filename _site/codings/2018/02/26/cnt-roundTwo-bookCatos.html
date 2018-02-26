@@ -11,7 +11,7 @@
 
   <title>
     
-      2nd Learn &middot; 修炼篇
+      菜鸟团学习Round2-Bioinformatics Data Skills &middot; 2ndLearn
     
   </title>
 
@@ -35,12 +35,17 @@
 </head>
 
 
-  <body class="default home">
+  <body class="post">
 
     <div id="sidebar">
   <header>
     <div class="site-title">
       <a href="/">
+        
+          <span class="back-arrow icon"><svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+  <path d="M0 0h24v24H0z" fill="none"/>
+  <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/>
+</svg></span>
         
         <a href="http://hwoihann.github.io" target="_blank" style="color:grey25; font-size:4">2<font size=8><sup>nd</sup></font> Learn</a>
       </a>
@@ -49,7 +54,7 @@
   </header>
   <nav id="sidebar-nav-links">
   
-    <a class="home-link  active"
+    <a class="home-link "
         href="/">Home</a>
   
   
@@ -234,36 +239,11 @@
 
 
     <main class="container">
-      <div class="content">
-  
-
-
-  
-
-  
-  <article class="post-body">
-    <h2 class="post-title">
-      <a href="/codings/2018/02/26/cnt-roundTwo-bookCatos.html">
-        菜鸟团学习Round2-Bioinformatics Data Skills
-      </a>
-    </h2>
-
-<!--  <h1 id="intro-2018-round2">Intro: 2018 菜鸟团学习Round2</h1>
-
-<p>经过前段时间对基础知识的介绍，小菜鸟已经可以根据一个pipeline 从测序原始数据获得那些量化数据，比如峰值、表达值和甲基化值等等，这些值就被用来做后续分析。但每每当我跑完了原始数据再回看pipeline，发现有很多原来不太明白却因为时间限制而草草掠过的地方还是有很多可以改进的（特别是当老板拿着一些明显的致命错误来问我的时候TnT）。</p>
-
-<p>正所谓“温故而知新”，看似忙碌实则却因各种错误而降低了课题效率，实在是得不偿失于是决定开始在升级这些pipeline的同时系统回顾曾经所学，年初就在菜鸟团里收了这本书：</p>
-
-<p><a href="http://shop.oreilly.com/product/0636920030157.do">Bioinformatics Data Skills</a>, by <a href="http://www.vincebuffalo.com/">Vince Buffalo</a>
-<img src="https://covers.oreillystatic.com/images/0636920030157/lrg.jpg" alt="" />
-作者在博客中也指明阅读对象，心内暗喜：</p>
-
-<blockquote>
-  <p>Bioinformatics Data Skills is an <strong>intermediate-level</strong> book, aimed at readers with some experience with a scripting language like Python, and very basic Unix (e.g. the Unix filesystem hierarchy, cd, ls, etc.). Bioinformatics Data Skills gives readers a solid Unix foundation in chapters 3 (“Remedial Unix Shell”), 7 (“Unix Data Tools”), and 12 (“Bioinformatics Shell Scripting”, “Writing Pipelines”, and “Parallelizing Tasks”). Readers are also introduced to the R language through learning exploratory data analysis (chapter 8).</p>
-</blockquote>
-
- -->
-    <div class="post-meta">
+      <header>
+  <h1 class="post-title">菜鸟团学习Round2-Bioinformatics Data Skills</h1>
+</header>
+<div class="content">
+  <div class="post-meta">
   <span class="post-date">26 February 2018</span>
   <span class="post-categories">
     
@@ -282,9 +262,8 @@
   </span>
 </div>
 
-
-    
-      <h1 id="intro-2018-round2">Intro: 2018 菜鸟团学习Round2</h1>
+  <div class="post-body">
+    <h1 id="intro-2018-round2">Intro: 2018 菜鸟团学习Round2</h1>
 
 <p>经过前段时间对基础知识的介绍，小菜鸟已经可以根据一个pipeline 从测序原始数据获得那些量化数据，比如峰值、表达值和甲基化值等等，这些值就被用来做后续分析。但每每当我跑完了原始数据再回看pipeline，发现有很多原来不太明白却因为时间限制而草草掠过的地方还是有很多可以改进的（特别是当老板拿着一些明显的致命错误来问我的时候TnT）。</p>
 
@@ -298,210 +277,195 @@
   <p>Bioinformatics Data Skills is an <strong>intermediate-level</strong> book, aimed at readers with some experience with a scripting language like Python, and very basic Unix (e.g. the Unix filesystem hierarchy, cd, ls, etc.). Bioinformatics Data Skills gives readers a solid Unix foundation in chapters 3 (“Remedial Unix Shell”), 7 (“Unix Data Tools”), and 12 (“Bioinformatics Shell Scripting”, “Writing Pipelines”, and “Parallelizing Tasks”). Readers are also introduced to the R language through learning exploratory data analysis (chapter 8).</p>
 </blockquote>
 
+<!--more-->
+
+<h1 id="main">Main</h1>
+
+<p>这本书分成三个部分：</p>
+
+<ul>
+  <li><strong>Ideology</strong>: 观念层面上的理解，相当于引言的扩展，主要强调研究的Robust and reproducible，比如实验设计、数据处理时的要注意的细节、态度等等，另外还有一些宝贵的建议，值得多想想自己平时做的和作者说的。这部分理念始终贯穿整本书，值得玩味。</li>
+  <li><strong>Prerequisite</strong>: 一些必备技能，比如项目的管理方式、服务器进程的管理、远程服务器（现在就是云端了:]），数据的获取和存储，以及最重要的版本控制软件：git！</li>
+  <li><strong>Practice</strong>:
+    <ul>
+      <li>unix data tools: know and subtract data (head, grep, cut, awk, uniq), subsell, unix philosophy</li>
+      <li>R : data subsetting, transforming, ggplot, control flow</li>
+      <li><strong>Range data</strong>: 算是最感兴趣的了，主要就是介绍几个R包，比如GenomicRanges，bedtools等等以及取range时需要注意的</li>
+      <li>Sequencing/Alignment data: 大致就是数据格式、质量和预处理，这在基础介绍的时候有所涉猎了，常见的工具可能会再看看</li>
+      <li>Shell scripting, pipelines, parallelizing tasks: 平时也没怎么修炼的兴趣点又一！</li>
+      <li>以及最后的存储相关知识: SQL，待要用了再学</li>
+    </ul>
+  </li>
+</ul>
+
+<p>数据分析和文献阅读固然重要，高效的基础确实扎实的数据处理基本功！趁此机会，通过这本书好好回顾一下所学，愿在盛夏总结春季所获不至惘然若失！</p>
+<p align="right"> 2018初春，王hh </p>
+
+<hr />
+
+<h1 id="plans">Plans</h1>
+<p>计划用约九周的时间完成两大块的学习，并chapter1 的思想为核心展开（价值观果然很重要！）～</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>week</th>
+      <th>task</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>week1</td>
+      <td>Managing a Bioinformatics Project (2)</td>
+    </tr>
+    <tr>
+      <td>week2</td>
+      <td>Basic shell and remote machines (3&amp;7, 4)</td>
+    </tr>
+    <tr>
+      <td>week3</td>
+      <td>Git and Data (5~6)</td>
+    </tr>
+    <tr>
+      <td>week4</td>
+      <td>Review &amp; basic R (1~8)</td>
+    </tr>
+    <tr>
+      <td>week5</td>
+      <td>Range data (9)</td>
+    </tr>
+    <tr>
+      <td>week6</td>
+      <td>Sequence data (10)</td>
+    </tr>
+    <tr>
+      <td>week7</td>
+      <td>Alignment data (11)</td>
+    </tr>
+    <tr>
+      <td>week8</td>
+      <td>Pipelines and others (12~14)</td>
+    </tr>
+    <tr>
+      <td>week9</td>
+      <td>Review 9~14</td>
+    </tr>
+  </tbody>
+</table>
+
 
     
 
-    
-      
-      
-      
 
-      
-        <a href="/codings/2018/02/26/cnt-roundTwo-bookCatos.html">More &hellip;</a>
-      
-    
-  </article>
+
+<div class="post-tags">
   
-  <article class="post-body">
-    <h2 class="post-title">
-      <a href="/definition/2017/09/29/basicNGS-centralDogma-transcription.html">
-        NGS与转录
-      </a>
-    </h2>
-
-<!--  <p><a href="https://en.wikipedia.org/wiki/Transcription_(biology)">转录（Transcription）</a> 是遗传信息由DNA转换到RNA的过程，即信使RNA（mRNA）以及非编码RNA（tRNA、rRNA等）的合成步骤。在NGS的促进下，研究转录和转录调控的技术有了极大的扩展，以空前的速度发展。</p>
-
- -->
-    <div class="post-meta">
-  <span class="post-date">29 September 2017</span>
-  <span class="post-categories">
     
-      &bull;
-
-      
-      
-      
-
-      
-        <a href="/category/a_%E5%90%8D%E8%AF%8D%E6%94%B6%E9%9B%86%E5%86%8C.html">
-          definition
-        </a>
-      
+    <a href="/tags.html#reviews">
     
-  </span>
+      <span class="icon">
+        <svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 0h24v24H0z" fill="none"/>
+    <path d="M17.63 5.84C17.27 5.33 16.67 5 16 5L5 5.01C3.9 5.01 3 5.9 3 7v10c0 1.1.9 1.99 2 1.99L16 19c.67 0 1.27-.33 1.63-.84L22 12l-4.37-6.16z"/>
+</svg>
+      </span>&nbsp;<span class="tag-name">Reviews</span>
+    </a>
+  
+    
+    <a href="/tags.html#ngs基础">
+    
+      <span class="icon">
+        <svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 0h24v24H0z" fill="none"/>
+    <path d="M17.63 5.84C17.27 5.33 16.67 5 16 5L5 5.01C3.9 5.01 3 5.9 3 7v10c0 1.1.9 1.99 2 1.99L16 19c.67 0 1.27-.33 1.63-.84L22 12l-4.37-6.16z"/>
+</svg>
+      </span>&nbsp;<span class="tag-name">NGS基础</span>
+    </a>
+  
+    
+    <a href="/tags.html#菜鸟团周推">
+    
+      <span class="icon">
+        <svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 0h24v24H0z" fill="none"/>
+    <path d="M17.63 5.84C17.27 5.33 16.67 5 16 5L5 5.01C3.9 5.01 3 5.9 3 7v10c0 1.1.9 1.99 2 1.99L16 19c.67 0 1.27-.33 1.63-.84L22 12l-4.37-6.16z"/>
+</svg>
+      </span>&nbsp;<span class="tag-name">菜鸟团周推</span>
+    </a>
+  
 </div>
-
-
-    
-      <p><a href="https://en.wikipedia.org/wiki/Transcription_(biology)">转录（Transcription）</a> 是遗传信息由DNA转换到RNA的过程，即信使RNA（mRNA）以及非编码RNA（tRNA、rRNA等）的合成步骤。在NGS的促进下，研究转录和转录调控的技术有了极大的扩展，以空前的速度发展。</p>
-
-
-    
-
-    
-      
-      
-      
-
-      
-        <a href="/definition/2017/09/29/basicNGS-centralDogma-transcription.html">More &hellip;</a>
-      
-    
-  </article>
-  
-  <article class="post-body">
-    <h2 class="post-title">
-      <a href="/definition/2017/09/22/basicNGS-depth-and-coverage.html">
-        NGS基础概念之depth and coverage
-      </a>
-    </h2>
-
-<!--  <p><strong>主要讲三个问题：测序深度和测序覆盖度怎么理解？怎么根据试验要求确定二者数值？一般用什么软件计算？</strong></p>
-
- -->
-    <div class="post-meta">
-  <span class="post-date">22 September 2017</span>
-  <span class="post-categories">
-    
-      &bull;
-
-      
-      
-      
-
-      
-        <a href="/category/a_%E5%90%8D%E8%AF%8D%E6%94%B6%E9%9B%86%E5%86%8C.html">
-          definition
-        </a>
-      
-    
-  </span>
-</div>
-
-
-    
-      <p><strong>主要讲三个问题：测序深度和测序覆盖度怎么理解？怎么根据试验要求确定二者数值？一般用什么软件计算？</strong></p>
-
-
-    
-
-    
-      
-      
-      
-
-      
-        <a href="/definition/2017/09/22/basicNGS-depth-and-coverage.html">More &hellip;</a>
-      
-    
-  </article>
-  
-  <article class="post-body">
-    <h2 class="post-title">
-      <a href="/analysis/2017/03/25/WGBS-analysis-summary.html">
-        WGBS analysis summary
-      </a>
-    </h2>
-
-<!--  <p>年初接触了WGBS数据分析，粗浅总结一下，有待修补:full_moon_with_face:。WGBS数据是精确到每个位点的深度测序，数据量因此也很大，动辄就上百个G，但是分析起来却很有意思。有了各种genomic features就可以探索很多事。</p>
-
- -->
-    <div class="post-meta">
-  <span class="post-date">25 March 2017</span>
-  <span class="post-categories">
-    
-      &bull;
-
-      
-      
-      
-
-      
-        <a href="/category/d_%E7%94%9F%E4%BF%A1%E5%AE%9E%E6%88%98.html">
-          Analysis
-        </a>
-      
-    
-  </span>
-</div>
-
-
-    
-      <p>年初接触了WGBS数据分析，粗浅总结一下，有待修补:full_moon_with_face:。WGBS数据是精确到每个位点的深度测序，数据量因此也很大，动辄就上百个G，但是分析起来却很有意思。有了各种genomic features就可以探索很多事。</p>
-
-
-    
-
-    
-      
-      
-      
-
-      
-        <a href="/analysis/2017/03/25/WGBS-analysis-summary.html">More &hellip;</a>
-      
-    
-  </article>
-  
-  <article class="post-body">
-    <h2 class="post-title">
-      <a href="/codings/2015/12/17/Linux-environment-summary.html">
-        linux环境变量学习整理
-      </a>
-    </h2>
-
-<!--  <p>今天上午玩服务器，把师姐的环境变量弄崩了，折腾了一下，不知怎的又恢复了，做一下记录供将来参考。查资料发现是提示符（prompt）出错了</p>
-
- -->
-    <div class="post-meta">
-  <span class="post-date">17 December 2015</span>
-  <span class="post-categories">
-    
-      &bull;
-
-      
-      
-      
-
-      
-        <a href="/category/b_%E4%B8%8D%E7%AE%97%E7%A0%81%E5%86%9C%E5%95%8A.html">
-          codings
-        </a>
-      
-    
-  </span>
-</div>
-
-
-    
-      <p>今天上午玩服务器，把师姐的环境变量弄崩了，折腾了一下，不知怎的又恢复了，做一下记录供将来参考。查资料发现是提示符（prompt）出错了</p>
-
-
-    
-
-    
-      
-      
-      
-
-      
-        <a href="/codings/2015/12/17/Linux-environment-summary.html">More &hellip;</a>
-      
-    
-  </article>
-  
+  </div>
 
   
+  <section class="comments">
+    <h2>Comments</h2>
+    
+  <div id="disqus_thread">
+    <button class="disqus-load" onClick="loadDisqusComments()">
+      Load Comments
+    </button>
+  </div>
+  <script>
+
+  /**
+  *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW
+  *  TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+  *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT:s
+  *  https://disqus.com/admin/universalcode/#configuration-variables
+  */
+  var disqus_config = function () {
+    this.page.url = "/codings/2018/02/26/cnt-roundTwo-bookCatos.html";
+    this.page.identifier = "" ||
+                           "/codings/2018/02/26/cnt-roundTwo-bookCatos.html";
+  }
+  function loadDisqusComments() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = 'https://hwoihann-github-io-farnorth.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  }
+  </script>
+  <noscript>
+    Please enable JavaScript to view the
+    <a href="https://disqus.com/?ref_noscript">comments powered by Disqus</a>.
+  </noscript>
+
+
+  </section>
+
+  <section class="related">
+  <h2>Related Posts</h2>
+  <ul class="posts-list">
+    
+      <li>
+        <h3>
+          <a href="/definition/2017/09/29/basicNGS-centralDogma-transcription.html">
+            NGS与转录
+            <small>29 Sep 2017</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/definition/2017/09/22/basicNGS-depth-and-coverage.html">
+            NGS基础概念之depth and coverage
+            <small>22 Sep 2017</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/analysis/2017/03/25/WGBS-analysis-summary.html">
+            WGBS analysis summary
+            <small>25 Mar 2017</small>
+          </a>
+        </h3>
+      </li>
+    
+  </ul>
+</section>
 
 </div>
 

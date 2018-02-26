@@ -28,7 +28,7 @@ main, article, section {
   display: block; }
 
 a {
-  color: #159BB8;
+  color: #01b2a3;
   text-decoration: none; }
   a:hover, a:focus {
     text-decoration: underline; }
@@ -70,11 +70,11 @@ button, input[type="submit"] {
   cursor: pointer;
   background: transparent;
   border-color: #e5e5e5;
-  color: #159BB8;
+  color: #01b2a3;
   transition: color 0.6s ease-in-out, border-color 0.6s ease-in-out, background 0.6s ease-in-out; }
   button:hover, input[type="submit"]:hover {
-    background: #159BB8;
-    border-color: #159BB8;
+    background: #01b2a3;
+    border-color: #01b2a3;
     color: white;
     box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.16); }
 
@@ -164,7 +164,7 @@ a svg, .icon svg {
   width: auto; }
 
 a svg {
-  fill: #159BB8; }
+  fill: #01b2a3; }
 
 .icon {
   vertical-align: middle; }
@@ -487,7 +487,7 @@ pre {
   we want the sidebar or header to stretch.
 */
 body {
-  color: rgba(255, 255, 255, 0.75);
+  color: #a5fe47;
   background-color: #268bd2;
   background-image: linear-gradient(to bottom, #3f9cdc, #2177b4);
   display: flex;
@@ -502,13 +502,13 @@ body {
     font-family: "Abril Fatface", serif;
     font-weight: normal;
     font-size: 1.25rem;
-    color: rgba(255, 255, 255, 0.75);
+    color: #a5fe47;
     margin-top: 0;
     margin-bottom: 0.5rem; }
     #sidebar .site-title a {
       color: inherit; }
       #sidebar .site-title a:hover {
-        color: white; }
+        color: #fff; }
     #sidebar .site-title .back-arrow {
       margin-right: 0.5rem; }
 
@@ -546,7 +546,7 @@ body {
   text-align: center; }
   .home #sidebar .site-title {
     font-size: 3.25rem;
-    color: white; }
+    color: #a5fe47; }
   .home #sidebar header ~ *, .home #sidebar p.lead {
     display: block; }
   .home #sidebar header ~ nav {
@@ -574,9 +574,9 @@ body {
       margin-bottom: 0; }
 
   #sidebar .site-title {
-    font-size: 3.25rem; }
+    font-size: 3rem; }
     #sidebar .site-title a {
-      color: white; }
+      color: #a5fe47; }
     #sidebar .site-title .back-arrow {
       display: none; }
   #sidebar p.lead, #sidebar header ~ * {
@@ -606,7 +606,7 @@ body {
   Sidebar links + nav
 ----------------------------------------------------------- */
 #sidebar a {
-  color: #fff; }
+  color: #a5fe47; }
   #sidebar a svg {
     fill: rgba(255, 255, 255, 0.85); }
   #sidebar a:hover svg, #sidebar a:focus svg, #sidebar a.active svg {
@@ -725,7 +725,7 @@ h2.post-title, h2.page-title {
     color: #999;
     white-space: nowrap; }
   .posts-list li a:hover {
-    color: #159BB8;
+    color: #01b2a3;
     text-decoration: none; }
     .posts-list li a:hover small {
       color: inherit; }
@@ -807,7 +807,7 @@ button.disqus-load {
   white-space: nowrap;
   opacity: 0.75; }
   .tags-list a .tag-count {
-    background: #159BB8;
+    background: #01b2a3;
     color: rgba(255, 255, 255, 0.8);
     margin-left: 0.25em;
     border-radius: 1000px;
@@ -859,7 +859,7 @@ main, article, section {
   display: block; }
 
 a {
-  color: #159BB8;
+  color: #01b2a3;
   text-decoration: none; }
   a:hover, a:focus {
     text-decoration: underline; }
@@ -901,11 +901,11 @@ button, input[type="submit"] {
   cursor: pointer;
   background: transparent;
   border-color: #e5e5e5;
-  color: #159BB8;
+  color: #01b2a3;
   transition: color 0.6s ease-in-out, border-color 0.6s ease-in-out, background 0.6s ease-in-out; }
   button:hover, input[type="submit"]:hover {
-    background: #159BB8;
-    border-color: #159BB8;
+    background: #01b2a3;
+    border-color: #01b2a3;
     color: white;
     box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.16); }
 
@@ -995,7 +995,7 @@ a svg, .icon svg {
   width: auto; }
 
 a svg {
-  fill: #159BB8; }
+  fill: #01b2a3; }
 
 .icon {
   vertical-align: middle; }
@@ -1318,9 +1318,9 @@ pre {
   we want the sidebar or header to stretch.
 */
 body {
-  color: rgba(255, 255, 255, 0.75);
-  background-color: #4877FF;
-  background-image: linear-gradient(to bottom, #6c92ff, #245cff);
+  color: #a5fe47;
+  background-color: #001130;
+  background-image: linear-gradient(to bottom, #001e54, #00040c);
   display: flex;
   flex-direction: column;
   min-width: 100vw;
@@ -1333,13 +1333,13 @@ body {
     font-family: "Abril Fatface", serif;
     font-weight: normal;
     font-size: 1.25rem;
-    color: rgba(255, 255, 255, 0.75);
+    color: #a5fe47;
     margin-top: 0;
     margin-bottom: 0.5rem; }
     #sidebar .site-title a {
       color: inherit; }
       #sidebar .site-title a:hover {
-        color: white; }
+        color: #fff; }
     #sidebar .site-title .back-arrow {
       margin-right: 0.5rem; }
 
@@ -1377,7 +1377,7 @@ body {
   text-align: center; }
   .home #sidebar .site-title {
     font-size: 3.25rem;
-    color: white; }
+    color: #a5fe47; }
   .home #sidebar header ~ *, .home #sidebar p.lead {
     display: block; }
   .home #sidebar header ~ nav {
@@ -1405,9 +1405,9 @@ body {
       margin-bottom: 0; }
 
   #sidebar .site-title {
-    font-size: 3.25rem; }
+    font-size: 3rem; }
     #sidebar .site-title a {
-      color: white; }
+      color: #a5fe47; }
     #sidebar .site-title .back-arrow {
       display: none; }
   #sidebar p.lead, #sidebar header ~ * {
@@ -1437,7 +1437,7 @@ body {
   Sidebar links + nav
 ----------------------------------------------------------- */
 #sidebar a {
-  color: #fff; }
+  color: #a5fe47; }
   #sidebar a svg {
     fill: rgba(255, 255, 255, 0.85); }
   #sidebar a:hover svg, #sidebar a:focus svg, #sidebar a.active svg {
@@ -1553,7 +1553,7 @@ h2.post-title, h2.page-title {
     color: #999;
     white-space: nowrap; }
   .posts-list li a:hover {
-    color: #159BB8;
+    color: #01b2a3;
     text-decoration: none; }
     .posts-list li a:hover small {
       color: inherit; }
@@ -1635,7 +1635,7 @@ button.disqus-load {
   white-space: nowrap;
   opacity: 0.75; }
   .tags-list a .tag-count {
-    background: #159BB8;
+    background: #01b2a3;
     color: rgba(255, 255, 255, 0.8);
     margin-left: 0.25em;
     border-radius: 1000px;

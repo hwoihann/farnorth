@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+
+  <title>
+    
+      NGS基础概念之depth and coverage &middot; 2ndLearn
+    
+  </title>
+
+  
+
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/assets/css/main.css" />
+  
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface" />
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/favicon.png" />
+<link rel="shortcut icon" href="/favicon.ico" />
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml" />
+
+  <!-- Additional head bits without overriding original head -->
+</head>
+
+
+  <body class="post">
+
+    <div id="sidebar">
+  <header>
+    <div class="site-title">
+      <a href="/">
+        
+          <span class="back-arrow icon"><svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+  <path d="M0 0h24v24H0z" fill="none"/>
+  <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/>
+</svg></span>
+        
+        <a href="http://hwoihann.github.io" target="_blank" style="color:grey25; font-size:4">2<font size=8><sup>nd</sup></font> Learn</a>
+      </a>
+    </div>
+    <p class="lead">Be A lifeHacker 修炼篇</p>
+  </header>
+  <nav id="sidebar-nav-links">
+  
+    <a class="home-link "
+        href="/">Home</a>
+  
+  
+
+  
+
+  
+
+
+  
+    
+  
+
+  
+    
+  
+
+  
+    
+      <a class="page-link "
+          href="/about.html">About</a>
+    
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+    
+  
+
+
+  
+
+
+  
+    
+  
+
+  
+    
+      <a class="category-link "
+          href="/category/a_%E5%90%8D%E8%AF%8D%E6%94%B6%E9%9B%86%E5%86%8C.html">名词收集册</a>
+    
+  
+
+  
+    
+  
+
+  
+    
+      <a class="category-link "
+          href="/category/b_%E4%B8%8D%E7%AE%97%E7%A0%81%E5%86%9C%E5%95%8A.html">不算码农啊</a>
+    
+  
+
+  
+    
+      <a class="category-link "
+          href="/category/c_%E5%8F%AF%E8%A7%86%E5%8C%96%E4%BF%AE%E7%82%BC.html">可视化修炼</a>
+    
+  
+
+  
+    
+      <a class="category-link "
+          href="/category/d_%E7%94%9F%E4%BF%A1%E5%AE%9E%E6%88%98.html">生信实战</a>
+    
+  
+
+  
+    
+  
+
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+    
+      <a class="category-link "
+          href="/category/z_%E4%BB%96%E5%B1%B1%E4%B9%8B%E7%9F%B3.html">他山之石</a>
+    
+  
+
+
+  <!-- Optional additional links to insert in sidebar nav -->
+</nav>
+
+
+  
+
+  <nav id="sidebar-icon-links">
+  
+    <a id="github-link"
+       class="icon" title="Github Project" aria-label="Github Project"
+       href="https://github.com/hwoihann/farnorth">
+      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 28"><path d="M12 2c6.625 0 12 5.375 12 12 0 5.297-3.437 9.797-8.203 11.391-0.609 0.109-0.828-0.266-0.828-0.578 0-0.391 0.016-1.687 0.016-3.297 0-1.125-0.375-1.844-0.812-2.219 2.672-0.297 5.484-1.313 5.484-5.922 0-1.313-0.469-2.375-1.234-3.219 0.125-0.313 0.531-1.531-0.125-3.187-1-0.313-3.297 1.234-3.297 1.234-0.953-0.266-1.984-0.406-3-0.406s-2.047 0.141-3 0.406c0 0-2.297-1.547-3.297-1.234-0.656 1.656-0.25 2.875-0.125 3.187-0.766 0.844-1.234 1.906-1.234 3.219 0 4.594 2.797 5.625 5.469 5.922-0.344 0.313-0.656 0.844-0.766 1.609-0.688 0.313-2.438 0.844-3.484-1-0.656-1.141-1.844-1.234-1.844-1.234-1.172-0.016-0.078 0.734-0.078 0.734 0.781 0.359 1.328 1.75 1.328 1.75 0.703 2.141 4.047 1.422 4.047 1.422 0 1 0.016 1.937 0.016 2.234 0 0.313-0.219 0.688-0.828 0.578-4.766-1.594-8.203-6.094-8.203-11.391 0-6.625 5.375-12 12-12zM4.547 19.234c0.031-0.063-0.016-0.141-0.109-0.187-0.094-0.031-0.172-0.016-0.203 0.031-0.031 0.063 0.016 0.141 0.109 0.187 0.078 0.047 0.172 0.031 0.203-0.031zM5.031 19.766c0.063-0.047 0.047-0.156-0.031-0.25-0.078-0.078-0.187-0.109-0.25-0.047-0.063 0.047-0.047 0.156 0.031 0.25 0.078 0.078 0.187 0.109 0.25 0.047zM5.5 20.469c0.078-0.063 0.078-0.187 0-0.297-0.063-0.109-0.187-0.156-0.266-0.094-0.078 0.047-0.078 0.172 0 0.281s0.203 0.156 0.266 0.109zM6.156 21.125c0.063-0.063 0.031-0.203-0.063-0.297-0.109-0.109-0.25-0.125-0.313-0.047-0.078 0.063-0.047 0.203 0.063 0.297 0.109 0.109 0.25 0.125 0.313 0.047zM7.047 21.516c0.031-0.094-0.063-0.203-0.203-0.25-0.125-0.031-0.266 0.016-0.297 0.109s0.063 0.203 0.203 0.234c0.125 0.047 0.266 0 0.297-0.094zM8.031 21.594c0-0.109-0.125-0.187-0.266-0.172-0.141 0-0.25 0.078-0.25 0.172 0 0.109 0.109 0.187 0.266 0.172 0.141 0 0.25-0.078 0.25-0.172zM8.937 21.438c-0.016-0.094-0.141-0.156-0.281-0.141-0.141 0.031-0.234 0.125-0.219 0.234 0.016 0.094 0.141 0.156 0.281 0.125s0.234-0.125 0.219-0.219z"></path>
+</svg>
+
+    </a>
+  
+
+  <a id="subscribe-link"
+     class="icon" title="Subscribe" aria-label="Subscribe"
+     href="/feed.xml">
+    <svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 0h24v24H0z" fill="none"/>
+    <circle cx="6.18" cy="17.82" r="2.18"/>
+    <path d="M4 4.44v2.83c7.03 0 12.73 5.7 12.73 12.73h2.83c0-8.59-6.97-15.56-15.56-15.56zm0 5.66v2.83c3.9 0 7.07 3.17 7.07 7.07h2.83c0-5.47-4.43-9.9-9.9-9.9z"/>
+</svg>
+  </a>
+
+  
+  
+  
+  
+
+  
+    <a id="tags-link"
+       class="icon"
+       title="Tags" aria-label="Tags"
+       href="/tags.html">
+      <svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 0h24v24H0z" fill="none"/>
+    <path d="M17.63 5.84C17.27 5.33 16.67 5 16 5L5 5.01C3.9 5.01 3 5.9 3 7v10c0 1.1.9 1.99 2 1.99L16 19c.67 0 1.27-.33 1.63-.84L22 12l-4.37-6.16z"/>
+</svg>
+    </a>
+  
+
+  
+    <a id="search-link"
+       class="icon"
+       title="Search" aria-label="Tags"
+       href="/search.html">
+      <svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+    <path d="M0 0h24v24H0z" fill="none"/>
+</svg>
+    </a>
+  
+
+  <!-- Optional additional links to insert for icons links -->
+</nav>
+
+  <p>
+  &copy; 2018.
+  <a href="/LICENSE.md">MIT License.</a>
+</p>
+
+</div>
+
+
+    <main class="container">
+      <header>
+  <h1 class="post-title">NGS基础概念之depth and coverage</h1>
+</header>
+<div class="content">
+  <div class="post-meta">
+  <span class="post-date">22 September 2017</span>
+  <span class="post-categories">
+    
+      &bull;
+
+      
+      
+      
+
+      
+        <a href="/category/a_%E5%90%8D%E8%AF%8D%E6%94%B6%E9%9B%86%E5%86%8C.html">
+          definition
+        </a>
+      
+    
+  </span>
+</div>
+
+  <div class="post-body">
+    <p><strong>主要讲三个问题：测序深度和测序覆盖度怎么理解？怎么根据试验要求确定二者数值？一般用什么软件计算？</strong></p>
+
+<!--more-->
+<p># 理解
+## depth 测序深度
+__测序深度__是指测序得到的总碱基数与待测基因组大小的比值，可以理解为基因组中每个碱基被测序到的平均次数。测序深度 = reads长度 × 比对的reads数目 / 参考序列长度。假设一个基因大小为2M，测序深度为10X，那么获得的总数据量为20M。</p>
+
+<p>可以根据我们的研究目的来选择相应的测序深度:
+<img src="http://mmbiz.qpic.cn/mmbiz/6kvRq2WRXpiaNhZ3TRr6fxoK59BEibL0cq6iaVtwflenGyrQNR0ia9lagqecMIU9FRvGveyfghgibPQsMIxtjAR1Yaw/640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1" alt="表1" /></p>
+
+<p>如果我们的研究目的仅仅是进行群体遗传分析等类型的分析。由于分析是通过计算基因组不同区域的多样性变化来推断进化选择压力，或构建进化树推断遗传分化关系，SNP检出率达到70~90%足以达到此类目的。所以，此类研究常见的测序深度选择在10X左右。</p>
+
+<p>如果想检测个体的全基因组突变，来寻找某个特定功能突变，则我们推荐大于30X的测序深度，以保证接近于“毫无疏漏”。</p>
+
+<p>如果测序样本是混样，例如，癌组织样本（癌细胞的细胞异质性很大），BSA分析中的群体混合池样本。那么在保证30X的测序深度的基础上，如果经费许可50X的测序深度更佳，以保证对混合池中低频变异的检测成功率（例如，新出现或即将消亡的癌细胞突变）。</p>
+
+<h2 id="coverage-">coverage 测序覆盖度</h2>
+<p>__覆盖度__是指测序获得的序列占整个基因组的比例。指的是基因组上至少被检测到1次的区域，占整个基因组的比例。当然，有些文章中也会将测序深度称为Coverage，容易给我们带来混淆。因此，我们还是需要根据语境来推断Coverage的意思。</p>
+
+<p>我们假设基因组大小为G, 假定每次测序可从基因组任何位置上随机检测一个碱基。那么对于基因组上某一个固定碱基位置，在一次测序中，该位置被命中的概率为P （P=1/G）。我们将试验重复n次，相当于产生了n个碱基（n=c*G, c为测序深度）。
+碱基的深度分布，相当于求该位置被测到0次，1次，…,n次的概率各是多少? 位点被检测到的n次的概率符合泊松分布。当然，由于概率极低，检测次数很大，所以这样的泊松分布接近于正态分布。</p>
+
+<p>由于基因组中的高GC、重复序列等复杂结构的存在，测序最终拼接组装获得的序列往往无法覆盖有所的区域，这部分没有获得的区域就称为Gap。例如一个细菌基因组测序，覆盖度是98%，那么还有2%的序列区域是没有通过测序获得的。</p>
+
+<h2 id="section">两者关系？</h2>
+<p>测序深度与基因组覆盖度之间是一个正相关的关系，而测序带来的错误率或变异检测（例如，SNP）假阳性结果会随着测序深度的提升而下降。在图2中可以看到当测序深度达到10x时基因组的覆盖度已接近饱和（左图）。但在测序深度达到10X的时候，SNP的检测率却没有达到饱和。
+<img src="http://mmbiz.qpic.cn/mmbiz/6kvRq2WRXpiaNhZ3TRr6fxoK59BEibL0cq66O6VIDj5j4BSjDtDKGfsHBbaZHXwPU0nUNVJB1EziczYjbophich7Fw/640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1" alt="" /></p>
+
+<h1 id="section-1">举例</h1>
+
+<p>对长100bp的目标区域进行捕获测序：采用单端测序，每个read长5bp；总共得到了200个reads；把所有的reads比对到目标区域后，100bp的目标区域中有98bp的位置至少有1个read覆盖到，换言之，剩余的2bp没有1个read覆盖。则</p>
+
+<p>深度: 200 x 5 / 100 = 10
+我们说这此测序的深度为10X。</p>
+
+<p>覆盖度: 98 / 100 × 100% = 98%
+我们说这次测序的覆盖度为98%。</p>
+
+<h1 id="section-2">应用</h1>
+<p>在临床panel检测遗传病时，首先要看一下质控，待测的基因是否捕获到？有多少区域大于10X? 很多时候基因检测机构并不提供这么具体的信息，可能会笼统的说XX%覆盖，平均深度是XXX，平均深度对于具体的基因并没有实际意义，另外在科研全外显子测序时，销售可能会说10G数据量，平均100X测序深度，实际结果到底是真是假很难说? 如果我们自己学会分析就可以亲自检验啦。</p>
+
+<h2 id="section-3">代码</h2>
+
+<p><code class="highlighter-rouge"> java -Xmx30g -jar /yourGATKFILE/GenomeAnalysisTK.jar-T DepthOfCoverage -R /reference_genome_dir/ucsc.hg19.fasta -o result_name -Ibam.list -L target.bed --omitDepthOutputAtEachBase --omitIntervalStatistics -ct1 -ct 10 -ct 20 </code>
+Sequencing depth and coverage: key considerations in genomic analyses
+GATK 的DepthOfCoverage，-R需要输入你的reference genome，bam.list为待分析的样本，可将多个bam放在一个bam.list里，-L 需要提供捕获的区域，为bed格式，如果是agilent的全外显子可在其官方网站下载，-ct1代表至少覆盖1X的区域，-ct10代表至少覆盖10X的区域，你可以自己添加自己想要的深度。</p>
+
+<p>以上海某知名测序公司的agilent v5外显子捕获测序为例，总数据量为8G左右，结果如下：
+<img src="http://owxb9z5ea.bkt.clouddn.com/17-9-29/26586732.jpg" alt="" />
+ 一共4个样本，total代表在捕获区域的总的碱基数，也就是ontarget碱基数，如果我们除以总的测序总量就会得到捕获效率大概为60%左右，也就是40%的数据都是无效的，当然这样的捕获效率在业界算是高的，mean代表平均测序深度，后面是大于1X的捕获区域99.8左右，然后是大于10X的区域为99.3左右，由于人员操作等原因，各公司这一数据的范围在85%-99.5%区间，这一数值对于后面的分析至关重要，如果低于90%就可以说明实验是失败的，再后面是大于20X的区域。
+最后再补充一点，NGS所说的10G数据并不是说测序文件在硬盘上的大小为10G，1G代表10亿个碱基，10G代表100亿个碱基。</p>
+
+<h1 id="section-4">其他资料：</h1>
+<ul>
+  <li>
+    <p>简单视频：https://v.qq.com/x/page/h0367nyz2le.html
+     主要介绍如何从suredesign网站下载外显子捕获区域、从ucsc的table browser下载外显子区域，通过GATK的子工具DepthOfCoverage计算覆盖度、大于10X区域比例，大于20X区域比例</p>
+  </li>
+  <li>
+    <p>进阶：使用R按照指定宽度计算覆盖率: https://www.plob.org/article/7123.html</p>
+  </li>
+  <li>
+    <p>2014: Sequencing depth and coverage: key considerations in genomic analyses https://www.nature.com/nrg/journal/v15/n2/pdf/nrg3642.pdf</p>
+  </li>
+</ul>
+
+<hr />
+<p>参考资料
+<a href="https://mp.weixin.qq.com/s?src=3&amp;timestamp=1506258871&amp;ver=1&amp;signature=jKdw9gNqXgIiG0n7SK9Gyhd5rdMKLkB-xjXkWPzhQICUBh3tZ4lcL7UGXXvZNSj1J53uW20h4Ri6h1xGxfFlZgBos7XNNqQcO2bahY9e7MUuD3cmPs3i0NclolYnEvVmoXijRqPig3XK*x3QpdWafQ==">《全基因组重测序深度如何选择?》基迪奥生物</a>
+https://www.plob.org/article/1217.html
+ <a href="https://mp.weixin.qq.com/s?src=3&amp;timestamp=1506258917&amp;ver=1&amp;signature=X22z2y*tjX88rVER4Xflg19Z4agK5jB70OsTuCZAEJFmdQiAm8SujU3ZgJpCKO106HgQ0yrS3YCGBoY-RWinSpDtl3ISc9w5XPWRxrDQWLV-E2k*zmwTUyfgWohBfQ7LGVzGVzTNe6JbVcSzvvUh3w==">《怎样分析panel与全外显子的覆盖度与深度》基因检测与解读</a></p>
+
+
+    
+
+
+
+<div class="post-tags">
+  
+    
+    <a href="/tags.html#测序常识">
+    
+      <span class="icon">
+        <svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 0h24v24H0z" fill="none"/>
+    <path d="M17.63 5.84C17.27 5.33 16.67 5 16 5L5 5.01C3.9 5.01 3 5.9 3 7v10c0 1.1.9 1.99 2 1.99L16 19c.67 0 1.27-.33 1.63-.84L22 12l-4.37-6.16z"/>
+</svg>
+      </span>&nbsp;<span class="tag-name">测序常识</span>
+    </a>
+  
+    
+    <a href="/tags.html#ngs基础">
+    
+      <span class="icon">
+        <svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 0h24v24H0z" fill="none"/>
+    <path d="M17.63 5.84C17.27 5.33 16.67 5 16 5L5 5.01C3.9 5.01 3 5.9 3 7v10c0 1.1.9 1.99 2 1.99L16 19c.67 0 1.27-.33 1.63-.84L22 12l-4.37-6.16z"/>
+</svg>
+      </span>&nbsp;<span class="tag-name">NGS基础</span>
+    </a>
+  
+    
+    <a href="/tags.html#菜鸟团周推">
+    
+      <span class="icon">
+        <svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 0h24v24H0z" fill="none"/>
+    <path d="M17.63 5.84C17.27 5.33 16.67 5 16 5L5 5.01C3.9 5.01 3 5.9 3 7v10c0 1.1.9 1.99 2 1.99L16 19c.67 0 1.27-.33 1.63-.84L22 12l-4.37-6.16z"/>
+</svg>
+      </span>&nbsp;<span class="tag-name">菜鸟团周推</span>
+    </a>
+  
+</div>
+  </div>
+
+  
+  <section class="comments">
+    <h2>Comments</h2>
+    
+  <div id="disqus_thread">
+    <button class="disqus-load" onClick="loadDisqusComments()">
+      Load Comments
+    </button>
+  </div>
+  <script>
+
+  /**
+  *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW
+  *  TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+  *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT:s
+  *  https://disqus.com/admin/universalcode/#configuration-variables
+  */
+  var disqus_config = function () {
+    this.page.url = "/definition/2017/09/22/basicNGS-depth-and-coverage.html";
+    this.page.identifier = "" ||
+                           "/definition/2017/09/22/basicNGS-depth-and-coverage.html";
+  }
+  function loadDisqusComments() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = 'https://hwoihann-github-io-farnorth.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  }
+  </script>
+  <noscript>
+    Please enable JavaScript to view the
+    <a href="https://disqus.com/?ref_noscript">comments powered by Disqus</a>.
+  </noscript>
+
+
+  </section>
+
+  <section class="related">
+  <h2>Related Posts</h2>
+  <ul class="posts-list">
+    
+      <li>
+        <h3>
+          <a href="/codings/2018/02/26/cnt-roundTwo-bookCatos.html">
+            菜鸟团学习Round2-Bioinformatics Data Skills
+            <small>26 Feb 2018</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/definition/2017/09/29/basicNGS-centralDogma-transcription.html">
+            NGS与转录
+            <small>29 Sep 2017</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/analysis/2017/03/25/WGBS-analysis-summary.html">
+            WGBS analysis summary
+            <small>25 Mar 2017</small>
+          </a>
+        </h3>
+      </li>
+    
+  </ul>
+</section>
+
+</div>
+
+    </main>
+
+    <!-- Optional footer content -->
+
+  </body>
+</html>

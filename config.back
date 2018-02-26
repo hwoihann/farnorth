@@ -27,9 +27,6 @@ plugins_dir:
   - jekyll-gist
   - jekyll-paginate
   - jemoji 
-
-gems:
-  - jekyll-paginate 
 # Custom vars
 sidebar_home_link:  true
 # sidebar_blog_link:  '/blog'   # By default, your home page is your blog
