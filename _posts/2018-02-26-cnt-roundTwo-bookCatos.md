@@ -1,7 +1,7 @@
 ---
 
 layout: post
-title: 菜鸟团学习Round2-Bioinformatics Data Skills
+title: '菜鸟团学习Round#2: Bioinformatics Data Skills'
 category: codings 
 tags: [Reviews, NGS基础, 菜鸟团周推]
 excerpt_separator: "<!--more-->"
