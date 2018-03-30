@@ -11,7 +11,7 @@
 
   <title>
     
-      NGS基础概念之depth and coverage &middot; 2ndLearn
+      癌症相关数据库: Keynote Ontology Clinical Trials &middot; 2ndLearn
     
   </title>
 
@@ -256,11 +256,11 @@
 
     <main class="container">
       <header>
-  <h1 class="post-title">NGS基础概念之depth and coverage</h1>
+  <h1 class="post-title">癌症相关数据库: Keynote Ontology Clinical Trials</h1>
 </header>
 <div class="content">
   <div class="post-meta">
-  <span class="post-date">22 September 2017</span>
+  <span class="post-date">09 March 2018</span>
   <span class="post-categories">
     
       &bull;
@@ -279,77 +279,87 @@
 </div>
 
   <div class="post-body">
-    <p><strong>主要讲三个问题：测序深度和测序覆盖度怎么理解？怎么根据试验要求确定二者数值？一般用什么软件计算？</strong></p>
+    <h1 id="pembrolizumab">Pembrolizumab</h1>
+
+<h2 id="11-介绍">1.1 介绍</h2>
+
+<p>Pembrolizumab是人源化单克隆抗体，首个被批准的阻断PD-1的靶向治疗药物。
+PD-1全名是程序性死亡分子1，英文名叫programmeddeath-1(PD-1)，是近年来发现的一种负性共刺激分子。PD-L1是PD-1的配体，各种肿瘤细胞组织中都有PD-L1的表达。 PD-1与PD-L1结合后可提供抑制性信号，诱导T细胞凋亡，抑制T细胞的活化和增殖，进而降低了免疫系统对抗肿瘤细胞的能力。</p>
 
 <!--more-->
-<h1 id="理解">理解</h1>
-<h2 id="depth-测序深度">depth 测序深度</h2>
-<p>__测序深度__是指测序得到的总碱基数与待测基因组大小的比值，可以理解为基因组中每个碱基被测序到的平均次数。测序深度 = reads长度 × 比对的reads数目 / 参考序列长度。假设一个基因大小为2M，测序深度为10X，那么获得的总数据量为20M。</p>
+<p>pembrolizumab作用机制</p>
 
-<p>可以根据我们的研究目的来选择相应的测序深度:
-<img src="http://mmbiz.qpic.cn/mmbiz/6kvRq2WRXpiaNhZ3TRr6fxoK59BEibL0cq6iaVtwflenGyrQNR0ia9lagqecMIU9FRvGveyfghgibPQsMIxtjAR1Yaw/640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1" alt="表1" /></p>
+<p><img src="http://owxb9z5ea.bkt.clouddn.com/18-3-5/74854260.jpg" alt="" /></p>
 
-<p>如果我们的研究目的仅仅是进行群体遗传分析等类型的分析。由于分析是通过计算基因组不同区域的多样性变化来推断进化选择压力，或构建进化树推断遗传分化关系，SNP检出率达到70~90%足以达到此类目的。所以，此类研究常见的测序深度选择在10X左右。</p>
+<h2 id="12-简史">1.2 简史</h2>
 
-<p>如果想检测个体的全基因组突变，来寻找某个特定功能突变，则我们推荐大于30X的测序深度，以保证接近于“毫无疏漏”。</p>
+<p>Pembrolizumab 已于2014年被美国FDA授予“突破性治疗药物”资格，批准用于局部晚期的或转移性黑色素瘤，以及用于晚期非小细胞肺癌。在已经进行的临床研究 中，Pembrolizumab的表现十分令人欣喜。655例晚期黑色素瘤患者用了Pembrolizumab后，结果发现，单药达到33%的有效率，无 进展生存率35%，中位总生存期23个月。Pembrolizumab 作为一线治疗药物用于晚期黑色素瘤优于标准治疗药物伊匹单抗，在两款免疫检查点抑制剂一对一的对照试验 中，Pembrolizumab(Keytruda) 达到了其所有的主要生存期终点，患者缓解率为 33%，几乎是伊匹单抗 12% 缓解率的三倍。
+英国国家卫生保健优化研究所推荐将 Pembrolizumab 作为一种治疗药物用于一些晚期、不可切除或转移性黑色素瘤患者。单一治疗药物已在英国获得上市许可，用于晚期（不可切除或转移性）黑色素瘤成年患者治疗。
+<img src="http://owxb9z5ea.bkt.clouddn.com/18-3-5/2017934.jpg" alt="" /></p>
 
-<p>如果测序样本是混样，例如，癌组织样本（癌细胞的细胞异质性很大），BSA分析中的群体混合池样本。那么在保证30X的测序深度的基础上，如果经费许可50X的测序深度更佳，以保证对混合池中低频变异的检测成功率（例如，新出现或即将消亡的癌细胞突变）。</p>
+<h2 id="13-扩展pd-1抑制剂">1.3 <em>扩展：PD-1抑制剂</em></h2>
 
-<h2 id="coverage-测序覆盖度">coverage 测序覆盖度</h2>
-<p>__覆盖度__是指测序获得的序列占整个基因组的比例。指的是基因组上至少被检测到1次的区域，占整个基因组的比例。当然，有些文章中也会将测序深度称为Coverage，容易给我们带来混淆。因此，我们还是需要根据语境来推断Coverage的意思。</p>
+<p>PD-1抑制剂，包括PD-1抗体和PD-L1抗体，是一类免疫治疗的新药。主要的作用机制，是阻断PD-1和PD-L1之间的相互作用，因为这两个蛋白的相互作用，会帮助肿瘤逃脱免疫系统的追杀。PD-1/PD-L1抗体，通过阻断这种罪恶的连接，促进病人自身的免疫系统杀伤肿瘤。</p>
 
-<p>我们假设基因组大小为G, 假定每次测序可从基因组任何位置上随机检测一个碱基。那么对于基因组上某一个固定碱基位置，在一次测序中，该位置被命中的概率为P （P=1/G）。我们将试验重复n次，相当于产生了n个碱基（n=c*G, c为测序深度）。
-碱基的深度分布，相当于求该位置被测到0次，1次，…,n次的概率各是多少? 位点被检测到的n次的概率符合泊松分布。当然，由于概率极低，检测次数很大，所以这样的泊松分布接近于正态分布。</p>
+<p>PD-1抗体有两种：Nivolumab（O药）适应症：黑色素瘤、非小细胞肺癌、肾细胞癌、经典型霍奇金淋巴瘤、头颈鳞癌、膀胱癌、胃癌、肝细胞癌、携带微卫星不稳定或错配修复基因缺陷的实体瘤。Pembrolizumab（K药）适应症：黑色素瘤、非小细胞肺癌、头颈鳞癌、经典型霍奇金淋巴瘤、膀胱癌、肝细胞癌、胃癌、携带微卫星不稳定或错配修复基因缺陷的实体瘤。PD-L1抗体三种：Atezolizumab（T药）适应症：膀胱癌、非小细胞肺癌。Avelumab（B药）适应症：膀胱癌、Merkel细胞癌。Durvalumab（I药）适应症：膀胱癌。</p>
 
-<p>由于基因组中的高GC、重复序列等复杂结构的存在，测序最终拼接组装获得的序列往往无法覆盖有所的区域，这部分没有获得的区域就称为Gap。例如一个细菌基因组测序，覆盖度是98%，那么还有2%的序列区域是没有通过测序获得的。</p>
+<h2 id="言归正传-keynote-ontology-clinical-trials与pembrolizumab有什么关系呢">言归正传， Keynote Ontology Clinical Trials与Pembrolizumab有什么关系呢？</h2>
 
-<h2 id="两者关系">两者关系？</h2>
-<p>测序深度与基因组覆盖度之间是一个正相关的关系，而测序带来的错误率或变异检测（例如，SNP）假阳性结果会随着测序深度的提升而下降。在图2中可以看到当测序深度达到10x时基因组的覆盖度已接近饱和（左图）。但在测序深度达到10X的时候，SNP的检测率却没有达到饱和。
-<img src="http://mmbiz.qpic.cn/mmbiz/6kvRq2WRXpiaNhZ3TRr6fxoK59BEibL0cq66O6VIDj5j4BSjDtDKGfsHBbaZHXwPU0nUNVJB1EziczYjbophich7Fw/640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1" alt="" /></p>
+<h1 id="keynote-ontology-clinical-trials">Keynote Ontology Clinical Trials</h1>
 
-<h1 id="举例">举例</h1>
+<h2 id="21-平台的作用和由来">2.1 平台的作用和由来</h2>
 
-<p>对长100bp的目标区域进行捕获测序：采用单端测序，每个read长5bp；总共得到了200个reads；把所有的reads比对到目标区域后，100bp的目标区域中有98bp的位置至少有1个read覆盖到，换言之，剩余的2bp没有1个read覆盖。则</p>
+<p>Keynote Ontology Clinical Trials(https://keynoteclinicaltrials.com/)是用Keytruda进行癌症免疫疗法的临床试验的介绍平台，介绍了若干适用PD-1疗法的癌症临床试验信息，主要供患者参考和报名相关的临床试验。所以目测“keynote”的名字应该是由“keytruda”而来。</p>
 
-<p>深度: 200 x 5 / 100 = 10
-我们说这此测序的深度为10X。</p>
-
-<p>覆盖度: 98 / 100 × 100% = 98%
-我们说这次测序的覆盖度为98%。</p>
-
-<h1 id="应用">应用</h1>
-<p>在临床panel检测遗传病时，首先要看一下质控，待测的基因是否捕获到？有多少区域大于10X? 很多时候基因检测机构并不提供这么具体的信息，可能会笼统的说XX%覆盖，平均深度是XXX，平均深度对于具体的基因并没有实际意义，另外在科研全外显子测序时，销售可能会说10G数据量，平均100X测序深度，实际结果到底是真是假很难说? 如果我们自己学会分析就可以亲自检验啦。</p>
-
-<h2 id="代码">代码</h2>
-
-<p><code class="highlighter-rouge"> java -Xmx30g -jar /yourGATKFILE/GenomeAnalysisTK.jar-T DepthOfCoverage -R /reference_genome_dir/ucsc.hg19.fasta -o result_name -Ibam.list -L target.bed --omitDepthOutputAtEachBase --omitIntervalStatistics -ct1 -ct 10 -ct 20 </code>
-Sequencing depth and coverage: key considerations in genomic analyses
-GATK 的DepthOfCoverage，-R需要输入你的reference genome，bam.list为待分析的样本，可将多个bam放在一个bam.list里，-L 需要提供捕获的区域，为bed格式，如果是agilent的全外显子可在其官方网站下载，-ct1代表至少覆盖1X的区域，-ct10代表至少覆盖10X的区域，你可以自己添加自己想要的深度。</p>
-
-<p>以上海某知名测序公司的agilent v5外显子捕获测序为例，总数据量为8G左右，结果如下：
-<img src="http://owxb9z5ea.bkt.clouddn.com/17-9-29/26586732.jpg" alt="" />
- 一共4个样本，total代表在捕获区域的总的碱基数，也就是ontarget碱基数，如果我们除以总的测序总量就会得到捕获效率大概为60%左右，也就是40%的数据都是无效的，当然这样的捕获效率在业界算是高的，mean代表平均测序深度，后面是大于1X的捕获区域99.8左右，然后是大于10X的区域为99.3左右，由于人员操作等原因，各公司这一数据的范围在85%-99.5%区间，这一数值对于后面的分析至关重要，如果低于90%就可以说明实验是失败的，再后面是大于20X的区域。
-最后再补充一点，NGS所说的10G数据并不是说测序文件在硬盘上的大小为10G，1G代表10亿个碱基，10G代表100亿个碱基。</p>
-
-<h1 id="其他资料">其他资料：</h1>
+<h2 id="22-可参与临床试验的癌症分类">2.2 可参与临床试验的癌症分类</h2>
 <ul>
-  <li>
-    <p>简单视频：https://v.qq.com/x/page/h0367nyz2le.html
-     主要介绍如何从suredesign网站下载外显子捕获区域、从ucsc的table browser下载外显子区域，通过GATK的子工具DepthOfCoverage计算覆盖度、大于10X区域比例，大于20X区域比例</p>
-  </li>
-  <li>
-    <p>进阶：使用R按照指定宽度计算覆盖率: https://www.plob.org/article/7123.html</p>
-  </li>
-  <li>
-    <p>2014: Sequencing depth and coverage: key considerations in genomic analyses https://www.nature.com/nrg/journal/v15/n2/pdf/nrg3642.pdf</p>
-  </li>
+  <li>Bladder</li>
+  <li>Breast</li>
+  <li>Colorectal</li>
+  <li>Esophageal</li>
+  <li>Gastric</li>
+  <li>Head and Neck</li>
+  <li>Hematology</li>
+  <li>Kidney</li>
+  <li>Liver</li>
+  <li>Lung</li>
+  <li>Melanoma</li>
+  <li>Ovarian</li>
+  <li>Pediatric</li>
+  <li>Prostate</li>
+  <li>Solid Tumors</li>
 </ul>
 
+<p>每个癌症目录下都有一些典型癌症的描述，比如三阴型乳腺癌，拷贝数异常的结肠癌等等，以及一段“实验参与者告知书”和当前活动的临床试验（下表）
+<img src="http://owxb9z5ea.bkt.clouddn.com/18-3-5/17390319.jpg" alt="" /></p>
+
+<p>其中每个title的含义：</p>
+<ul>
+  <li>1: keynote 临床试验的title，比如keynote355，点进去就是对该项目的具体描述。
+<img src="http://owxb9z5ea.bkt.clouddn.com/18-3-5/19523115.jpg" alt="" /></li>
+  <li>2: 记录的参与人数</li>
+  <li>3: 癌症的类型</li>
+  <li>4: phase，药物临床试验的几个阶段
+<img src="http://owxb9z5ea.bkt.clouddn.com/18-3-5/42635917.jpg" alt="" /></li>
+  <li>5: 招募状态，招募中的话就进入keynote的页面，而完成招募项目进行中的跳转页面则是<a href="https://clinicaltrials.gov/ct2/home">geo clinical</a> 的页面。比如keynote119，有一个专属号码：MK-3475-119/KEYNOTE-119 (https://clinicaltrials.gov/ct2/show/NCT02555657)，MK-3475就是keytruda了，记录了试验的起止日期、生存时间（多数是保密数据）等信息。</li>
+</ul>
+
+<blockquote>
+  <p>Participating in a clinical trial is an important decision. Anyone participating in a trial should know as much as possible about what is being studied, what risks are involved and what potential benefits may be gained before deciding to enroll. If you are interested in participating in a clinical trial, please talk to your doctor first.</p>
+</blockquote>
+
+<h2 id="23-clinical-trial的faq">2.3 Clinical Trial的FAQ</h2>
+
+<p>记录了一些参与试验的注意事项，常见的问题等等。
+https://keynoteclinicaltrials.com/clinical-trials-faq#accordion-4
+<img src="http://owxb9z5ea.bkt.clouddn.com/18-3-5/40464681.jpg" alt="" /></p>
+
+<p>一个药物就有这么系统完整的医疗记录，很值得国内借鉴啊！</p>
+
 <hr />
-<p>参考资料
-<a href="https://mp.weixin.qq.com/s?src=3&amp;timestamp=1506258871&amp;ver=1&amp;signature=jKdw9gNqXgIiG0n7SK9Gyhd5rdMKLkB-xjXkWPzhQICUBh3tZ4lcL7UGXXvZNSj1J53uW20h4Ri6h1xGxfFlZgBos7XNNqQcO2bahY9e7MUuD3cmPs3i0NclolYnEvVmoXijRqPig3XK*x3QpdWafQ==">《全基因组重测序深度如何选择?》基迪奥生物</a>
-https://www.plob.org/article/1217.html
- <a href="https://mp.weixin.qq.com/s?src=3&amp;timestamp=1506258917&amp;ver=1&amp;signature=X22z2y*tjX88rVER4Xflg19Z4agK5jB70OsTuCZAEJFmdQiAm8SujU3ZgJpCKO106HgQ0yrS3YCGBoY-RWinSpDtl3ISc9w5XPWRxrDQWLV-E2k*zmwTUyfgWohBfQ7LGVzGVzTNe6JbVcSzvvUh3w==">《怎样分析panel与全外显子的覆盖度与深度》基因检测与解读</a></p>
+
+<p>REF
+http://databankcollect6.blogspot.kr/2016/01/pembrolizumabmk-3475.html</p>
 
 
     
@@ -359,25 +369,14 @@ https://www.plob.org/article/1217.html
 <div class="post-tags">
   
     
-    <a href="/tags.html#测序常识">
+    <a href="/tags.html#癌症相关数据库专题">
     
       <span class="icon">
         <svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
     <path d="M0 0h24v24H0z" fill="none"/>
     <path d="M17.63 5.84C17.27 5.33 16.67 5 16 5L5 5.01C3.9 5.01 3 5.9 3 7v10c0 1.1.9 1.99 2 1.99L16 19c.67 0 1.27-.33 1.63-.84L22 12l-4.37-6.16z"/>
 </svg>
-      </span>&nbsp;<span class="tag-name">测序常识</span>
-    </a>
-  
-    
-    <a href="/tags.html#ngs基础">
-    
-      <span class="icon">
-        <svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
-    <path d="M0 0h24v24H0z" fill="none"/>
-    <path d="M17.63 5.84C17.27 5.33 16.67 5 16 5L5 5.01C3.9 5.01 3 5.9 3 7v10c0 1.1.9 1.99 2 1.99L16 19c.67 0 1.27-.33 1.63-.84L22 12l-4.37-6.16z"/>
-</svg>
-      </span>&nbsp;<span class="tag-name">NGS基础</span>
+      </span>&nbsp;<span class="tag-name">癌症相关数据库专题</span>
     </a>
   
     
@@ -412,9 +411,9 @@ https://www.plob.org/article/1217.html
   *  https://disqus.com/admin/universalcode/#configuration-variables
   */
   var disqus_config = function () {
-    this.page.url = "http://localhost:4000/definition/2017/09/22/basicNGS-depth-and-coverage.html";
+    this.page.url = "http://localhost:4000/definition/2018/03/09/bioGroup-keynote-immunos.html";
     this.page.identifier = "" ||
-                           "http://localhost:4000/definition/2017/09/22/basicNGS-depth-and-coverage.html";
+                           "http://localhost:4000/definition/2018/03/09/bioGroup-keynote-immunos.html";
   }
   function loadDisqusComments() { // DON'T EDIT BELOW THIS LINE
     var d = document, s = d.createElement('script');
@@ -446,18 +445,18 @@ https://www.plob.org/article/1217.html
     
       <li>
         <h3>
-          <a href="/definition/2018/03/09/bioGroup-keynote-immunos.html">
-            癌症相关数据库: Keynote Ontology Clinical Trials
-            <small>09 Mar 2018</small>
+          <a href="/definition/2018/03/07/btest.html">
+            hahaha
+            <small>07 Mar 2018</small>
           </a>
         </h3>
       </li>
     
       <li>
         <h3>
-          <a href="/definition/2018/03/07/btest.html">
-            hahaha
-            <small>07 Mar 2018</small>
+          <a href="/reference/2018/03/06/paper-epi-protein-dnmt.html">
+            Digest: Isoform‐specific localization of DNMT3A regulates DNA methylation fidelity at bivalent CpG islands
+            <small>06 Mar 2018</small>
           </a>
         </h3>
       </li>

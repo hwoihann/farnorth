@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+
+  <title>
+    
+      R Gtf Refgenome &middot; 2ndLearn
+    
+  </title>
+
+  
+
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/assets/css/main.css" />
+  
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface" />
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/favicon.png" />
+<link rel="shortcut icon" href="/favicon.ico" />
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml" />
+
+  <!-- Additional head bits without overriding original head -->
+</head>
+
+
+  <body class="post">
+
+    <div id="sidebar">
+  <header>
+    <div class="site-title">
+      <a href="/">
+        
+          <span class="back-arrow icon"><svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+  <path d="M0 0h24v24H0z" fill="none"/>
+  <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/>
+</svg></span>
+        
+        <a href="http://hwoihann.github.io" target="_blank" style="color:grey25; font-size:4">2<font size=8><sup>nd</sup></font> Learn</a>
+      </a>
+    </div>
+    <p class="lead">Be A lifeHacker 修炼篇</p>
+  </header>
+  <nav id="sidebar-nav-links">
+  
+    <a class="home-link "
+        href="/">Home</a>
+  
+  
+
+  
+
+  
+
+
+  
+    
+  
+
+  
+    
+  
+
+  
+    
+      <a class="page-link "
+          href="/about.html">About</a>
+    
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+    
+  
+
+
+  
+
+
+  
+    
+  
+
+  
+    
+      <a class="category-link "
+          href="/category/a_%E5%90%8D%E8%AF%8D%E6%94%B6%E9%9B%86%E5%86%8C.html">名词收集册</a>
+    
+  
+
+  
+    
+  
+
+  
+    
+      <a class="category-link "
+          href="/category/b_%E4%B8%8D%E7%AE%97%E7%A0%81%E5%86%9C%E5%95%8A.html">不算码农啊</a>
+    
+  
+
+  
+    
+      <a class="category-link "
+          href="/category/c_%E5%8F%AF%E8%A7%86%E5%8C%96%E4%BF%AE%E7%82%BC.html">可视化修炼</a>
+    
+  
+
+  
+    
+      <a class="category-link "
+          href="/category/d_%E7%94%9F%E4%BF%A1%E5%AE%9E%E6%88%98.html">生信实战</a>
+    
+  
+
+  
+    
+  
+
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+    
+      <a class="category-link "
+          href="/category/z_%E4%BB%96%E5%B1%B1%E4%B9%8B%E7%9F%B3.html">他山之石</a>
+    
+  
+
+  
+
+  
+
+  
+    
+  
+
+
+  <!-- Optional additional links to insert in sidebar nav -->
+</nav>
+
+
+  
+
+  <nav id="sidebar-icon-links">
+  
+    <a id="github-link"
+       class="icon" title="Github Project" aria-label="Github Project"
+       href="https://github.com/hwoihann/farnorth">
+      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 28"><path d="M12 2c6.625 0 12 5.375 12 12 0 5.297-3.437 9.797-8.203 11.391-0.609 0.109-0.828-0.266-0.828-0.578 0-0.391 0.016-1.687 0.016-3.297 0-1.125-0.375-1.844-0.812-2.219 2.672-0.297 5.484-1.313 5.484-5.922 0-1.313-0.469-2.375-1.234-3.219 0.125-0.313 0.531-1.531-0.125-3.187-1-0.313-3.297 1.234-3.297 1.234-0.953-0.266-1.984-0.406-3-0.406s-2.047 0.141-3 0.406c0 0-2.297-1.547-3.297-1.234-0.656 1.656-0.25 2.875-0.125 3.187-0.766 0.844-1.234 1.906-1.234 3.219 0 4.594 2.797 5.625 5.469 5.922-0.344 0.313-0.656 0.844-0.766 1.609-0.688 0.313-2.438 0.844-3.484-1-0.656-1.141-1.844-1.234-1.844-1.234-1.172-0.016-0.078 0.734-0.078 0.734 0.781 0.359 1.328 1.75 1.328 1.75 0.703 2.141 4.047 1.422 4.047 1.422 0 1 0.016 1.937 0.016 2.234 0 0.313-0.219 0.688-0.828 0.578-4.766-1.594-8.203-6.094-8.203-11.391 0-6.625 5.375-12 12-12zM4.547 19.234c0.031-0.063-0.016-0.141-0.109-0.187-0.094-0.031-0.172-0.016-0.203 0.031-0.031 0.063 0.016 0.141 0.109 0.187 0.078 0.047 0.172 0.031 0.203-0.031zM5.031 19.766c0.063-0.047 0.047-0.156-0.031-0.25-0.078-0.078-0.187-0.109-0.25-0.047-0.063 0.047-0.047 0.156 0.031 0.25 0.078 0.078 0.187 0.109 0.25 0.047zM5.5 20.469c0.078-0.063 0.078-0.187 0-0.297-0.063-0.109-0.187-0.156-0.266-0.094-0.078 0.047-0.078 0.172 0 0.281s0.203 0.156 0.266 0.109zM6.156 21.125c0.063-0.063 0.031-0.203-0.063-0.297-0.109-0.109-0.25-0.125-0.313-0.047-0.078 0.063-0.047 0.203 0.063 0.297 0.109 0.109 0.25 0.125 0.313 0.047zM7.047 21.516c0.031-0.094-0.063-0.203-0.203-0.25-0.125-0.031-0.266 0.016-0.297 0.109s0.063 0.203 0.203 0.234c0.125 0.047 0.266 0 0.297-0.094zM8.031 21.594c0-0.109-0.125-0.187-0.266-0.172-0.141 0-0.25 0.078-0.25 0.172 0 0.109 0.109 0.187 0.266 0.172 0.141 0 0.25-0.078 0.25-0.172zM8.937 21.438c-0.016-0.094-0.141-0.156-0.281-0.141-0.141 0.031-0.234 0.125-0.219 0.234 0.016 0.094 0.141 0.156 0.281 0.125s0.234-0.125 0.219-0.219z"></path>
+</svg>
+
+    </a>
+  
+
+  <a id="subscribe-link"
+     class="icon" title="Subscribe" aria-label="Subscribe"
+     href="/feed.xml">
+    <svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 0h24v24H0z" fill="none"/>
+    <circle cx="6.18" cy="17.82" r="2.18"/>
+    <path d="M4 4.44v2.83c7.03 0 12.73 5.7 12.73 12.73h2.83c0-8.59-6.97-15.56-15.56-15.56zm0 5.66v2.83c3.9 0 7.07 3.17 7.07 7.07h2.83c0-5.47-4.43-9.9-9.9-9.9z"/>
+</svg>
+  </a>
+
+  
+  
+  
+  
+
+  
+    <a id="tags-link"
+       class="icon"
+       title="Tags" aria-label="Tags"
+       href="/tags.html">
+      <svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 0h24v24H0z" fill="none"/>
+    <path d="M17.63 5.84C17.27 5.33 16.67 5 16 5L5 5.01C3.9 5.01 3 5.9 3 7v10c0 1.1.9 1.99 2 1.99L16 19c.67 0 1.27-.33 1.63-.84L22 12l-4.37-6.16z"/>
+</svg>
+    </a>
+  
+
+  
+    <a id="search-link"
+       class="icon"
+       title="Search" aria-label="Tags"
+       href="/search.html">
+      <svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+    <path d="M0 0h24v24H0z" fill="none"/>
+</svg>
+    </a>
+  
+
+  <!-- Optional additional links to insert for icons links -->
+</nav>
+
+  <p>
+  &copy; 2018.
+  <a href="/LICENSE.md">MIT License.</a>
+</p>
+
+</div>
+
+
+    <main class="container">
+      <header>
+  <h1 class="post-title">R Gtf Refgenome</h1>
+</header>
+<div class="content">
+  <div class="post-meta">
+  <span class="post-date">30 March 2018</span>
+  <span class="post-categories">
+    
+  </span>
+</div>
+
+  <div class="post-body">
+    
+<p>R专题：使用R读取，处理GTF格式的文件.md</p>
+
+<h2 id="前言小白快问快答">前言：小白快问快答</h2>
+<p><strong>Q1：GTF是个啥？</strong></p>
+
+<p>见下表和以前的推文：
+<a href="https://mp.weixin.qq.com/s?__biz=MzUzMTEwODk0Ng==&amp;mid=2247484320&amp;idx=1&amp;sn=f7c9e7ee096f636449aa5137af7b830d&amp;chksm=fa46c69dcd314f8bef00af84e87769768eb629b370d5af626c9e1ea74a96d1d4210006b9d5ba&amp;mpshare=1&amp;scene=1&amp;srcid=0330YCwz36p9lpcBNZehFzTq&amp;pass_ticket=CKS4DzU20h7YLgPJXblylkaCCQHn%2BV6Pmwb9awL4JCeD2UuddEEkOfaa%2FBUesum2#rd">NGS数据格式之gff/gtf</a></p>
+
+<p><img src="http://owxb9z5ea.bkt.clouddn.com/18-3-30/46681628.jpg" alt="" /></p>
+
+<p><strong>Q2： 为什么要在R里面倒腾GTF？</strong>
+为了生信小白对此类数据格式的快速入门+R的学习！</p>
+
+<h2 id="学习资料准备">学习资料准备</h2>
+<h4 id="1-r包-refgenome">1. <strong>R包</strong>： refGenome</h4>
+<p>本文基本出自该包官方文档说明：
+https://cran.r-project.org/web/packages/refGenome/vignettes/refGenome.pdf</p>
+
+<p><img src="http://owxb9z5ea.bkt.clouddn.com/18-3-30/98353593.jpg" alt="" /></p>
+
+<h4 id="2-一个gtf文件">2. 一个gtf文件</h4>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>wget -c ftp://ftp.ensembl.org/pub/release-91/gtf/mus_musculus/Mus_musculus.GRCm38.91.gtf.gz
+gunzipMus_musculus.GRCm38.91.gtf.gz
+ cat /nethome/Shared/annotation/genomes/GRCm38/Mus_musculus.GRCm38.91.gtf | grep 'gene_name "Xkr4";' 
+ cat /nethome/Shared/annotation/genomes/GRCm38/Mus_musculus.GRCm38.91.gtf | grep -v "^#" | wc -l
+1768660
+1 ensembl_havana CDS 3216025 3216968 . - 2 gene_id "ENSMUSG00000051951"; gene_version "5"; transcript_id "ENSMUST00000070533"; transcript_version "4"; exon_number "3"; gene_name "Xkr4"; gene_source "ensembl_havana"; gene_biotype "protein_coding"; havana_gene "OTTMUSG00000026353"; havana_gene_version "2"; transcript_name "Xkr4-201"; transcript_source "ensembl_havana"; transcript_biotype "protein_coding"; tag "CCDS"; ccds_id "CCDS14803"; havana_transcript "OTTMUST00000065166"; havana_transcript_version "1"; protein_id "ENSMUSP00000070648"; protein_version "4"; tag "basic"; transcript_support_level "1";
+</code></pre></div></div>
+
+<p>还是再简单的了解一下它的内容（比较简单，不翻译了:) ）：</p>
+
+<ol>
+  <li>seqname    The name of the sequence; must be a chromosome or scaffold.</li>
+  <li>
+    <p>source    The program that generated this feature.这个gtf文件中gene的source主要来自于：
+ havana
+ insdc
+ mirbase
+ ensembl
+ ensembl_havana</p>
+  </li>
+  <li>feature    The name of this type of feature, e.g. “CDS”, “start_codon”, “stop_codon”, and “exon”</li>
+  <li>start    The starting position of the feature in the sequence; the first base is numbered 1.</li>
+  <li>end    The ending position of the feature (inclusive).</li>
+  <li>score    A score between 0 and 1000.</li>
+  <li>strand    Valid entries include “+”, “-“, or “.”.</li>
+  <li>frame    If the feature is a coding exon, frame should be a number between 0-2 that represents the reading frame of the first base. If the feature is not a coding exon, the value should be “.”.</li>
+</ol>
+
+<p>然后挑一个顺眼的基因看看它的feature和frame，果然和描述的一致，继续往下看。</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>awk 'BEGIN{FS="\t|;"} ($0  ~/(gene_name "Xkr4")/ ) {print $3,$8}' GRCm38/Mus_musculus.GRCm38.91.gtf
+    gene .
+    transcript .
+    exon .
+    exon .
+    transcript .
+    exon .
+    exon .
+    transcript .
+    exon .
+    CDS 0
+    start_codon 0
+    exon .
+    CDS 1
+    exon .
+    CDS 2
+    stop_codon 0
+    five_prime_utr .
+    three_prime_utr .
+</code></pre></div></div>
+
+<p>\9. group    All lines with the same group are linked together into a single item.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gene_id "ENSMUSG00000051951"
+gene_id "ENSMUSG00000051951"
+gene_id "ENSMUSG00000051951"
+gene_id "ENSMUSG00000051951"
+gene_id "ENSMUSG00000051951"
+gene_id "ENSMUSG00000051951"
+gene_id "ENSMUSG00000051951"
+gene_id "ENSMUSG00000051951"
+gene_id "ENSMUSG00000051951"
+gene_id "ENSMUSG00000051951"
+gene_id "ENSMUSG00000051951"
+gene_id "ENSMUSG00000051951"
+gene_id "ENSMUSG00000051951"
+gene_id "ENSMUSG00000051951"
+gene_id "ENSMUSG00000051951"
+gene_id "ENSMUSG00000051951"
+gene_id "ENSMUSG00000051951"
+gene_id "ENSMUSG00000051951"
+</code></pre></div></div>
+
+<p>这个single item即指基因id了，一共有53000多个ensmusg。</p>
+
+<h4 id="3-_-其他的可跳过非重点_">3. _ 其他的(可跳过，非重点)_</h4>
+<ul>
+  <li>S4 class：各种annotation相关R包的基础，有兴趣可参看http://www.bioconductor.org/help/course-materials/2010/AdvancedR/S4InBioconductor.pdf</li>
+  <li>正则表达式</li>
+</ul>
+
+<h2 id="正文refgenome使用简介">正文：refGenome使用简介</h2>
+
+<p>这个包主要适用于gtf文件（比如Ensembl和UCSC数据）的读取和操作，基于S4 class，可以分成_refGenome_，<em>refExons</em> 和 _refJunctions_三个子类。每一个类别都对应着Ensemble或UCSC的定义类型（顾名思义，genome、exon……）。本文主要讲讲相对简单的genome和exon对象的相关操作。</p>
+
+<h3 id="1-安装">1. 安装</h3>
+<p>安装，读取gtf，可以看到loading的信息。</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>install.packages("refGenome") 
+library(refGenome) 
+
+# create ensemblGenome object for storing Ensembl genomic annotation data
+ens &lt;- ensemblGenome()
+ 
+# read GTF file into ensemblGenome object
+read.gtf(ens, "Mus_musculus.GRCm38.91.gtf")
+
+[read.gtf.refGenome] Reading file 'Mus_musculus.GRCm38.91.gtf'.
+[GTF]  1768665 lines processed.
+[read.gtf.refGenome] Extracting genes table.
+**[read.gtf.refGenome] Found 53,465 gene records.**
+[read.gtf.refGenome] Finished.
+</code></pre></div></div>
+
+<p>看看这个ens是个啥</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  ens
+ Object of class 'ensemblGenome' with 1,715,195 rows and 31 columns.
+   id seqid  source    feature   start     end score strand frame
+ 2  2     1  havana transcript 3073253 3074322     .      +     .
+ 3  3     1  havana       exon 3073253 3074322     .      +     .
+ 5  5     1 ensembl transcript 3102016 3102125     .      +     .
+ 6  6     1 ensembl       exon 3102016 3102125     .      +     .
+ 8  8     1  havana transcript 3205901 3216344     .      -     .
+ 9  9     1  havana       exon 3213609 3216344     .      -     .
+   protein_version protein_id ccds_id transcript_support_level   tag
+ 2            &lt;NA&gt;       &lt;NA&gt;    &lt;NA&gt;                       NA basic
+ 3            &lt;NA&gt;       &lt;NA&gt;    &lt;NA&gt;                       NA basic
+ 5            &lt;NA&gt;       &lt;NA&gt;    &lt;NA&gt;                       NA basic
+ 6            &lt;NA&gt;       &lt;NA&gt;    &lt;NA&gt;                       NA basic
+ 8            &lt;NA&gt;       &lt;NA&gt;    &lt;NA&gt;                        1  &lt;NA&gt;
+ 9            &lt;NA&gt;       &lt;NA&gt;    &lt;NA&gt;                        1  &lt;NA&gt;
+     transcript_biotype transcript_source exon_number            gene_id
+ 2                  TEC            havana        &lt;NA&gt; ENSMUSG00000102693
+ 3                  TEC            havana           1 ENSMUSG00000102693
+ 5                snRNA           ensembl        &lt;NA&gt; ENSMUSG00000064842
+ 6                snRNA           ensembl           1 ENSMUSG00000064842
+ 8 processed_transcript            havana        &lt;NA&gt; ENSMUSG00000051951
+ 9 processed_transcript            havana           1 ENSMUSG00000051951
+     transcript_name gene_version  havana_transcript     gene_name
+ 2 4933401J01Rik-201            1 OTTMUST00000127109 4933401J01Rik
+ 3 4933401J01Rik-201            1 OTTMUST00000127109 4933401J01Rik
+ 5       Gm26206-201            1               &lt;NA&gt;       Gm26206
+ 6       Gm26206-201            1               &lt;NA&gt;       Gm26206
+ 8          Xkr4-203            5 OTTMUST00000086625          Xkr4
+ 9          Xkr4-203            5 OTTMUST00000086625          Xkr4
+      gene_source   gene_biotype exon_version        havana_gene
+ 2         havana            TEC         &lt;NA&gt; OTTMUSG00000049935
+ 3         havana            TEC            1 OTTMUSG00000049935
+ 5        ensembl          snRNA         &lt;NA&gt;               &lt;NA&gt;
+ 6        ensembl          snRNA            1               &lt;NA&gt;
+ 8 ensembl_havana protein_coding         &lt;NA&gt; OTTMUSG00000026353
+ 9 ensembl_havana protein_coding            1 OTTMUSG00000026353
+   havana_transcript_version havana_gene_version            exon_id
+ 2                         1                   1               &lt;NA&gt;
+ 3                         1                   1 ENSMUSE00001343744
+ 5                      &lt;NA&gt;                &lt;NA&gt;               &lt;NA&gt;
+ 6                      &lt;NA&gt;                &lt;NA&gt; ENSMUSE00000522066
+ 8                         1                   2               &lt;NA&gt;
+ 9                         1                   2 ENSMUSE00000858910
+   transcript_version      transcript_id
+ 2                  1 ENSMUST00000193812
+ 3                  1 ENSMUST00000193812
+ 5                  1 ENSMUST00000082908
+ 6                  1 ENSMUST00000082908
+ 8                  1 ENSMUST00000162897
+ 9                  1 ENSMUST00000162897
+
+
+class(ens)
+[1] "ensemblGenome"
+
+</code></pre></div></div>
+
+<p>emmm,和之前介绍过的格式差不多，请自行理解。</p>
+
+<h3 id="2-功能简介">2. 功能简介</h3>
+
+<h4 id="genome-class相关操作">genome class相关操作</h4>
+
+<h5 id="1-通过染色体相关信息seqids-提取ens子集对象类型是ens对应的ensemblgenome">1. 通过染色体相关信息（Seqids） 提取ens子集，对象类型是ens对应的ensemblGenome</h5>
+<ul>
+  <li><code class="highlighter-rouge">extractSeqids</code>：提取特定染色体上的基因注释信息</li>
+  <li><code class="highlighter-rouge">tableSeqids</code>：统计特定染色体上的基因</li>
+</ul>
+
+<p>比如取出线粒体染色体上的信息：<code class="highlighter-rouge">extractSeqids(ens, "^MT$")</code>, MT即线粒体的代号，这里用了正则表达式（^和$）做了过滤。
+那怎么看可以用的染色体信息呢：输入<code class="highlighter-rouge">ensPrimAssembly()</code>，可以得到 primary assembly data，用于正则表达式筛选</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] "^([0-9]{1,2})$|^[XY]|MT$"
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>enpa &lt;- extractSeqids(ens,ensPrimAssembly())
+tableSeqids(enpa)
+
+     1     10     11     12     13     14     15     16     17     18     19 
+111746  83081 123843  60654  62035  70962  57035  48515  68654  31782  45802 
+     2      3      4      5      6      7      8      9     MT      X      Y 
+146388  83712 100869 118010  94207 146202  82914 105329    110  60507  11953 
+</code></pre></div></div>
+
+<p>假如不加任何过滤信息，可以得到正常ensembl里没有的特异信息，可能是新的参考基因组里出现的：</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> tableSeqids(ens)
+
+#         1         10         11         12         13         14         15 
+    111746      83081     123843      60654      62035      70962      57035 
+#        16         17         18         19          2          3          4 
+     48515      68654      31782      45802     146388      83712     100869 
+         5          6          7          8          9 GL456210.1 GL456211.1 
+#    118010      94207     146202      82914     105329         37         50 
+GL456212.1 GL456216.1 GL456219.1 GL456221.1 GL456233.1 GL456239.1 GL456350.1 
+#        34         21         10         56         61          2         60 
+GL456354.1 GL456372.1 GL456381.1 GL456385.1 JH584292.1 JH584293.1 JH584294.1 
+#        48          2          2          4         75        100         83 
+JH584295.1 JH584296.1 JH584297.1 JH584298.1 JH584299.1 JH584303.1 JH584304.1 
+#        15         25         25         29        110          4         32 
+        MT          X          Y 
+#       110      60507      11953 
+</code></pre></div></div>
+
+<h5 id="2-通过features提取ens子集-对象还是ensemblgenome">2. 通过features提取ens子集 ，对象还是ensemblGenome</h5>
+<ul>
+  <li><code class="highlighter-rouge">extractFeature</code></li>
+  <li><code class="highlighter-rouge">tableFeatures</code></li>
+</ul>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>enpf &lt;- extractFeature(enpa,"exon")
+enpf
+
+Object of class 'ensemblGenome' with 794,728 rows and 31 columns.
+   id seqid  source feature   start     end score strand frame protein_version
+3   3     1  havana    exon 3073253 3074322     .      +     .            &lt;NA&gt;
+6   6     1 ensembl    exon 3102016 3102125     .      +     .            &lt;NA&gt;
+10 10     1  havana    exon 3205901 3207317     .      -     .            &lt;NA&gt;
+
+tableFeatures(enpa)
+
+            CDS            exon  five_prime_utr  Selenocysteine     start_codon 
+         504216          794728           90176              65           57074 
+     stop_codon three_prime_utr      transcript 
+          53106           81096          133849 
+
+</code></pre></div></div>
+
+<h5 id="3-提取单个基因或者转录本信息举在上文中提到的xkr4-基因ensmusg00000051951哈哈">3. 提取单个基因或者转录本信息，举在上文中提到的Xkr4 基因（ENSMUSG00000051951，哈哈）</h5>
+
+<p><code class="highlighter-rouge">extractByGeneId(ens, "ENSMUSG00000051951")</code></p>
+<blockquote>
+  <p><img src="http://owxb9z5ea.bkt.clouddn.com/18-3-30/32797111.jpg" alt="" /></p>
+</blockquote>
+
+<p><code class="highlighter-rouge"> extractTranscript(ens, "ENSMUST00000162897")</code></p>
+<blockquote>
+  <p>Object of class ‘ensemblGenome’ with 3 rows and 31 columns.
+<img src="http://owxb9z5ea.bkt.clouddn.com/18-3-30/72540956.jpg" alt="" /></p>
+</blockquote>
+
+<p>还可以用<code class="highlighter-rouge">tableTranscript.id</code>看看所有转录本的信息</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt; head(tableTranscript.id(ens))
+
+ENSMUST00000000001 ENSMUST00000000003 ENSMUST00000000010 ENSMUST00000000028 
+                23                 19                  9                 45 
+ENSMUST00000000033 ENSMUST00000000049 
+                13                 21 
+</code></pre></div></div>
+
+<h5 id="5-信息整合">5. 信息整合</h5>
+<p>比如这个任务：Accumulate data for whole genes
+原文描述比较精妙：</p>
+<blockquote>
+  <p>The function getGenePositions accumulates position data for whole genes. Genes are grouped by gene_name. For both, ensemblGenome and ucscGenome the gene_name column is not present after the standard gtf-import. For ucscGenome, addXref must be used. Respective warnings are thrown.</p>
+</blockquote>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gpe &lt;- getGenePositions(ens)
+gpe
+            id      seqid         source   start     end score strand frame
+    1:       1          1         havana 3073253 3074322     .      +     .
+    2:       4          1        ensembl 3102016 3102125     .      +     .
+    3:       7          1 ensembl_havana 3205901 3671498     .      -     .
+    4:      25          1         havana 3252757 3253236     .      +     .
+    5:      28          1         havana 3365731 3368549     .      -     .
+   ---                                                                     
+53461: 1768560 GL456385.1        ensembl   32719   32818     .      +     .
+53462: 1768563 GL456372.1        ensembl   13262   13382     .      -     .
+53463: 1768566 GL456381.1        ensembl   16623   16721     .      -     .
+53464: 1768569 JH584292.1        ensembl    3536   11935     .      +     .
+53465: 1768645 JH584295.1        ensembl      66    1479     .      -     .
+</code></pre></div></div>
+
+<h4 id="exon-class相关操作仅适用于ensembl-data">Exon class相关操作：仅适用于ensembl data</h4>
+<p>splice-junction的用法从略，感觉不是这个包干的主要任务，在有兴趣可自行探索。:)
+<code class="highlighter-rouge">ensemblExons</code>
+<code class="highlighter-rouge">getSpliceTable(ens)</code> : splice-junction based views</p>
+
+<h4 id="genemodel和transcriptmodel对象相关操作">geneModel和transcriptModel对象相关操作</h4>
+
+<h5 id="1-genemodel对象">1. geneModel对象</h5>
+<p>包含若干转录本对象和外显子对象。</p>
+<ul>
+  <li><code class="highlighter-rouge">getGeneTable</code></li>
+  <li><code class="highlighter-rouge">geneModel</code></li>
+</ul>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gt &lt;- getGeneTable(ens)
+&gt; head(gt)
+   id seqid         source   start     end score strand frame protein_version
+1   1     1         havana 3073253 3074322     .      +     .            &lt;NA&gt;
+4   4     1        ensembl 3102016 3102125     .      +     .            &lt;NA&gt;
+7   7     1 ensembl_havana 3205901 3671498     .      -     .            &lt;NA&gt;
+25 25     1         havana 3252757 3253236     .      +     .            &lt;NA&gt;
+28 28     1         havana 3365731 3368549     .      -     .            &lt;NA&gt;
+31 31     1         havana 3375556 3377788     .      -     .            &lt;NA&gt;
+gm &lt;- geneModel(ens, "ENSMUSG00000051951")
+plot(gm)1
+</code></pre></div></div>
+
+<blockquote>
+  <p><img src="http://owxb9z5ea.bkt.clouddn.com/18-3-30/1397243.jpg" alt="" /></p>
+</blockquote>
+
+<h5 id="2-transcriptmodel对象">2. transcriptModel对象</h5>
+<p>主要包含单个转录本信息，比如geneid, genename, strand or coordinates. 可以通过name或这index从geneModel objects 提取这类对象。
+<code class="highlighter-rouge">getTranscript</code>
+<code class="highlighter-rouge">getExonData</code></p>
+
+<p><strong>Extraction by index</strong></p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt; getTranscript(gm, 1)
+An object of class 'transcriptModel'.
+ID          :  ENSMUST00000070533 
+Name        :  Xkr4-201 
+Gene ID     :  ENSMUSG00000051951 
+Gene Name   :  Xkr4 
+Start       :  3,214,482    End         :  3,671,498 
+Start codon :  3,671,346    Stop  codon :  3,216,022 
+5' prime utr:  3,671,349    3' prime utr:  3,214,482 
+Seq Name    :  1 
+Strand      :  - 
+</code></pre></div></div>
+
+<p><strong>Extraction by ID</strong></p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>tr &lt;- getTranscript(gm, "ENSMUST00000070533")
+tr
+
+An object of class 'transcriptModel'.
+ID          :  ENSMUST00000070533 
+Name        :  Xkr4-201 
+Gene ID     :  ENSMUSG00000051951 
+Gene Name   :  Xkr4 
+Start       :  3,214,482    End         :  3,671,498 
+Start codon :  3,671,346    Stop  codon :  3,216,022 
+5' prime utr:  3,671,349    3' prime utr:  3,214,482 
+Seq Name    :  1 
+Strand      :  - 
+</code></pre></div></div>
+
+<p>其他</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>getExonData(tr)
+    start     end            exon_id exon_number exon_version seqid strand
+1 3670552 3671498 ENSMUSE00000485541           1            3     1      -
+2 3421702 3421901 ENSMUSE00000449517           2            3     1      -
+3 3214482 3216968 ENSMUSE00000448840           3            2     1      -
+
+
+getCdsData(tr)
+    start     end            exon_id exon_number exon_version seqid strand
+1 3670552 3671498 ENSMUSE00000485541           1            3     1      -
+2 3421702 3421901 ENSMUSE00000449517           2            3     1      -
+3 3214482 3216968 ENSMUSE00000448840           3            2     1      -
+
+</code></pre></div></div>
+
+<h4 id="最后一些简单的结合分析">最后：一些简单的结合分析</h4>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code># length of genes
+my_gene_length &lt;- log10(gt$end - gt$start)
+my_density &lt;- density(my_gene_length)
+plot(my_density, main = 'Distribution of gene lengths (log10, bp)')
+</code></pre></div></div>
+
+<p><img src="http://owxb9z5ea.bkt.clouddn.com/18-3-30/23231531.jpg" alt="" /></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>library(GenomicRanges)
+my_gr &lt;- with(my_gene, GRanges(seqid, IRanges(start, end), strand, id = gene_id))
+ 
+library(Gviz)
+ref &lt;- GRanges()
+ref_track &lt;- GenomeAxisTrack()
+options(ucscChromosomeNames=FALSE)
+data_track &lt;- AnnotationTrack(my_gr, name = "Genes", showFeatureId = TRUE)
+plotTracks(c(ref_track, data_track),
+           from = 1, to = 10000)## 图略略略略。。。
+</code></pre></div></div>
+
+<blockquote>
+  <p>REF:</p>
+  <ol>
+    <li>https://cran.r-project.org/web/packages/refGenome/vignettes/refGenome.pdf</li>
+    <li>https://davetang.org/muse/2017/08/04/read-gtf-file-r/</li>
+  </ol>
+</blockquote>
+
+    
+
+
+
+<div class="post-tags">
+  
+</div>
+  </div>
+
+  
+  <section class="comments">
+    <h2>Comments</h2>
+    
+  <div id="disqus_thread">
+    <button class="disqus-load" onClick="loadDisqusComments()">
+      Load Comments
+    </button>
+  </div>
+  <script>
+
+  /**
+  *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW
+  *  TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+  *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT:s
+  *  https://disqus.com/admin/universalcode/#configuration-variables
+  */
+  var disqus_config = function () {
+    this.page.url = "http://localhost:4000/2018/03/30/R-gtf-refGenome.html";
+    this.page.identifier = "" ||
+                           "http://localhost:4000/2018/03/30/R-gtf-refGenome.html";
+  }
+  function loadDisqusComments() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = 'https://hwoihann-github-io-farnorth.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  }
+  </script>
+  <noscript>
+    Please enable JavaScript to view the
+    <a href="https://disqus.com/?ref_noscript">comments powered by Disqus</a>.
+  </noscript>
+
+
+  </section>
+
+  <section class="related">
+  <h2>Related Posts</h2>
+  <ul class="posts-list">
+    
+      <li>
+        <h3>
+          <a href="/definition/2018/03/09/bioGroup-keynote-immunos.html">
+            癌症相关数据库: Keynote Ontology Clinical Trials
+            <small>09 Mar 2018</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/definition/2018/03/07/btest.html">
+            hahaha
+            <small>07 Mar 2018</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/reference/2018/03/06/paper-epi-protein-dnmt.html">
+            Digest: Isoform‐specific localization of DNMT3A regulates DNA methylation fidelity at bivalent CpG islands
+            <small>06 Mar 2018</small>
+          </a>
+        </h3>
+      </li>
+    
+  </ul>
+</section>
+
+</div>
+
+    </main>
+
+    <!-- Optional footer content -->
+
+  </body>
+</html>

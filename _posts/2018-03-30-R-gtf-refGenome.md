@@ -1,5 +1,14 @@
+---
 
-R专题：使用R读取，处理GTF格式的文件.md
+layout: post
+title: 'R专题：使用R读取&处理GTF格式的文件'
+category: definition 
+tags: [R专题, 菜鸟团周推]
+excerpt_separator: "<!--more-->"
+last_modified_at: 2018-03-30T19:20:31-23:20
+
+---
+
 
 ## 前言：小白快问快答
 __Q1：GTF是个啥？__

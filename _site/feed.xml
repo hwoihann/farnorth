@@ -1,4 +1,495 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.2">Jekyll</generator><link href="http://0.0.0.0:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://0.0.0.0:4000/" rel="alternate" type="text/html" /><updated>2018-03-08T16:28:34+08:00</updated><id>http://0.0.0.0:4000/</id><title type="html">&lt;a href=&quot;http://hwoihann.github.io&quot; target=&quot;_blank&quot; style=&quot;color:grey25; font-size:4&quot;&gt;2&amp;lt;font size=8&amp;gt;&lt;sup&gt;nd&lt;/sup&gt;&amp;lt;/font&amp;gt; Learn&lt;/a&gt;</title><subtitle>Be A lifeHacker 修炼篇</subtitle><author><name>Hwoihann Wong</name></author><entry><title type="html">hahaha</title><link href="http://0.0.0.0:4000/definition/2018/03/07/btest.html" rel="alternate" type="text/html" title="hahaha" /><published>2018-03-07T00:00:00+08:00</published><updated>2018-03-11T03:40:31+08:00</updated><id>http://0.0.0.0:4000/definition/2018/03/07/btest</id><content type="html" xml:base="http://0.0.0.0:4000/definition/2018/03/07/btest.html">what's this?</content><author><name>Hwoihann Wong</name></author><category term="definition" /><category term="癌症相关数据库专题" /><category term="菜鸟团周推" /><summary type="html">what's this?</summary></entry><entry><title type="html">Digest: Isoform‐specific localization of DNMT3A regulates DNA methylation fidelity at bivalent CpG islands</title><link href="http://0.0.0.0:4000/reference/2018/03/06/paper-epi-protein-dnmt.html" rel="alternate" type="text/html" title="Digest: Isoform‐specific localization of DNMT3A regulates DNA methylation fidelity at bivalent CpG islands" /><published>2018-03-06T00:00:00+08:00</published><updated>2018-03-06T00:00:00+08:00</updated><id>http://0.0.0.0:4000/reference/2018/03/06/paper-epi-protein-dnmt</id><content type="html" xml:base="http://0.0.0.0:4000/reference/2018/03/06/paper-epi-protein-dnmt.html"></content><author><name>Hwoihann Wong</name></author><category term="reference" /><summary type="html"></summary></entry><entry><title type="html">菜鸟团学习Round#2: Bioinformatics Data Skills</title><link href="http://0.0.0.0:4000/codings/2018/02/26/cnt-roundTwo-bookCatos.html" rel="alternate" type="text/html" title="菜鸟团学习Round#2: Bioinformatics Data Skills" /><published>2018-02-26T00:00:00+08:00</published><updated>2018-02-28T05:00:31+08:00</updated><id>http://0.0.0.0:4000/codings/2018/02/26/cnt-roundTwo-bookCatos</id><content type="html" xml:base="http://0.0.0.0:4000/codings/2018/02/26/cnt-roundTwo-bookCatos.html">&lt;h1 id=&quot;intro-2018-菜鸟团学习round2&quot;&gt;Intro: 2018 菜鸟团学习Round2&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-03-30T23:12:41+08:00</updated><id>http://localhost:4000/</id><title type="html">&lt;a href=&quot;http://hwoihann.github.io&quot; target=&quot;_blank&quot; style=&quot;color:grey25; font-size:4&quot;&gt;2&amp;lt;font size=8&amp;gt;&lt;sup&gt;nd&lt;/sup&gt;&amp;lt;/font&amp;gt; Learn&lt;/a&gt;</title><subtitle>Be A lifeHacker 修炼篇</subtitle><author><name>Hwoihann Wong</name></author><entry><title type="html">R Gtf Refgenome</title><link href="http://localhost:4000/2018/03/30/R-gtf-refGenome.html" rel="alternate" type="text/html" title="R Gtf Refgenome" /><published>2018-03-30T00:00:00+08:00</published><updated>2018-03-30T00:00:00+08:00</updated><id>http://localhost:4000/2018/03/30/R-gtf-refGenome</id><content type="html" xml:base="http://localhost:4000/2018/03/30/R-gtf-refGenome.html">&lt;p&gt;R专题：使用R读取，处理GTF格式的文件.md&lt;/p&gt;
+
+&lt;h2 id=&quot;前言小白快问快答&quot;&gt;前言：小白快问快答&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Q1：GTF是个啥？&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;见下表和以前的推文：
+&lt;a href=&quot;https://mp.weixin.qq.com/s?__biz=MzUzMTEwODk0Ng==&amp;amp;mid=2247484320&amp;amp;idx=1&amp;amp;sn=f7c9e7ee096f636449aa5137af7b830d&amp;amp;chksm=fa46c69dcd314f8bef00af84e87769768eb629b370d5af626c9e1ea74a96d1d4210006b9d5ba&amp;amp;mpshare=1&amp;amp;scene=1&amp;amp;srcid=0330YCwz36p9lpcBNZehFzTq&amp;amp;pass_ticket=CKS4DzU20h7YLgPJXblylkaCCQHn%2BV6Pmwb9awL4JCeD2UuddEEkOfaa%2FBUesum2#rd&quot;&gt;NGS数据格式之gff/gtf&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://owxb9z5ea.bkt.clouddn.com/18-3-30/46681628.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Q2： 为什么要在R里面倒腾GTF？&lt;/strong&gt;
+为了生信小白对此类数据格式的快速入门+R的学习！&lt;/p&gt;
+
+&lt;h2 id=&quot;学习资料准备&quot;&gt;学习资料准备&lt;/h2&gt;
+&lt;h4 id=&quot;1-r包-refgenome&quot;&gt;1. &lt;strong&gt;R包&lt;/strong&gt;： refGenome&lt;/h4&gt;
+&lt;p&gt;本文基本出自该包官方文档说明：
+https://cran.r-project.org/web/packages/refGenome/vignettes/refGenome.pdf&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://owxb9z5ea.bkt.clouddn.com/18-3-30/98353593.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;2-一个gtf文件&quot;&gt;2. 一个gtf文件&lt;/h4&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;wget -c ftp://ftp.ensembl.org/pub/release-91/gtf/mus_musculus/Mus_musculus.GRCm38.91.gtf.gz
+gunzipMus_musculus.GRCm38.91.gtf.gz
+ cat /nethome/Shared/annotation/genomes/GRCm38/Mus_musculus.GRCm38.91.gtf | grep 'gene_name &quot;Xkr4&quot;;' 
+ cat /nethome/Shared/annotation/genomes/GRCm38/Mus_musculus.GRCm38.91.gtf | grep -v &quot;^#&quot; | wc -l
+1768660
+1 ensembl_havana CDS 3216025 3216968 . - 2 gene_id &quot;ENSMUSG00000051951&quot;; gene_version &quot;5&quot;; transcript_id &quot;ENSMUST00000070533&quot;; transcript_version &quot;4&quot;; exon_number &quot;3&quot;; gene_name &quot;Xkr4&quot;; gene_source &quot;ensembl_havana&quot;; gene_biotype &quot;protein_coding&quot;; havana_gene &quot;OTTMUSG00000026353&quot;; havana_gene_version &quot;2&quot;; transcript_name &quot;Xkr4-201&quot;; transcript_source &quot;ensembl_havana&quot;; transcript_biotype &quot;protein_coding&quot;; tag &quot;CCDS&quot;; ccds_id &quot;CCDS14803&quot;; havana_transcript &quot;OTTMUST00000065166&quot;; havana_transcript_version &quot;1&quot;; protein_id &quot;ENSMUSP00000070648&quot;; protein_version &quot;4&quot;; tag &quot;basic&quot;; transcript_support_level &quot;1&quot;;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;还是再简单的了解一下它的内容（比较简单，不翻译了:) ）：&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;seqname    The name of the sequence; must be a chromosome or scaffold.&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;source    The program that generated this feature.这个gtf文件中gene的source主要来自于：
+ havana
+ insdc
+ mirbase
+ ensembl
+ ensembl_havana&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;feature    The name of this type of feature, e.g. “CDS”, “start_codon”, “stop_codon”, and “exon”&lt;/li&gt;
+  &lt;li&gt;start    The starting position of the feature in the sequence; the first base is numbered 1.&lt;/li&gt;
+  &lt;li&gt;end    The ending position of the feature (inclusive).&lt;/li&gt;
+  &lt;li&gt;score    A score between 0 and 1000.&lt;/li&gt;
+  &lt;li&gt;strand    Valid entries include “+”, “-“, or “.”.&lt;/li&gt;
+  &lt;li&gt;frame    If the feature is a coding exon, frame should be a number between 0-2 that represents the reading frame of the first base. If the feature is not a coding exon, the value should be “.”.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;然后挑一个顺眼的基因看看它的feature和frame，果然和描述的一致，继续往下看。&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;awk 'BEGIN{FS=&quot;\t|;&quot;} ($0  ~/(gene_name &quot;Xkr4&quot;)/ ) {print $3,$8}' GRCm38/Mus_musculus.GRCm38.91.gtf
+    gene .
+    transcript .
+    exon .
+    exon .
+    transcript .
+    exon .
+    exon .
+    transcript .
+    exon .
+    CDS 0
+    start_codon 0
+    exon .
+    CDS 1
+    exon .
+    CDS 2
+    stop_codon 0
+    five_prime_utr .
+    three_prime_utr .
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;\9. group    All lines with the same group are linked together into a single item.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;gene_id &quot;ENSMUSG00000051951&quot;
+gene_id &quot;ENSMUSG00000051951&quot;
+gene_id &quot;ENSMUSG00000051951&quot;
+gene_id &quot;ENSMUSG00000051951&quot;
+gene_id &quot;ENSMUSG00000051951&quot;
+gene_id &quot;ENSMUSG00000051951&quot;
+gene_id &quot;ENSMUSG00000051951&quot;
+gene_id &quot;ENSMUSG00000051951&quot;
+gene_id &quot;ENSMUSG00000051951&quot;
+gene_id &quot;ENSMUSG00000051951&quot;
+gene_id &quot;ENSMUSG00000051951&quot;
+gene_id &quot;ENSMUSG00000051951&quot;
+gene_id &quot;ENSMUSG00000051951&quot;
+gene_id &quot;ENSMUSG00000051951&quot;
+gene_id &quot;ENSMUSG00000051951&quot;
+gene_id &quot;ENSMUSG00000051951&quot;
+gene_id &quot;ENSMUSG00000051951&quot;
+gene_id &quot;ENSMUSG00000051951&quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;这个single item即指基因id了，一共有53000多个ensmusg。&lt;/p&gt;
+
+&lt;h4 id=&quot;3-_-其他的可跳过非重点_&quot;&gt;3. _ 其他的(可跳过，非重点)_&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;S4 class：各种annotation相关R包的基础，有兴趣可参看http://www.bioconductor.org/help/course-materials/2010/AdvancedR/S4InBioconductor.pdf&lt;/li&gt;
+  &lt;li&gt;正则表达式&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;正文refgenome使用简介&quot;&gt;正文：refGenome使用简介&lt;/h2&gt;
+
+&lt;p&gt;这个包主要适用于gtf文件（比如Ensembl和UCSC数据）的读取和操作，基于S4 class，可以分成_refGenome_，&lt;em&gt;refExons&lt;/em&gt; 和 _refJunctions_三个子类。每一个类别都对应着Ensemble或UCSC的定义类型（顾名思义，genome、exon……）。本文主要讲讲相对简单的genome和exon对象的相关操作。&lt;/p&gt;
+
+&lt;h3 id=&quot;1-安装&quot;&gt;1. 安装&lt;/h3&gt;
+&lt;p&gt;安装，读取gtf，可以看到loading的信息。&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;install.packages(&quot;refGenome&quot;) 
+library(refGenome) 
+
+# create ensemblGenome object for storing Ensembl genomic annotation data
+ens &amp;lt;- ensemblGenome()
+ 
+# read GTF file into ensemblGenome object
+read.gtf(ens, &quot;Mus_musculus.GRCm38.91.gtf&quot;)
+
+[read.gtf.refGenome] Reading file 'Mus_musculus.GRCm38.91.gtf'.
+[GTF]  1768665 lines processed.
+[read.gtf.refGenome] Extracting genes table.
+**[read.gtf.refGenome] Found 53,465 gene records.**
+[read.gtf.refGenome] Finished.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;看看这个ens是个啥&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  ens
+ Object of class 'ensemblGenome' with 1,715,195 rows and 31 columns.
+   id seqid  source    feature   start     end score strand frame
+ 2  2     1  havana transcript 3073253 3074322     .      +     .
+ 3  3     1  havana       exon 3073253 3074322     .      +     .
+ 5  5     1 ensembl transcript 3102016 3102125     .      +     .
+ 6  6     1 ensembl       exon 3102016 3102125     .      +     .
+ 8  8     1  havana transcript 3205901 3216344     .      -     .
+ 9  9     1  havana       exon 3213609 3216344     .      -     .
+   protein_version protein_id ccds_id transcript_support_level   tag
+ 2            &amp;lt;NA&amp;gt;       &amp;lt;NA&amp;gt;    &amp;lt;NA&amp;gt;                       NA basic
+ 3            &amp;lt;NA&amp;gt;       &amp;lt;NA&amp;gt;    &amp;lt;NA&amp;gt;                       NA basic
+ 5            &amp;lt;NA&amp;gt;       &amp;lt;NA&amp;gt;    &amp;lt;NA&amp;gt;                       NA basic
+ 6            &amp;lt;NA&amp;gt;       &amp;lt;NA&amp;gt;    &amp;lt;NA&amp;gt;                       NA basic
+ 8            &amp;lt;NA&amp;gt;       &amp;lt;NA&amp;gt;    &amp;lt;NA&amp;gt;                        1  &amp;lt;NA&amp;gt;
+ 9            &amp;lt;NA&amp;gt;       &amp;lt;NA&amp;gt;    &amp;lt;NA&amp;gt;                        1  &amp;lt;NA&amp;gt;
+     transcript_biotype transcript_source exon_number            gene_id
+ 2                  TEC            havana        &amp;lt;NA&amp;gt; ENSMUSG00000102693
+ 3                  TEC            havana           1 ENSMUSG00000102693
+ 5                snRNA           ensembl        &amp;lt;NA&amp;gt; ENSMUSG00000064842
+ 6                snRNA           ensembl           1 ENSMUSG00000064842
+ 8 processed_transcript            havana        &amp;lt;NA&amp;gt; ENSMUSG00000051951
+ 9 processed_transcript            havana           1 ENSMUSG00000051951
+     transcript_name gene_version  havana_transcript     gene_name
+ 2 4933401J01Rik-201            1 OTTMUST00000127109 4933401J01Rik
+ 3 4933401J01Rik-201            1 OTTMUST00000127109 4933401J01Rik
+ 5       Gm26206-201            1               &amp;lt;NA&amp;gt;       Gm26206
+ 6       Gm26206-201            1               &amp;lt;NA&amp;gt;       Gm26206
+ 8          Xkr4-203            5 OTTMUST00000086625          Xkr4
+ 9          Xkr4-203            5 OTTMUST00000086625          Xkr4
+      gene_source   gene_biotype exon_version        havana_gene
+ 2         havana            TEC         &amp;lt;NA&amp;gt; OTTMUSG00000049935
+ 3         havana            TEC            1 OTTMUSG00000049935
+ 5        ensembl          snRNA         &amp;lt;NA&amp;gt;               &amp;lt;NA&amp;gt;
+ 6        ensembl          snRNA            1               &amp;lt;NA&amp;gt;
+ 8 ensembl_havana protein_coding         &amp;lt;NA&amp;gt; OTTMUSG00000026353
+ 9 ensembl_havana protein_coding            1 OTTMUSG00000026353
+   havana_transcript_version havana_gene_version            exon_id
+ 2                         1                   1               &amp;lt;NA&amp;gt;
+ 3                         1                   1 ENSMUSE00001343744
+ 5                      &amp;lt;NA&amp;gt;                &amp;lt;NA&amp;gt;               &amp;lt;NA&amp;gt;
+ 6                      &amp;lt;NA&amp;gt;                &amp;lt;NA&amp;gt; ENSMUSE00000522066
+ 8                         1                   2               &amp;lt;NA&amp;gt;
+ 9                         1                   2 ENSMUSE00000858910
+   transcript_version      transcript_id
+ 2                  1 ENSMUST00000193812
+ 3                  1 ENSMUST00000193812
+ 5                  1 ENSMUST00000082908
+ 6                  1 ENSMUST00000082908
+ 8                  1 ENSMUST00000162897
+ 9                  1 ENSMUST00000162897
+
+
+class(ens)
+[1] &quot;ensemblGenome&quot;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;emmm,和之前介绍过的格式差不多，请自行理解。&lt;/p&gt;
+
+&lt;h3 id=&quot;2-功能简介&quot;&gt;2. 功能简介&lt;/h3&gt;
+
+&lt;h4 id=&quot;genome-class相关操作&quot;&gt;genome class相关操作&lt;/h4&gt;
+
+&lt;h5 id=&quot;1-通过染色体相关信息seqids-提取ens子集对象类型是ens对应的ensemblgenome&quot;&gt;1. 通过染色体相关信息（Seqids） 提取ens子集，对象类型是ens对应的ensemblGenome&lt;/h5&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;extractSeqids&lt;/code&gt;：提取特定染色体上的基因注释信息&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;tableSeqids&lt;/code&gt;：统计特定染色体上的基因&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;比如取出线粒体染色体上的信息：&lt;code class=&quot;highlighter-rouge&quot;&gt;extractSeqids(ens, &quot;^MT$&quot;)&lt;/code&gt;, MT即线粒体的代号，这里用了正则表达式（^和$）做了过滤。
+那怎么看可以用的染色体信息呢：输入&lt;code class=&quot;highlighter-rouge&quot;&gt;ensPrimAssembly()&lt;/code&gt;，可以得到 primary assembly data，用于正则表达式筛选&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;[1] &quot;^([0-9]{1,2})$|^[XY]|MT$&quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;enpa &amp;lt;- extractSeqids(ens,ensPrimAssembly())
+tableSeqids(enpa)
+
+     1     10     11     12     13     14     15     16     17     18     19 
+111746  83081 123843  60654  62035  70962  57035  48515  68654  31782  45802 
+     2      3      4      5      6      7      8      9     MT      X      Y 
+146388  83712 100869 118010  94207 146202  82914 105329    110  60507  11953 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;假如不加任何过滤信息，可以得到正常ensembl里没有的特异信息，可能是新的参考基因组里出现的：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; tableSeqids(ens)
+
+#         1         10         11         12         13         14         15 
+    111746      83081     123843      60654      62035      70962      57035 
+#        16         17         18         19          2          3          4 
+     48515      68654      31782      45802     146388      83712     100869 
+         5          6          7          8          9 GL456210.1 GL456211.1 
+#    118010      94207     146202      82914     105329         37         50 
+GL456212.1 GL456216.1 GL456219.1 GL456221.1 GL456233.1 GL456239.1 GL456350.1 
+#        34         21         10         56         61          2         60 
+GL456354.1 GL456372.1 GL456381.1 GL456385.1 JH584292.1 JH584293.1 JH584294.1 
+#        48          2          2          4         75        100         83 
+JH584295.1 JH584296.1 JH584297.1 JH584298.1 JH584299.1 JH584303.1 JH584304.1 
+#        15         25         25         29        110          4         32 
+        MT          X          Y 
+#       110      60507      11953 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h5 id=&quot;2-通过features提取ens子集-对象还是ensemblgenome&quot;&gt;2. 通过features提取ens子集 ，对象还是ensemblGenome&lt;/h5&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;extractFeature&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;tableFeatures&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;enpf &amp;lt;- extractFeature(enpa,&quot;exon&quot;)
+enpf
+
+Object of class 'ensemblGenome' with 794,728 rows and 31 columns.
+   id seqid  source feature   start     end score strand frame protein_version
+3   3     1  havana    exon 3073253 3074322     .      +     .            &amp;lt;NA&amp;gt;
+6   6     1 ensembl    exon 3102016 3102125     .      +     .            &amp;lt;NA&amp;gt;
+10 10     1  havana    exon 3205901 3207317     .      -     .            &amp;lt;NA&amp;gt;
+
+tableFeatures(enpa)
+
+            CDS            exon  five_prime_utr  Selenocysteine     start_codon 
+         504216          794728           90176              65           57074 
+     stop_codon three_prime_utr      transcript 
+          53106           81096          133849 
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h5 id=&quot;3-提取单个基因或者转录本信息举在上文中提到的xkr4-基因ensmusg00000051951哈哈&quot;&gt;3. 提取单个基因或者转录本信息，举在上文中提到的Xkr4 基因（ENSMUSG00000051951，哈哈）&lt;/h5&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;extractByGeneId(ens, &quot;ENSMUSG00000051951&quot;)&lt;/code&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;img src=&quot;http://owxb9z5ea.bkt.clouddn.com/18-3-30/32797111.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt; extractTranscript(ens, &quot;ENSMUST00000162897&quot;)&lt;/code&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;Object of class ‘ensemblGenome’ with 3 rows and 31 columns.
+&lt;img src=&quot;http://owxb9z5ea.bkt.clouddn.com/18-3-30/72540956.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;还可以用&lt;code class=&quot;highlighter-rouge&quot;&gt;tableTranscript.id&lt;/code&gt;看看所有转录本的信息&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;gt; head(tableTranscript.id(ens))
+
+ENSMUST00000000001 ENSMUST00000000003 ENSMUST00000000010 ENSMUST00000000028 
+                23                 19                  9                 45 
+ENSMUST00000000033 ENSMUST00000000049 
+                13                 21 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h5 id=&quot;5-信息整合&quot;&gt;5. 信息整合&lt;/h5&gt;
+&lt;p&gt;比如这个任务：Accumulate data for whole genes
+原文描述比较精妙：&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;The function getGenePositions accumulates position data for whole genes. Genes are grouped by gene_name. For both, ensemblGenome and ucscGenome the gene_name column is not present after the standard gtf-import. For ucscGenome, addXref must be used. Respective warnings are thrown.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;gpe &amp;lt;- getGenePositions(ens)
+gpe
+            id      seqid         source   start     end score strand frame
+    1:       1          1         havana 3073253 3074322     .      +     .
+    2:       4          1        ensembl 3102016 3102125     .      +     .
+    3:       7          1 ensembl_havana 3205901 3671498     .      -     .
+    4:      25          1         havana 3252757 3253236     .      +     .
+    5:      28          1         havana 3365731 3368549     .      -     .
+   ---                                                                     
+53461: 1768560 GL456385.1        ensembl   32719   32818     .      +     .
+53462: 1768563 GL456372.1        ensembl   13262   13382     .      -     .
+53463: 1768566 GL456381.1        ensembl   16623   16721     .      -     .
+53464: 1768569 JH584292.1        ensembl    3536   11935     .      +     .
+53465: 1768645 JH584295.1        ensembl      66    1479     .      -     .
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;exon-class相关操作仅适用于ensembl-data&quot;&gt;Exon class相关操作：仅适用于ensembl data&lt;/h4&gt;
+&lt;p&gt;splice-junction的用法从略，感觉不是这个包干的主要任务，在有兴趣可自行探索。:)
+&lt;code class=&quot;highlighter-rouge&quot;&gt;ensemblExons&lt;/code&gt;
+&lt;code class=&quot;highlighter-rouge&quot;&gt;getSpliceTable(ens)&lt;/code&gt; : splice-junction based views&lt;/p&gt;
+
+&lt;h4 id=&quot;genemodel和transcriptmodel对象相关操作&quot;&gt;geneModel和transcriptModel对象相关操作&lt;/h4&gt;
+
+&lt;h5 id=&quot;1-genemodel对象&quot;&gt;1. geneModel对象&lt;/h5&gt;
+&lt;p&gt;包含若干转录本对象和外显子对象。&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;getGeneTable&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;geneModel&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;gt &amp;lt;- getGeneTable(ens)
+&amp;gt; head(gt)
+   id seqid         source   start     end score strand frame protein_version
+1   1     1         havana 3073253 3074322     .      +     .            &amp;lt;NA&amp;gt;
+4   4     1        ensembl 3102016 3102125     .      +     .            &amp;lt;NA&amp;gt;
+7   7     1 ensembl_havana 3205901 3671498     .      -     .            &amp;lt;NA&amp;gt;
+25 25     1         havana 3252757 3253236     .      +     .            &amp;lt;NA&amp;gt;
+28 28     1         havana 3365731 3368549     .      -     .            &amp;lt;NA&amp;gt;
+31 31     1         havana 3375556 3377788     .      -     .            &amp;lt;NA&amp;gt;
+gm &amp;lt;- geneModel(ens, &quot;ENSMUSG00000051951&quot;)
+plot(gm)1
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;img src=&quot;http://owxb9z5ea.bkt.clouddn.com/18-3-30/1397243.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h5 id=&quot;2-transcriptmodel对象&quot;&gt;2. transcriptModel对象&lt;/h5&gt;
+&lt;p&gt;主要包含单个转录本信息，比如geneid, genename, strand or coordinates. 可以通过name或这index从geneModel objects 提取这类对象。
+&lt;code class=&quot;highlighter-rouge&quot;&gt;getTranscript&lt;/code&gt;
+&lt;code class=&quot;highlighter-rouge&quot;&gt;getExonData&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Extraction by index&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;gt; getTranscript(gm, 1)
+An object of class 'transcriptModel'.
+ID          :  ENSMUST00000070533 
+Name        :  Xkr4-201 
+Gene ID     :  ENSMUSG00000051951 
+Gene Name   :  Xkr4 
+Start       :  3,214,482    End         :  3,671,498 
+Start codon :  3,671,346    Stop  codon :  3,216,022 
+5' prime utr:  3,671,349    3' prime utr:  3,214,482 
+Seq Name    :  1 
+Strand      :  - 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;Extraction by ID&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;tr &amp;lt;- getTranscript(gm, &quot;ENSMUST00000070533&quot;)
+tr
+
+An object of class 'transcriptModel'.
+ID          :  ENSMUST00000070533 
+Name        :  Xkr4-201 
+Gene ID     :  ENSMUSG00000051951 
+Gene Name   :  Xkr4 
+Start       :  3,214,482    End         :  3,671,498 
+Start codon :  3,671,346    Stop  codon :  3,216,022 
+5' prime utr:  3,671,349    3' prime utr:  3,214,482 
+Seq Name    :  1 
+Strand      :  - 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;其他&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;getExonData(tr)
+    start     end            exon_id exon_number exon_version seqid strand
+1 3670552 3671498 ENSMUSE00000485541           1            3     1      -
+2 3421702 3421901 ENSMUSE00000449517           2            3     1      -
+3 3214482 3216968 ENSMUSE00000448840           3            2     1      -
+
+
+getCdsData(tr)
+    start     end            exon_id exon_number exon_version seqid strand
+1 3670552 3671498 ENSMUSE00000485541           1            3     1      -
+2 3421702 3421901 ENSMUSE00000449517           2            3     1      -
+3 3214482 3216968 ENSMUSE00000448840           3            2     1      -
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;最后一些简单的结合分析&quot;&gt;最后：一些简单的结合分析&lt;/h4&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# length of genes
+my_gene_length &amp;lt;- log10(gt$end - gt$start)
+my_density &amp;lt;- density(my_gene_length)
+plot(my_density, main = 'Distribution of gene lengths (log10, bp)')
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://owxb9z5ea.bkt.clouddn.com/18-3-30/23231531.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;library(GenomicRanges)
+my_gr &amp;lt;- with(my_gene, GRanges(seqid, IRanges(start, end), strand, id = gene_id))
+ 
+library(Gviz)
+ref &amp;lt;- GRanges()
+ref_track &amp;lt;- GenomeAxisTrack()
+options(ucscChromosomeNames=FALSE)
+data_track &amp;lt;- AnnotationTrack(my_gr, name = &quot;Genes&quot;, showFeatureId = TRUE)
+plotTracks(c(ref_track, data_track),
+           from = 1, to = 10000)## 图略略略略。。。
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;REF:&lt;/p&gt;
+  &lt;ol&gt;
+    &lt;li&gt;https://cran.r-project.org/web/packages/refGenome/vignettes/refGenome.pdf&lt;/li&gt;
+    &lt;li&gt;https://davetang.org/muse/2017/08/04/read-gtf-file-r/&lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/blockquote&gt;</content><author><name>Hwoihann Wong</name></author><summary type="html">R专题：使用R读取，处理GTF格式的文件.md</summary></entry><entry><title type="html">癌症相关数据库: Keynote Ontology Clinical Trials</title><link href="http://localhost:4000/definition/2018/03/09/bioGroup-keynote-immunos.html" rel="alternate" type="text/html" title="癌症相关数据库: Keynote Ontology Clinical Trials" /><published>2018-03-09T00:00:00+08:00</published><updated>2018-03-11T03:40:31+08:00</updated><id>http://localhost:4000/definition/2018/03/09/bioGroup-keynote-immunos</id><content type="html" xml:base="http://localhost:4000/definition/2018/03/09/bioGroup-keynote-immunos.html">&lt;h1 id=&quot;pembrolizumab&quot;&gt;Pembrolizumab&lt;/h1&gt;
+
+&lt;h2 id=&quot;11-介绍&quot;&gt;1.1 介绍&lt;/h2&gt;
+
+&lt;p&gt;Pembrolizumab是人源化单克隆抗体，首个被批准的阻断PD-1的靶向治疗药物。
+PD-1全名是程序性死亡分子1，英文名叫programmeddeath-1(PD-1)，是近年来发现的一种负性共刺激分子。PD-L1是PD-1的配体，各种肿瘤细胞组织中都有PD-L1的表达。 PD-1与PD-L1结合后可提供抑制性信号，诱导T细胞凋亡，抑制T细胞的活化和增殖，进而降低了免疫系统对抗肿瘤细胞的能力。&lt;/p&gt;
+
+&lt;!--more--&gt;
+&lt;p&gt;pembrolizumab作用机制&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://owxb9z5ea.bkt.clouddn.com/18-3-5/74854260.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;12-简史&quot;&gt;1.2 简史&lt;/h2&gt;
+
+&lt;p&gt;Pembrolizumab 已于2014年被美国FDA授予“突破性治疗药物”资格，批准用于局部晚期的或转移性黑色素瘤，以及用于晚期非小细胞肺癌。在已经进行的临床研究 中，Pembrolizumab的表现十分令人欣喜。655例晚期黑色素瘤患者用了Pembrolizumab后，结果发现，单药达到33%的有效率，无 进展生存率35%，中位总生存期23个月。Pembrolizumab 作为一线治疗药物用于晚期黑色素瘤优于标准治疗药物伊匹单抗，在两款免疫检查点抑制剂一对一的对照试验 中，Pembrolizumab(Keytruda) 达到了其所有的主要生存期终点，患者缓解率为 33%，几乎是伊匹单抗 12% 缓解率的三倍。
+英国国家卫生保健优化研究所推荐将 Pembrolizumab 作为一种治疗药物用于一些晚期、不可切除或转移性黑色素瘤患者。单一治疗药物已在英国获得上市许可，用于晚期（不可切除或转移性）黑色素瘤成年患者治疗。
+&lt;img src=&quot;http://owxb9z5ea.bkt.clouddn.com/18-3-5/2017934.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;13-扩展pd-1抑制剂&quot;&gt;1.3 &lt;em&gt;扩展：PD-1抑制剂&lt;/em&gt;&lt;/h2&gt;
+
+&lt;p&gt;PD-1抑制剂，包括PD-1抗体和PD-L1抗体，是一类免疫治疗的新药。主要的作用机制，是阻断PD-1和PD-L1之间的相互作用，因为这两个蛋白的相互作用，会帮助肿瘤逃脱免疫系统的追杀。PD-1/PD-L1抗体，通过阻断这种罪恶的连接，促进病人自身的免疫系统杀伤肿瘤。&lt;/p&gt;
+
+&lt;p&gt;PD-1抗体有两种：Nivolumab（O药）适应症：黑色素瘤、非小细胞肺癌、肾细胞癌、经典型霍奇金淋巴瘤、头颈鳞癌、膀胱癌、胃癌、肝细胞癌、携带微卫星不稳定或错配修复基因缺陷的实体瘤。Pembrolizumab（K药）适应症：黑色素瘤、非小细胞肺癌、头颈鳞癌、经典型霍奇金淋巴瘤、膀胱癌、肝细胞癌、胃癌、携带微卫星不稳定或错配修复基因缺陷的实体瘤。PD-L1抗体三种：Atezolizumab（T药）适应症：膀胱癌、非小细胞肺癌。Avelumab（B药）适应症：膀胱癌、Merkel细胞癌。Durvalumab（I药）适应症：膀胱癌。&lt;/p&gt;
+
+&lt;h2 id=&quot;言归正传-keynote-ontology-clinical-trials与pembrolizumab有什么关系呢&quot;&gt;言归正传， Keynote Ontology Clinical Trials与Pembrolizumab有什么关系呢？&lt;/h2&gt;
+
+&lt;h1 id=&quot;keynote-ontology-clinical-trials&quot;&gt;Keynote Ontology Clinical Trials&lt;/h1&gt;
+
+&lt;h2 id=&quot;21-平台的作用和由来&quot;&gt;2.1 平台的作用和由来&lt;/h2&gt;
+
+&lt;p&gt;Keynote Ontology Clinical Trials(https://keynoteclinicaltrials.com/)是用Keytruda进行癌症免疫疗法的临床试验的介绍平台，介绍了若干适用PD-1疗法的癌症临床试验信息，主要供患者参考和报名相关的临床试验。所以目测“keynote”的名字应该是由“keytruda”而来。&lt;/p&gt;
+
+&lt;h2 id=&quot;22-可参与临床试验的癌症分类&quot;&gt;2.2 可参与临床试验的癌症分类&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;Bladder&lt;/li&gt;
+  &lt;li&gt;Breast&lt;/li&gt;
+  &lt;li&gt;Colorectal&lt;/li&gt;
+  &lt;li&gt;Esophageal&lt;/li&gt;
+  &lt;li&gt;Gastric&lt;/li&gt;
+  &lt;li&gt;Head and Neck&lt;/li&gt;
+  &lt;li&gt;Hematology&lt;/li&gt;
+  &lt;li&gt;Kidney&lt;/li&gt;
+  &lt;li&gt;Liver&lt;/li&gt;
+  &lt;li&gt;Lung&lt;/li&gt;
+  &lt;li&gt;Melanoma&lt;/li&gt;
+  &lt;li&gt;Ovarian&lt;/li&gt;
+  &lt;li&gt;Pediatric&lt;/li&gt;
+  &lt;li&gt;Prostate&lt;/li&gt;
+  &lt;li&gt;Solid Tumors&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;每个癌症目录下都有一些典型癌症的描述，比如三阴型乳腺癌，拷贝数异常的结肠癌等等，以及一段“实验参与者告知书”和当前活动的临床试验（下表）
+&lt;img src=&quot;http://owxb9z5ea.bkt.clouddn.com/18-3-5/17390319.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;其中每个title的含义：&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;1: keynote 临床试验的title，比如keynote355，点进去就是对该项目的具体描述。
+&lt;img src=&quot;http://owxb9z5ea.bkt.clouddn.com/18-3-5/19523115.jpg&quot; alt=&quot;&quot; /&gt;&lt;/li&gt;
+  &lt;li&gt;2: 记录的参与人数&lt;/li&gt;
+  &lt;li&gt;3: 癌症的类型&lt;/li&gt;
+  &lt;li&gt;4: phase，药物临床试验的几个阶段
+&lt;img src=&quot;http://owxb9z5ea.bkt.clouddn.com/18-3-5/42635917.jpg&quot; alt=&quot;&quot; /&gt;&lt;/li&gt;
+  &lt;li&gt;5: 招募状态，招募中的话就进入keynote的页面，而完成招募项目进行中的跳转页面则是&lt;a href=&quot;https://clinicaltrials.gov/ct2/home&quot;&gt;geo clinical&lt;/a&gt; 的页面。比如keynote119，有一个专属号码：MK-3475-119/KEYNOTE-119 (https://clinicaltrials.gov/ct2/show/NCT02555657)，MK-3475就是keytruda了，记录了试验的起止日期、生存时间（多数是保密数据）等信息。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Participating in a clinical trial is an important decision. Anyone participating in a trial should know as much as possible about what is being studied, what risks are involved and what potential benefits may be gained before deciding to enroll. If you are interested in participating in a clinical trial, please talk to your doctor first.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;23-clinical-trial的faq&quot;&gt;2.3 Clinical Trial的FAQ&lt;/h2&gt;
+
+&lt;p&gt;记录了一些参与试验的注意事项，常见的问题等等。
+https://keynoteclinicaltrials.com/clinical-trials-faq#accordion-4
+&lt;img src=&quot;http://owxb9z5ea.bkt.clouddn.com/18-3-5/40464681.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;一个药物就有这么系统完整的医疗记录，很值得国内借鉴啊！&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;REF
+http://databankcollect6.blogspot.kr/2016/01/pembrolizumabmk-3475.html&lt;/p&gt;</content><author><name>Hwoihann Wong</name></author><category term="definition" /><category term="癌症相关数据库专题" /><category term="菜鸟团周推" /><summary type="html">Pembrolizumab 1.1 介绍 Pembrolizumab是人源化单克隆抗体，首个被批准的阻断PD-1的靶向治疗药物。 PD-1全名是程序性死亡分子1，英文名叫programmeddeath-1(PD-1)，是近年来发现的一种负性共刺激分子。PD-L1是PD-1的配体，各种肿瘤细胞组织中都有PD-L1的表达。 PD-1与PD-L1结合后可提供抑制性信号，诱导T细胞凋亡，抑制T细胞的活化和增殖，进而降低了免疫系统对抗肿瘤细胞的能力。</summary></entry><entry><title type="html">hahaha</title><link href="http://localhost:4000/definition/2018/03/07/btest.html" rel="alternate" type="text/html" title="hahaha" /><published>2018-03-07T00:00:00+08:00</published><updated>2018-03-11T03:40:31+08:00</updated><id>http://localhost:4000/definition/2018/03/07/btest</id><content type="html" xml:base="http://localhost:4000/definition/2018/03/07/btest.html">what's this?</content><author><name>Hwoihann Wong</name></author><category term="definition" /><category term="癌症相关数据库专题" /><category term="菜鸟团周推" /><summary type="html">what's this?</summary></entry><entry><title type="html">Digest: Isoform‐specific localization of DNMT3A regulates DNA methylation fidelity at bivalent CpG islands</title><link href="http://localhost:4000/reference/2018/03/06/paper-epi-protein-dnmt.html" rel="alternate" type="text/html" title="Digest: Isoform‐specific localization of DNMT3A regulates DNA methylation fidelity at bivalent CpG islands" /><published>2018-03-06T00:00:00+08:00</published><updated>2018-03-06T00:00:00+08:00</updated><id>http://localhost:4000/reference/2018/03/06/paper-epi-protein-dnmt</id><content type="html" xml:base="http://localhost:4000/reference/2018/03/06/paper-epi-protein-dnmt.html"></content><author><name>Hwoihann Wong</name></author><category term="reference" /><summary type="html"></summary></entry><entry><title type="html">菜鸟团学习Round#2: Bioinformatics Data Skills</title><link href="http://localhost:4000/codings/2018/02/26/cnt-roundTwo-bookCatos.html" rel="alternate" type="text/html" title="菜鸟团学习Round#2: Bioinformatics Data Skills" /><published>2018-02-26T00:00:00+08:00</published><updated>2018-02-28T05:00:31+08:00</updated><id>http://localhost:4000/codings/2018/02/26/cnt-roundTwo-bookCatos</id><content type="html" xml:base="http://localhost:4000/codings/2018/02/26/cnt-roundTwo-bookCatos.html">&lt;h1 id=&quot;intro-2018-菜鸟团学习round2&quot;&gt;Intro: 2018 菜鸟团学习Round2&lt;/h1&gt;
 
 &lt;p&gt;经过前段时间对基础知识的介绍，小菜鸟已经可以根据一个pipeline 从测序原始数据获得那些量化数据，比如峰值、表达值和甲基化值等等，这些值就被用来做后续分析。但每每当我跑完了原始数据再回看pipeline，发现有很多原来不太明白却因为时间限制而草草掠过的地方还是有很多可以改进的（特别是当老板拿着一些明显的致命错误来问我的时候TnT）。&lt;/p&gt;
 
@@ -86,7 +577,7 @@
       &lt;td&gt;Review 9~14&lt;/td&gt;
     &lt;/tr&gt;
   &lt;/tbody&gt;
-&lt;/table&gt;</content><author><name>Hwoihann Wong</name></author><category term="codings" /><category term="Reviews" /><category term="NGS基础" /><category term="菜鸟团周推" /><summary type="html">Intro: 2018 菜鸟团学习Round2 经过前段时间对基础知识的介绍，小菜鸟已经可以根据一个pipeline 从测序原始数据获得那些量化数据，比如峰值、表达值和甲基化值等等，这些值就被用来做后续分析。但每每当我跑完了原始数据再回看pipeline，发现有很多原来不太明白却因为时间限制而草草掠过的地方还是有很多可以改进的（特别是当老板拿着一些明显的致命错误来问我的时候TnT）。 正所谓“温故而知新”，看似忙碌实则却因各种错误而降低了课题效率，实在是得不偿失于是决定开始在升级这些pipeline的同时系统回顾曾经所学，年初就在菜鸟团里收了这本书： Bioinformatics Data Skills, by Vince Buffalo 作者在博客中也指明阅读对象，心内暗喜： Bioinformatics Data Skills is an intermediate-level book, aimed at readers with some experience with a scripting language like Python, and very basic Unix (e.g. the Unix filesystem hierarchy, cd, ls, etc.). Bioinformatics Data Skills gives readers a solid Unix foundation in chapters 3 (“Remedial Unix Shell”), 7 (“Unix Data Tools”), and 12 (“Bioinformatics Shell Scripting”, “Writing Pipelines”, and “Parallelizing Tasks”). Readers are also introduced to the R language through learning exploratory data analysis (chapter 8).</summary></entry><entry><title type="html">NGS与转录</title><link href="http://0.0.0.0:4000/definition/2017/09/29/basicNGS-centralDogma-transcription.html" rel="alternate" type="text/html" title="NGS与转录" /><published>2017-09-29T00:00:00+08:00</published><updated>2017-10-01T05:00:31+08:00</updated><id>http://0.0.0.0:4000/definition/2017/09/29/basicNGS-centralDogma-transcription</id><content type="html" xml:base="http://0.0.0.0:4000/definition/2017/09/29/basicNGS-centralDogma-transcription.html">&lt;p&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Transcription_(biology)&quot;&gt;转录（Transcription）&lt;/a&gt; 是遗传信息由DNA转换到RNA的过程，即信使RNA（mRNA）以及非编码RNA（tRNA、rRNA等）的合成步骤。在NGS的促进下，研究转录和转录调控的技术有了极大的扩展，以空前的速度发展。
+&lt;/table&gt;</content><author><name>Hwoihann Wong</name></author><category term="codings" /><category term="Reviews" /><category term="NGS基础" /><category term="菜鸟团周推" /><summary type="html">Intro: 2018 菜鸟团学习Round2 经过前段时间对基础知识的介绍，小菜鸟已经可以根据一个pipeline 从测序原始数据获得那些量化数据，比如峰值、表达值和甲基化值等等，这些值就被用来做后续分析。但每每当我跑完了原始数据再回看pipeline，发现有很多原来不太明白却因为时间限制而草草掠过的地方还是有很多可以改进的（特别是当老板拿着一些明显的致命错误来问我的时候TnT）。 正所谓“温故而知新”，看似忙碌实则却因各种错误而降低了课题效率，实在是得不偿失于是决定开始在升级这些pipeline的同时系统回顾曾经所学，年初就在菜鸟团里收了这本书： Bioinformatics Data Skills, by Vince Buffalo 作者在博客中也指明阅读对象，心内暗喜： Bioinformatics Data Skills is an intermediate-level book, aimed at readers with some experience with a scripting language like Python, and very basic Unix (e.g. the Unix filesystem hierarchy, cd, ls, etc.). Bioinformatics Data Skills gives readers a solid Unix foundation in chapters 3 (“Remedial Unix Shell”), 7 (“Unix Data Tools”), and 12 (“Bioinformatics Shell Scripting”, “Writing Pipelines”, and “Parallelizing Tasks”). Readers are also introduced to the R language through learning exploratory data analysis (chapter 8).</summary></entry><entry><title type="html">NGS与转录</title><link href="http://localhost:4000/definition/2017/09/29/basicNGS-centralDogma-transcription.html" rel="alternate" type="text/html" title="NGS与转录" /><published>2017-09-29T00:00:00+08:00</published><updated>2017-10-01T05:00:31+08:00</updated><id>http://localhost:4000/definition/2017/09/29/basicNGS-centralDogma-transcription</id><content type="html" xml:base="http://localhost:4000/definition/2017/09/29/basicNGS-centralDogma-transcription.html">&lt;p&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Transcription_(biology)&quot;&gt;转录（Transcription）&lt;/a&gt; 是遗传信息由DNA转换到RNA的过程，即信使RNA（mRNA）以及非编码RNA（tRNA、rRNA等）的合成步骤。在NGS的促进下，研究转录和转录调控的技术有了极大的扩展，以空前的速度发展。
 &lt;!--more--&gt;&lt;/p&gt;
 
 &lt;p&gt;转录中，一个基因会被读取、复制为mRNA；这个过程由RNA聚合酶（RNA polymerase）和转录因子（transcription factor）所共同完成。两个真核生物转录必备基础名词：&lt;/p&gt;
@@ -165,7 +656,7 @@ Next-generation sequencing applications in studies of transcriptional regulation
 &lt;h1 id=&quot;总结&quot;&gt;总结&lt;/h1&gt;
 &lt;p&gt;转录是在DNA和蛋白质之间传递信息的关键，调控途径多样，分析手段因此也层出不穷，多结合生物学背景，多看文献，才能想到idea再找数据去分析，光会用却不明白相关关系还是不行的。
 最后，上一个Homer，住大家国庆快乐，中秋快乐 :metal: ～
-&lt;img src=&quot;http://owxb9z5ea.bkt.clouddn.com/17-9-29/5863002.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;</content><author><name>Hwoihann Wong</name></author><category term="definition" /><category term="中心法则" /><category term="NGS基础" /><category term="菜鸟团周推" /><summary type="html">转录（Transcription） 是遗传信息由DNA转换到RNA的过程，即信使RNA（mRNA）以及非编码RNA（tRNA、rRNA等）的合成步骤。在NGS的促进下，研究转录和转录调控的技术有了极大的扩展，以空前的速度发展。</summary></entry><entry><title type="html">NGS基础概念之depth and coverage</title><link href="http://0.0.0.0:4000/definition/2017/09/22/basicNGS-depth-and-coverage.html" rel="alternate" type="text/html" title="NGS基础概念之depth and coverage" /><published>2017-09-22T00:00:00+08:00</published><updated>2017-10-01T05:00:31+08:00</updated><id>http://0.0.0.0:4000/definition/2017/09/22/basicNGS-depth-and-coverage</id><content type="html" xml:base="http://0.0.0.0:4000/definition/2017/09/22/basicNGS-depth-and-coverage.html">&lt;p&gt;&lt;strong&gt;主要讲三个问题：测序深度和测序覆盖度怎么理解？怎么根据试验要求确定二者数值？一般用什么软件计算？&lt;/strong&gt;&lt;/p&gt;
+&lt;img src=&quot;http://owxb9z5ea.bkt.clouddn.com/17-9-29/5863002.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;</content><author><name>Hwoihann Wong</name></author><category term="definition" /><category term="中心法则" /><category term="NGS基础" /><category term="菜鸟团周推" /><summary type="html">转录（Transcription） 是遗传信息由DNA转换到RNA的过程，即信使RNA（mRNA）以及非编码RNA（tRNA、rRNA等）的合成步骤。在NGS的促进下，研究转录和转录调控的技术有了极大的扩展，以空前的速度发展。</summary></entry><entry><title type="html">NGS基础概念之depth and coverage</title><link href="http://localhost:4000/definition/2017/09/22/basicNGS-depth-and-coverage.html" rel="alternate" type="text/html" title="NGS基础概念之depth and coverage" /><published>2017-09-22T00:00:00+08:00</published><updated>2017-10-01T05:00:31+08:00</updated><id>http://localhost:4000/definition/2017/09/22/basicNGS-depth-and-coverage</id><content type="html" xml:base="http://localhost:4000/definition/2017/09/22/basicNGS-depth-and-coverage.html">&lt;p&gt;&lt;strong&gt;主要讲三个问题：测序深度和测序覆盖度怎么理解？怎么根据试验要求确定二者数值？一般用什么软件计算？&lt;/strong&gt;&lt;/p&gt;
 
 &lt;!--more--&gt;
 &lt;h1 id=&quot;理解&quot;&gt;理解&lt;/h1&gt;
@@ -235,7 +726,7 @@ GATK 的DepthOfCoverage，-R需要输入你的reference genome，bam.list为待�
 &lt;p&gt;参考资料
 &lt;a href=&quot;https://mp.weixin.qq.com/s?src=3&amp;amp;timestamp=1506258871&amp;amp;ver=1&amp;amp;signature=jKdw9gNqXgIiG0n7SK9Gyhd5rdMKLkB-xjXkWPzhQICUBh3tZ4lcL7UGXXvZNSj1J53uW20h4Ri6h1xGxfFlZgBos7XNNqQcO2bahY9e7MUuD3cmPs3i0NclolYnEvVmoXijRqPig3XK*x3QpdWafQ==&quot;&gt;《全基因组重测序深度如何选择?》基迪奥生物&lt;/a&gt;
 https://www.plob.org/article/1217.html
- &lt;a href=&quot;https://mp.weixin.qq.com/s?src=3&amp;amp;timestamp=1506258917&amp;amp;ver=1&amp;amp;signature=X22z2y*tjX88rVER4Xflg19Z4agK5jB70OsTuCZAEJFmdQiAm8SujU3ZgJpCKO106HgQ0yrS3YCGBoY-RWinSpDtl3ISc9w5XPWRxrDQWLV-E2k*zmwTUyfgWohBfQ7LGVzGVzTNe6JbVcSzvvUh3w==&quot;&gt;《怎样分析panel与全外显子的覆盖度与深度》基因检测与解读&lt;/a&gt;&lt;/p&gt;</content><author><name>Hwoihann Wong</name></author><category term="测序常识" /><category term="NGS基础" /><category term="菜鸟团周推" /><summary type="html">主要讲三个问题：测序深度和测序覆盖度怎么理解？怎么根据试验要求确定二者数值？一般用什么软件计算？</summary></entry><entry><title type="html">WGBS analysis summary</title><link href="http://0.0.0.0:4000/analysis/2017/03/25/WGBS-analysis-summary.html" rel="alternate" type="text/html" title="WGBS analysis summary" /><published>2017-03-25T00:00:00+08:00</published><updated>2017-03-25T00:00:00+08:00</updated><id>http://0.0.0.0:4000/analysis/2017/03/25/WGBS-analysis-summary</id><content type="html" xml:base="http://0.0.0.0:4000/analysis/2017/03/25/WGBS-analysis-summary.html">&lt;p&gt;年初接触了WGBS数据分析，粗浅总结一下，有待修补:full_moon_with_face:。WGBS数据是精确到每个位点的深度测序，数据量因此也很大，动辄就上百个G，但是分析起来却很有意思。有了各种genomic features就可以探索很多事。
+ &lt;a href=&quot;https://mp.weixin.qq.com/s?src=3&amp;amp;timestamp=1506258917&amp;amp;ver=1&amp;amp;signature=X22z2y*tjX88rVER4Xflg19Z4agK5jB70OsTuCZAEJFmdQiAm8SujU3ZgJpCKO106HgQ0yrS3YCGBoY-RWinSpDtl3ISc9w5XPWRxrDQWLV-E2k*zmwTUyfgWohBfQ7LGVzGVzTNe6JbVcSzvvUh3w==&quot;&gt;《怎样分析panel与全外显子的覆盖度与深度》基因检测与解读&lt;/a&gt;&lt;/p&gt;</content><author><name>Hwoihann Wong</name></author><category term="测序常识" /><category term="NGS基础" /><category term="菜鸟团周推" /><summary type="html">主要讲三个问题：测序深度和测序覆盖度怎么理解？怎么根据试验要求确定二者数值？一般用什么软件计算？</summary></entry><entry><title type="html">WGBS analysis summary</title><link href="http://localhost:4000/analysis/2017/03/25/WGBS-analysis-summary.html" rel="alternate" type="text/html" title="WGBS analysis summary" /><published>2017-03-25T00:00:00+08:00</published><updated>2017-03-25T00:00:00+08:00</updated><id>http://localhost:4000/analysis/2017/03/25/WGBS-analysis-summary</id><content type="html" xml:base="http://localhost:4000/analysis/2017/03/25/WGBS-analysis-summary.html">&lt;p&gt;年初接触了WGBS数据分析，粗浅总结一下，有待修补:full_moon_with_face:。WGBS数据是精确到每个位点的深度测序，数据量因此也很大，动辄就上百个G，但是分析起来却很有意思。有了各种genomic features就可以探索很多事。
 &lt;!--more--&gt;&lt;/p&gt;
 
 &lt;h1 id=&quot;基本概念&quot;&gt;基本概念&lt;/h1&gt;
@@ -625,7 +1116,7 @@ Visual examination of methylation patterns for specific genes and genomic region
  In the ESC and iPSC methylomes, as well as 5 of the blood methylomes, this HMR extends downstream of the DNMT3B TSS by roughly 3 kb. In the remaining methylomes the downstream boundary is roughly 1.2 kb downstream of the TSS. The extended portion of this HMR clearly overlaps a cluster of TFBS, suggesting a &lt;strong&gt;regulatory module functioning in iPSC, ESC and blood cells.&lt;/strong&gt; At the other end of this &lt;strong&gt;promoter HMR&lt;/strong&gt; the boundaries seem to form discrete categories, suggesting several &lt;strong&gt;distinct regulatory modules with precise boundaries&lt;/strong&gt;. Another HMR appears roughly 10 kb upstream of the DNMT3B TSS exclusively in the iPSC and ESC methylomes. 
 &lt;strong&gt;可以协同其他genome-wide数据用于发现特异调控区域结构&lt;/strong&gt;
 Such these observational features in conjunction with other forms of genome-wide data provide a starting point for dissecting the architecture of particular regulatory regions.&lt;/p&gt;
-&lt;/blockquote&gt;</content><author><name>Hwoihann Wong</name></author><category term="bismark" /><category term="methpipe" /><category term="WGBS" /><summary type="html">年初接触了WGBS数据分析，粗浅总结一下，有待修补:full_moon_with_face:。WGBS数据是精确到每个位点的深度测序，数据量因此也很大，动辄就上百个G，但是分析起来却很有意思。有了各种genomic features就可以探索很多事。</summary></entry><entry><title type="html">linux环境变量学习整理</title><link href="http://0.0.0.0:4000/codings/2015/12/17/Linux-environment-summary.html" rel="alternate" type="text/html" title="linux环境变量学习整理" /><published>2015-12-17T00:00:00+08:00</published><updated>2015-12-17T00:00:00+08:00</updated><id>http://0.0.0.0:4000/codings/2015/12/17/Linux-environment-summary</id><content type="html" xml:base="http://0.0.0.0:4000/codings/2015/12/17/Linux-environment-summary.html">&lt;p&gt;今天上午玩服务器，把师姐的环境变量弄崩了，折腾了一下，不知怎的又恢复了，做一下记录供将来参考。查资料发现是提示符（prompt）出错了&lt;/p&gt;
+&lt;/blockquote&gt;</content><author><name>Hwoihann Wong</name></author><category term="bismark" /><category term="methpipe" /><category term="WGBS" /><summary type="html">年初接触了WGBS数据分析，粗浅总结一下，有待修补:full_moon_with_face:。WGBS数据是精确到每个位点的深度测序，数据量因此也很大，动辄就上百个G，但是分析起来却很有意思。有了各种genomic features就可以探索很多事。</summary></entry><entry><title type="html">linux环境变量学习整理</title><link href="http://localhost:4000/codings/2015/12/17/Linux-environment-summary.html" rel="alternate" type="text/html" title="linux环境变量学习整理" /><published>2015-12-17T00:00:00+08:00</published><updated>2015-12-17T00:00:00+08:00</updated><id>http://localhost:4000/codings/2015/12/17/Linux-environment-summary</id><content type="html" xml:base="http://localhost:4000/codings/2015/12/17/Linux-environment-summary.html">&lt;p&gt;今天上午玩服务器，把师姐的环境变量弄崩了，折腾了一下，不知怎的又恢复了，做一下记录供将来参考。查资料发现是提示符（prompt）出错了&lt;/p&gt;
 
 &lt;!--more--&gt;
 
