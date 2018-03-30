@@ -10,14 +10,13 @@ last_modified_at: 2018-03-02T21:30:31-22:10
 ---
 
 Start from Part II. Prerequisites: Essential Skills for Getting Started with a Bioinformatics Project
+
 | week | task |
-|--------|---------------------------------|
+|--------|--------------|
 | week1 |  Managing a Bioinformatics Project (2) |
 
 # Setting Up and Managing a Bioinformatics Project
-In this chapter, we’ll look at some best practices in organizing your bioinformatics project directories and how to digitally document your work using plain-text Markdown files. We’ll also see why project directory organization isn’t just about being tidy, but is essential to the way by
-which tasks are automated across large numbers of files (which we routinely do in
-bioinformatics)
+In this chapter, we’ll look at some best practices in organizing your bioinformatics project directories and how to digitally document your work using plain-text Markdown files. We’ll also see why project directory organization isn’t just about being tidy, but is essential to the way by which tasks are automated across large numbers of files (which we routinely do in bioinformatics)
 
 - Project Directories and Directory Structures
 - Project Documentation
@@ -107,16 +106,30 @@ won’t have to email you to ask what files are or where they are).
 
 
 ## 3. Use Directories to Divide Up Your Project into Subprojects
-ake-home point is: leverage directories to help stay organized
-
-Creating directories to logically separate subprojects (e.g., sequencing data quality
-improvement, aligning, analyzing alignment results, etc.) can simplify complex
-projects and help keep files organized. 
+Take-home point is: leverage directories to help stay organized
+simplify complex projects
 
 ## 4. Organizing Data to Automate File Processing Tasks
+consistent file naming schemes
+tips:
+    - brace expansion "{}": `mkdir -p zmays-snps/{data/seqs,scripts,analysis}`
+    - 
+
 ## 5. Markdown for Project Notebooks
+__plain-text project notebooks__
+Keep a project notebook containing detailed information about:
+ - the chronology of your computational work
+ -  steps you’ve taken, 
+ -  information about why you’ve made decisions, and 
+ -  of course all pertinent information to reproduce your work. 
+
 ## 6. Markdown Formatting Basics
 ## 7. Using Pandoc to Render Markdown to HTML
+Pandoc can convert between a variety of different markup and output formats. Using
+Pandoc is very simple—to convert from Markdown to HTML, use the --from mark
+down and --to html options and supply your input file as the last argument:
+`$ pandoc --from markdown --to html notebook.md > output.html`
+
 
 # Remember in heart
 __Part 1, Ideology: Data Skills for Robust and Reproducible Bioinformatics__

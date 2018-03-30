@@ -22,13 +22,11 @@ paginate:         5
 paginate_path:    '/blog/page:num'
                     # Or '/blog/page:num' if you want to move your index pages
 
-plugins_dir:
+plugins:
   - jekyll-feed
   - jekyll-gist
   - jekyll-paginate
   - jemoji 
-
-gems:
   - jekyll-paginate 
 # Custom vars
 sidebar_home_link:  true

@@ -1,0 +1,847 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.2">Jekyll</generator><link href="http://0.0.0.0:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://0.0.0.0:4000/" rel="alternate" type="text/html" /><updated>2018-03-08T16:28:34+08:00</updated><id>http://0.0.0.0:4000/</id><title type="html">&lt;a href=&quot;http://hwoihann.github.io&quot; target=&quot;_blank&quot; style=&quot;color:grey25; font-size:4&quot;&gt;2&amp;lt;font size=8&amp;gt;&lt;sup&gt;nd&lt;/sup&gt;&amp;lt;/font&amp;gt; Learn&lt;/a&gt;</title><subtitle>Be A lifeHacker 修炼篇</subtitle><author><name>Hwoihann Wong</name></author><entry><title type="html">hahaha</title><link href="http://0.0.0.0:4000/definition/2018/03/07/btest.html" rel="alternate" type="text/html" title="hahaha" /><published>2018-03-07T00:00:00+08:00</published><updated>2018-03-11T03:40:31+08:00</updated><id>http://0.0.0.0:4000/definition/2018/03/07/btest</id><content type="html" xml:base="http://0.0.0.0:4000/definition/2018/03/07/btest.html">what's this?</content><author><name>Hwoihann Wong</name></author><category term="definition" /><category term="癌症相关数据库专题" /><category term="菜鸟团周推" /><summary type="html">what's this?</summary></entry><entry><title type="html">Digest: Isoform‐specific localization of DNMT3A regulates DNA methylation fidelity at bivalent CpG islands</title><link href="http://0.0.0.0:4000/reference/2018/03/06/paper-epi-protein-dnmt.html" rel="alternate" type="text/html" title="Digest: Isoform‐specific localization of DNMT3A regulates DNA methylation fidelity at bivalent CpG islands" /><published>2018-03-06T00:00:00+08:00</published><updated>2018-03-06T00:00:00+08:00</updated><id>http://0.0.0.0:4000/reference/2018/03/06/paper-epi-protein-dnmt</id><content type="html" xml:base="http://0.0.0.0:4000/reference/2018/03/06/paper-epi-protein-dnmt.html"></content><author><name>Hwoihann Wong</name></author><category term="reference" /><summary type="html"></summary></entry><entry><title type="html">菜鸟团学习Round#2: Bioinformatics Data Skills</title><link href="http://0.0.0.0:4000/codings/2018/02/26/cnt-roundTwo-bookCatos.html" rel="alternate" type="text/html" title="菜鸟团学习Round#2: Bioinformatics Data Skills" /><published>2018-02-26T00:00:00+08:00</published><updated>2018-02-28T05:00:31+08:00</updated><id>http://0.0.0.0:4000/codings/2018/02/26/cnt-roundTwo-bookCatos</id><content type="html" xml:base="http://0.0.0.0:4000/codings/2018/02/26/cnt-roundTwo-bookCatos.html">&lt;h1 id=&quot;intro-2018-菜鸟团学习round2&quot;&gt;Intro: 2018 菜鸟团学习Round2&lt;/h1&gt;
+
+&lt;p&gt;经过前段时间对基础知识的介绍，小菜鸟已经可以根据一个pipeline 从测序原始数据获得那些量化数据，比如峰值、表达值和甲基化值等等，这些值就被用来做后续分析。但每每当我跑完了原始数据再回看pipeline，发现有很多原来不太明白却因为时间限制而草草掠过的地方还是有很多可以改进的（特别是当老板拿着一些明显的致命错误来问我的时候TnT）。&lt;/p&gt;
+
+&lt;p&gt;正所谓“温故而知新”，看似忙碌实则却因各种错误而降低了课题效率，实在是得不偿失于是决定开始在升级这些pipeline的同时系统回顾曾经所学，年初就在菜鸟团里收了这本书：&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://shop.oreilly.com/product/0636920030157.do&quot;&gt;Bioinformatics Data Skills&lt;/a&gt;, by &lt;a href=&quot;http://www.vincebuffalo.com/&quot;&gt;Vince Buffalo&lt;/a&gt;
+&lt;img src=&quot;https://covers.oreillystatic.com/images/0636920030157/lrg.jpg&quot; alt=&quot;&quot; /&gt;
+作者在博客中也指明阅读对象，心内暗喜：&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Bioinformatics Data Skills is an &lt;strong&gt;intermediate-level&lt;/strong&gt; book, aimed at readers with some experience with a scripting language like Python, and very basic Unix (e.g. the Unix filesystem hierarchy, cd, ls, etc.). Bioinformatics Data Skills gives readers a solid Unix foundation in chapters 3 (“Remedial Unix Shell”), 7 (“Unix Data Tools”), and 12 (“Bioinformatics Shell Scripting”, “Writing Pipelines”, and “Parallelizing Tasks”). Readers are also introduced to the R language through learning exploratory data analysis (chapter 8).&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;!--more--&gt;
+
+&lt;h1 id=&quot;main&quot;&gt;Main&lt;/h1&gt;
+
+&lt;p&gt;这本书分成三个部分：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Ideology&lt;/strong&gt;: 观念层面上的理解，相当于引言的扩展，主要强调研究的Robust and reproducible，比如实验设计、数据处理时的要注意的细节、态度等等，另外还有一些宝贵的建议，值得多想想自己平时做的和作者说的。这部分理念始终贯穿整本书，值得玩味。&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Prerequisite&lt;/strong&gt;: 一些必备技能，比如项目的管理方式、服务器进程的管理、远程服务器（现在就是云端了:]），数据的获取和存储，以及最重要的版本控制软件：git！&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Practice&lt;/strong&gt;:
+    &lt;ul&gt;
+      &lt;li&gt;unix data tools: know and subtract data (head, grep, cut, awk, uniq), subsell, unix philosophy&lt;/li&gt;
+      &lt;li&gt;R : data subsetting, transforming, ggplot, control flow&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;Range data&lt;/strong&gt;: 算是最感兴趣的了，主要就是介绍几个R包，比如GenomicRanges，bedtools等等以及取range时需要注意的&lt;/li&gt;
+      &lt;li&gt;Sequencing/Alignment data: 大致就是数据格式、质量和预处理，这在基础介绍的时候有所涉猎了，常见的工具可能会再看看&lt;/li&gt;
+      &lt;li&gt;Shell scripting, pipelines, parallelizing tasks: 平时也没怎么修炼的兴趣点又一！&lt;/li&gt;
+      &lt;li&gt;以及最后的存储相关知识: SQL，待要用了再学&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;数据分析和文献阅读固然重要，高效的基础确实扎实的数据处理基本功！趁此机会，通过这本书好好回顾一下所学，愿在盛夏总结春季所获不至惘然若失！&lt;/p&gt;
+&lt;p align=&quot;right&quot;&gt; 2018初春，王hh &lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;plans&quot;&gt;Plans&lt;/h1&gt;
+&lt;p&gt;计划用约九周的时间完成两大块的学习，并chapter1 的思想为核心展开（价值观果然很重要！）～&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;week&lt;/th&gt;
+      &lt;th&gt;task&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;week1&lt;/td&gt;
+      &lt;td&gt;Managing a Bioinformatics Project (2)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;week2&lt;/td&gt;
+      &lt;td&gt;Basic shell and remote machines (3&amp;amp;7, 4)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;week3&lt;/td&gt;
+      &lt;td&gt;Git and Data (5~6)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;week4&lt;/td&gt;
+      &lt;td&gt;Review &amp;amp; basic R (1~8)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;week5&lt;/td&gt;
+      &lt;td&gt;Range data (9)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;week6&lt;/td&gt;
+      &lt;td&gt;Sequence data (10)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;week7&lt;/td&gt;
+      &lt;td&gt;Alignment data (11)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;week8&lt;/td&gt;
+      &lt;td&gt;Pipelines and others (12~14)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;week9&lt;/td&gt;
+      &lt;td&gt;Review 9~14&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;</content><author><name>Hwoihann Wong</name></author><category term="codings" /><category term="Reviews" /><category term="NGS基础" /><category term="菜鸟团周推" /><summary type="html">Intro: 2018 菜鸟团学习Round2 经过前段时间对基础知识的介绍，小菜鸟已经可以根据一个pipeline 从测序原始数据获得那些量化数据，比如峰值、表达值和甲基化值等等，这些值就被用来做后续分析。但每每当我跑完了原始数据再回看pipeline，发现有很多原来不太明白却因为时间限制而草草掠过的地方还是有很多可以改进的（特别是当老板拿着一些明显的致命错误来问我的时候TnT）。 正所谓“温故而知新”，看似忙碌实则却因各种错误而降低了课题效率，实在是得不偿失于是决定开始在升级这些pipeline的同时系统回顾曾经所学，年初就在菜鸟团里收了这本书： Bioinformatics Data Skills, by Vince Buffalo 作者在博客中也指明阅读对象，心内暗喜： Bioinformatics Data Skills is an intermediate-level book, aimed at readers with some experience with a scripting language like Python, and very basic Unix (e.g. the Unix filesystem hierarchy, cd, ls, etc.). Bioinformatics Data Skills gives readers a solid Unix foundation in chapters 3 (“Remedial Unix Shell”), 7 (“Unix Data Tools”), and 12 (“Bioinformatics Shell Scripting”, “Writing Pipelines”, and “Parallelizing Tasks”). Readers are also introduced to the R language through learning exploratory data analysis (chapter 8).</summary></entry><entry><title type="html">NGS与转录</title><link href="http://0.0.0.0:4000/definition/2017/09/29/basicNGS-centralDogma-transcription.html" rel="alternate" type="text/html" title="NGS与转录" /><published>2017-09-29T00:00:00+08:00</published><updated>2017-10-01T05:00:31+08:00</updated><id>http://0.0.0.0:4000/definition/2017/09/29/basicNGS-centralDogma-transcription</id><content type="html" xml:base="http://0.0.0.0:4000/definition/2017/09/29/basicNGS-centralDogma-transcription.html">&lt;p&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Transcription_(biology)&quot;&gt;转录（Transcription）&lt;/a&gt; 是遗传信息由DNA转换到RNA的过程，即信使RNA（mRNA）以及非编码RNA（tRNA、rRNA等）的合成步骤。在NGS的促进下，研究转录和转录调控的技术有了极大的扩展，以空前的速度发展。
+&lt;!--more--&gt;&lt;/p&gt;
+
+&lt;p&gt;转录中，一个基因会被读取、复制为mRNA；这个过程由RNA聚合酶（RNA polymerase）和转录因子（transcription factor）所共同完成。两个真核生物转录必备基础名词：&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Cis-regulatory_element&quot;&gt;顺式元件&lt;/a&gt;，Cis-regulatory elements (CREs) ：增强或抑制其附近基因转录活性的非编码区域。通常是转录因子结合位点（TFBS）: promoter,  enhancers, silencers, and insulators.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Trans-regulatory_element&quot;&gt;反式因子&lt;/a&gt;，Trans-regulatory elements：能够特异结合顺式元件的因子，多数为蛋白质，如RNA聚合酶，能和RNA聚合酶结合稳定转录起始复合物的蛋白质等。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/MRNA.svg/758px-MRNA.svg.png&quot; alt=&quot;transcription&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;1-转录和转录调控&quot;&gt;1. 转录和转录调控&lt;/h1&gt;
+
+&lt;p&gt;转录组即某个物种或特定细胞在某一功能状态下产生的所有RNA的总和，可以揭示基因组序列中哪些序列能够表达，而且还能揭示在何时何处表达，以及转录活跃程度。&lt;/p&gt;
+
+&lt;p&gt;在每个细胞中，只有一部分基因是能够转录，此处染色质多为开放状态，其余的基因则处于抑制状态，对应的染色质状态较为紧密。在细胞中，保持一类基因的关闭，而另一类基因开启的状态称为基因调控，基因调控是动态的，在生物生长发育中起重要作用。基因表达的调控包含诸多维度比如信号转导，转录前（包括染色质构象和表观调控等），转录调控，转录后调控（剪切、编辑、转运等等），翻译和翻译后调控。其中多个步骤都是围绕着基因序列（DNA序列—传统的认为是顺式元件Cis）和其结合因子包括蛋白和非蛋白因子（传统地认为反式作用因子Trans）而发生。wiki中给出了转录因子可能参与转录调控的所有途径，见下图：
+&lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Transcription_Factors.svg/1024px-Transcription_Factors.svg.png&quot; alt=&quot;TF&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;基因的表观和转录调控可以分为两个层面，顺式元件和反式因子，技术方法学也可以简单粗暴地分为以研究顺式元件或反式因子为主的两类方法学：&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;已知或候选反式因子（表观和转录因子）和顺式元件的研究手段较成熟，比如经典的EMSA，报告基因，ChIP等。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;如何研究在native状态下与之相互作用的未知反式因子？&lt;/strong&gt; 基因组非编码区域含有大量的组织特异性的调控序列，包括基因转录增强子(enhancer)、沉默子（silencer）、绝缘子（insulators） 等。这些调控序列通常结合几个，几十个，甚至几百个调控因子（包括转录因子，染色质调控蛋白，组蛋白，RNA分子）以及他们形成的三维结构。用来分离纯化单个调控序列的传统的方法面临的最大的挑战是无法区分结合调控序列的特异性调控因子和细胞内大量的非特异性因子。现有的技术包括locked nucleic acids (LNAs)和transcription activator-like (TAL)蛋白只能用在分离纯化多拷贝的基因组重复序列，比如染色体端粒(telomere)。而其他的常规技术，比如ChIP-seq和ChIA-PE则依赖于单个调控因子或组蛋白修饰，而并不能纯化和分析单个调控序列所结合的多个调控因子以及三维结构。在今年8月刚被cell报道的In Situ capture of chromatin interactions by biotinylated dCAS9中，作者首次利用了“biotinylated dCAS9”的方法建立了高分辨率，位点特异原位DNA-蛋白质以及其他元件的互作网络，为攻克这一难题揭开了序幕 [^ref1]。
+&lt;img src=&quot;http://owxb9z5ea.bkt.clouddn.com/17-9-29/88002581.jpg&quot; alt=&quot;&quot; /&gt;
+ [^ref1]: &lt;a href=&quot;https://www.wxwenku.com/d/102384708&quot;&gt;战胜不可能：转录调控的重大技术进展&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h1 id=&quot;2-转录与ngs&quot;&gt;2. 转录与NGS&lt;/h1&gt;
+
+&lt;p&gt;转录组测序的分析流程大致可以分成三类，包括基因组比对（Genome mapping）、转录组比对（Transcriptome mapping）、转录组组装（Reference-free assembly。其中第三种主要是用于分析没有参考基因组和基因注释的物种，应用场合较少且不适合新手入门。对于人、小鼠、大鼠等模式物种，通常用前两种方法进行分析。&lt;/p&gt;
+
+&lt;p&gt;转录组测序一般是在你有了一部分生理生化的实验结果，如表型差异、生理指标发生明显变化或有效物质含量出现明显差异等等，在这个基础上你可能会问自己，这些现象内在的机制如何。所以，转录组测序核心回答的是那些基因组存在表达差异，这些存在差异的基因都涉及什么功能，是如何发挥作用的。可以根据实验的目的确定需要转录组测序还是表达谱测序。&lt;/p&gt;
+
+&lt;h2 id=&quot;转录组测序和表达谱测序的区别&quot;&gt;转录组测序和表达谱测序的区别&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;转录组测序 RNA-seq（Transcriptome）
+    &lt;ul&gt;
+      &lt;li&gt;定义： 通过RNA测序，既想得到样本中序列的信息，又需要对序列的表达进行定量和分析。
+        &lt;ul&gt;
+          &lt;li&gt;没有参考基因组的物种，RNA-seq (Transcriptome) 需要进行de novo拼接，对拼接得到的Unigene进行注释；
+然后计算de novo得到的Unigene的表达量。所以，这个分析就包含了核酸序列分析和核酸表达定量分析。&lt;/li&gt;
+          &lt;li&gt;对于已有参考基因组的物种，RNA-seq (Transcriptome) 会对测序结果进行基于参考基因组的比对和拼接，从而分析样本中转录本的可变剪切、基因融合、SNP变异等此类针对转录本序列的分析；在序列分析的基础上，在分析转录本的表达量。所以，这个分析也包含了核酸序列的分析和核酸表达量的分析。&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;对测序的要求：因为涉及到序列的拼接和组装，所以转录组测序对数据量的要求较高（一般单个样本的测序量&amp;gt; 4G），同时一般要求使用双末端测序（Paired end）的数据。[^ref2]
+[^ref2]: 转录组测序和表达谱测序的区别》基迪奥生物&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;表达谱测序 RNA-seq（Qualification）
+    &lt;ul&gt;
+      &lt;li&gt;定义：Qualification，顾名思义，这个产品的定义就是只对样本中mRNA进行定量分析，而不需要分析mRNA序列的变化。通常此类分析，需要参考序列。参考序列可以是：基因组序列（有参考基因组的物种）或转录组序列（无参考基因组物种，转录组de novo拼接的结果）。&lt;/li&gt;
+      &lt;li&gt;对此类产品的分析要求仅仅是：将测序得到的数据比对到参考序列上，然后计算参考序列的在样本中的对应表达，而不需要去分析参考序列在样本中是否发生了序列变化（可变剪切、基因融合、SNP等）。一般单个样本的测序量2~3G足够，同时单末端测序（single End）和双末端测序（paired End）的数据均可以分析。&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h1 id=&quot;3-转录调控与ngs&quot;&gt;3. 转录调控与NGS&lt;/h1&gt;
+
+&lt;p&gt;##常用的转录调控测量技术
+参考上文提及的转录因子的调控路径，2012 Shirley Liu 的&lt;a href=&quot;https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3458226/&quot;&gt;Minireview: Applications of Next-Generation Sequencing on Studies of Nuclear Receptor Regulation and Function&lt;/a&gt; 总结得很好，主要有Gene Expression Profiling, Transcription Factor Cistrome Mapping, Epigenome Profiling, Interactions in Three Dimensions, 也直接上图表示：&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;img src=&quot;http://owxb9z5ea.bkt.clouddn.com/17-9-29/71714242.jpg&quot; alt=&quot;&quot; /&gt;
+Next-generation sequencing applications in studies of transcriptional regulation. Applications in red make use mainly of the quantification of abundance, whereas applications in blue make use of sequence-based observations.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;ngs分析手段&quot;&gt;NGS分析手段&lt;/h2&gt;
+
+&lt;p&gt;对于可以直接参考HOMER提供的教程，学会了就能分析&lt;code class=&quot;highlighter-rouge&quot;&gt;ChIP-Seq, GRO-Seq, RNA-Seq, DNase-Seq, Hi-C and numerous other types of functional genomics sequencing data sets&lt;/code&gt;。
+入门应不成问题，官网在此&lt;a href=&quot;http://homer.ucsd.edu/homer&quot;&gt;http://homer.ucsd.edu/homer&lt;/a&gt;。&lt;/p&gt;
+
+&lt;h1 id=&quot;总结&quot;&gt;总结&lt;/h1&gt;
+&lt;p&gt;转录是在DNA和蛋白质之间传递信息的关键，调控途径多样，分析手段因此也层出不穷，多结合生物学背景，多看文献，才能想到idea再找数据去分析，光会用却不明白相关关系还是不行的。
+最后，上一个Homer，住大家国庆快乐，中秋快乐 :metal: ～
+&lt;img src=&quot;http://owxb9z5ea.bkt.clouddn.com/17-9-29/5863002.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;</content><author><name>Hwoihann Wong</name></author><category term="definition" /><category term="中心法则" /><category term="NGS基础" /><category term="菜鸟团周推" /><summary type="html">转录（Transcription） 是遗传信息由DNA转换到RNA的过程，即信使RNA（mRNA）以及非编码RNA（tRNA、rRNA等）的合成步骤。在NGS的促进下，研究转录和转录调控的技术有了极大的扩展，以空前的速度发展。</summary></entry><entry><title type="html">NGS基础概念之depth and coverage</title><link href="http://0.0.0.0:4000/definition/2017/09/22/basicNGS-depth-and-coverage.html" rel="alternate" type="text/html" title="NGS基础概念之depth and coverage" /><published>2017-09-22T00:00:00+08:00</published><updated>2017-10-01T05:00:31+08:00</updated><id>http://0.0.0.0:4000/definition/2017/09/22/basicNGS-depth-and-coverage</id><content type="html" xml:base="http://0.0.0.0:4000/definition/2017/09/22/basicNGS-depth-and-coverage.html">&lt;p&gt;&lt;strong&gt;主要讲三个问题：测序深度和测序覆盖度怎么理解？怎么根据试验要求确定二者数值？一般用什么软件计算？&lt;/strong&gt;&lt;/p&gt;
+
+&lt;!--more--&gt;
+&lt;h1 id=&quot;理解&quot;&gt;理解&lt;/h1&gt;
+&lt;h2 id=&quot;depth-测序深度&quot;&gt;depth 测序深度&lt;/h2&gt;
+&lt;p&gt;__测序深度__是指测序得到的总碱基数与待测基因组大小的比值，可以理解为基因组中每个碱基被测序到的平均次数。测序深度 = reads长度 × 比对的reads数目 / 参考序列长度。假设一个基因大小为2M，测序深度为10X，那么获得的总数据量为20M。&lt;/p&gt;
+
+&lt;p&gt;可以根据我们的研究目的来选择相应的测序深度:
+&lt;img src=&quot;http://mmbiz.qpic.cn/mmbiz/6kvRq2WRXpiaNhZ3TRr6fxoK59BEibL0cq6iaVtwflenGyrQNR0ia9lagqecMIU9FRvGveyfghgibPQsMIxtjAR1Yaw/640?wx_fmt=png&amp;amp;tp=webp&amp;amp;wxfrom=5&amp;amp;wx_lazy=1&quot; alt=&quot;表1&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;如果我们的研究目的仅仅是进行群体遗传分析等类型的分析。由于分析是通过计算基因组不同区域的多样性变化来推断进化选择压力，或构建进化树推断遗传分化关系，SNP检出率达到70~90%足以达到此类目的。所以，此类研究常见的测序深度选择在10X左右。&lt;/p&gt;
+
+&lt;p&gt;如果想检测个体的全基因组突变，来寻找某个特定功能突变，则我们推荐大于30X的测序深度，以保证接近于“毫无疏漏”。&lt;/p&gt;
+
+&lt;p&gt;如果测序样本是混样，例如，癌组织样本（癌细胞的细胞异质性很大），BSA分析中的群体混合池样本。那么在保证30X的测序深度的基础上，如果经费许可50X的测序深度更佳，以保证对混合池中低频变异的检测成功率（例如，新出现或即将消亡的癌细胞突变）。&lt;/p&gt;
+
+&lt;h2 id=&quot;coverage-测序覆盖度&quot;&gt;coverage 测序覆盖度&lt;/h2&gt;
+&lt;p&gt;__覆盖度__是指测序获得的序列占整个基因组的比例。指的是基因组上至少被检测到1次的区域，占整个基因组的比例。当然，有些文章中也会将测序深度称为Coverage，容易给我们带来混淆。因此，我们还是需要根据语境来推断Coverage的意思。&lt;/p&gt;
+
+&lt;p&gt;我们假设基因组大小为G, 假定每次测序可从基因组任何位置上随机检测一个碱基。那么对于基因组上某一个固定碱基位置，在一次测序中，该位置被命中的概率为P （P=1/G）。我们将试验重复n次，相当于产生了n个碱基（n=c*G, c为测序深度）。
+碱基的深度分布，相当于求该位置被测到0次，1次，…,n次的概率各是多少? 位点被检测到的n次的概率符合泊松分布。当然，由于概率极低，检测次数很大，所以这样的泊松分布接近于正态分布。&lt;/p&gt;
+
+&lt;p&gt;由于基因组中的高GC、重复序列等复杂结构的存在，测序最终拼接组装获得的序列往往无法覆盖有所的区域，这部分没有获得的区域就称为Gap。例如一个细菌基因组测序，覆盖度是98%，那么还有2%的序列区域是没有通过测序获得的。&lt;/p&gt;
+
+&lt;h2 id=&quot;两者关系&quot;&gt;两者关系？&lt;/h2&gt;
+&lt;p&gt;测序深度与基因组覆盖度之间是一个正相关的关系，而测序带来的错误率或变异检测（例如，SNP）假阳性结果会随着测序深度的提升而下降。在图2中可以看到当测序深度达到10x时基因组的覆盖度已接近饱和（左图）。但在测序深度达到10X的时候，SNP的检测率却没有达到饱和。
+&lt;img src=&quot;http://mmbiz.qpic.cn/mmbiz/6kvRq2WRXpiaNhZ3TRr6fxoK59BEibL0cq66O6VIDj5j4BSjDtDKGfsHBbaZHXwPU0nUNVJB1EziczYjbophich7Fw/640?wx_fmt=png&amp;amp;tp=webp&amp;amp;wxfrom=5&amp;amp;wx_lazy=1&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;举例&quot;&gt;举例&lt;/h1&gt;
+
+&lt;p&gt;对长100bp的目标区域进行捕获测序：采用单端测序，每个read长5bp；总共得到了200个reads；把所有的reads比对到目标区域后，100bp的目标区域中有98bp的位置至少有1个read覆盖到，换言之，剩余的2bp没有1个read覆盖。则&lt;/p&gt;
+
+&lt;p&gt;深度: 200 x 5 / 100 = 10
+我们说这此测序的深度为10X。&lt;/p&gt;
+
+&lt;p&gt;覆盖度: 98 / 100 × 100% = 98%
+我们说这次测序的覆盖度为98%。&lt;/p&gt;
+
+&lt;h1 id=&quot;应用&quot;&gt;应用&lt;/h1&gt;
+&lt;p&gt;在临床panel检测遗传病时，首先要看一下质控，待测的基因是否捕获到？有多少区域大于10X? 很多时候基因检测机构并不提供这么具体的信息，可能会笼统的说XX%覆盖，平均深度是XXX，平均深度对于具体的基因并没有实际意义，另外在科研全外显子测序时，销售可能会说10G数据量，平均100X测序深度，实际结果到底是真是假很难说? 如果我们自己学会分析就可以亲自检验啦。&lt;/p&gt;
+
+&lt;h2 id=&quot;代码&quot;&gt;代码&lt;/h2&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt; java -Xmx30g -jar /yourGATKFILE/GenomeAnalysisTK.jar-T DepthOfCoverage -R /reference_genome_dir/ucsc.hg19.fasta -o result_name -Ibam.list -L target.bed --omitDepthOutputAtEachBase --omitIntervalStatistics -ct1 -ct 10 -ct 20 &lt;/code&gt;
+Sequencing depth and coverage: key considerations in genomic analyses
+GATK 的DepthOfCoverage，-R需要输入你的reference genome，bam.list为待分析的样本，可将多个bam放在一个bam.list里，-L 需要提供捕获的区域，为bed格式，如果是agilent的全外显子可在其官方网站下载，-ct1代表至少覆盖1X的区域，-ct10代表至少覆盖10X的区域，你可以自己添加自己想要的深度。&lt;/p&gt;
+
+&lt;p&gt;以上海某知名测序公司的agilent v5外显子捕获测序为例，总数据量为8G左右，结果如下：
+&lt;img src=&quot;http://owxb9z5ea.bkt.clouddn.com/17-9-29/26586732.jpg&quot; alt=&quot;&quot; /&gt;
+ 一共4个样本，total代表在捕获区域的总的碱基数，也就是ontarget碱基数，如果我们除以总的测序总量就会得到捕获效率大概为60%左右，也就是40%的数据都是无效的，当然这样的捕获效率在业界算是高的，mean代表平均测序深度，后面是大于1X的捕获区域99.8左右，然后是大于10X的区域为99.3左右，由于人员操作等原因，各公司这一数据的范围在85%-99.5%区间，这一数值对于后面的分析至关重要，如果低于90%就可以说明实验是失败的，再后面是大于20X的区域。
+最后再补充一点，NGS所说的10G数据并不是说测序文件在硬盘上的大小为10G，1G代表10亿个碱基，10G代表100亿个碱基。&lt;/p&gt;
+
+&lt;h1 id=&quot;其他资料&quot;&gt;其他资料：&lt;/h1&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;简单视频：https://v.qq.com/x/page/h0367nyz2le.html
+     主要介绍如何从suredesign网站下载外显子捕获区域、从ucsc的table browser下载外显子区域，通过GATK的子工具DepthOfCoverage计算覆盖度、大于10X区域比例，大于20X区域比例&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;进阶：使用R按照指定宽度计算覆盖率: https://www.plob.org/article/7123.html&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;2014: Sequencing depth and coverage: key considerations in genomic analyses https://www.nature.com/nrg/journal/v15/n2/pdf/nrg3642.pdf&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+&lt;p&gt;参考资料
+&lt;a href=&quot;https://mp.weixin.qq.com/s?src=3&amp;amp;timestamp=1506258871&amp;amp;ver=1&amp;amp;signature=jKdw9gNqXgIiG0n7SK9Gyhd5rdMKLkB-xjXkWPzhQICUBh3tZ4lcL7UGXXvZNSj1J53uW20h4Ri6h1xGxfFlZgBos7XNNqQcO2bahY9e7MUuD3cmPs3i0NclolYnEvVmoXijRqPig3XK*x3QpdWafQ==&quot;&gt;《全基因组重测序深度如何选择?》基迪奥生物&lt;/a&gt;
+https://www.plob.org/article/1217.html
+ &lt;a href=&quot;https://mp.weixin.qq.com/s?src=3&amp;amp;timestamp=1506258917&amp;amp;ver=1&amp;amp;signature=X22z2y*tjX88rVER4Xflg19Z4agK5jB70OsTuCZAEJFmdQiAm8SujU3ZgJpCKO106HgQ0yrS3YCGBoY-RWinSpDtl3ISc9w5XPWRxrDQWLV-E2k*zmwTUyfgWohBfQ7LGVzGVzTNe6JbVcSzvvUh3w==&quot;&gt;《怎样分析panel与全外显子的覆盖度与深度》基因检测与解读&lt;/a&gt;&lt;/p&gt;</content><author><name>Hwoihann Wong</name></author><category term="测序常识" /><category term="NGS基础" /><category term="菜鸟团周推" /><summary type="html">主要讲三个问题：测序深度和测序覆盖度怎么理解？怎么根据试验要求确定二者数值？一般用什么软件计算？</summary></entry><entry><title type="html">WGBS analysis summary</title><link href="http://0.0.0.0:4000/analysis/2017/03/25/WGBS-analysis-summary.html" rel="alternate" type="text/html" title="WGBS analysis summary" /><published>2017-03-25T00:00:00+08:00</published><updated>2017-03-25T00:00:00+08:00</updated><id>http://0.0.0.0:4000/analysis/2017/03/25/WGBS-analysis-summary</id><content type="html" xml:base="http://0.0.0.0:4000/analysis/2017/03/25/WGBS-analysis-summary.html">&lt;p&gt;年初接触了WGBS数据分析，粗浅总结一下，有待修补:full_moon_with_face:。WGBS数据是精确到每个位点的深度测序，数据量因此也很大，动辄就上百个G，但是分析起来却很有意思。有了各种genomic features就可以探索很多事。
+&lt;!--more--&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;基本概念&quot;&gt;基本概念&lt;/h1&gt;
+&lt;p&gt;&lt;strong&gt;Methylation levels：位点甲基化水平的无偏估计&lt;/strong&gt;
+Although individual methyl groups can either be present or absent on a cytosine, current WGBS data is not from single cells, and we therefore refer to a methylation ‘‘level’’ for each cytosine, interpreted as the fraction of molecules in the underlying cell population that have the methyl mark on the corresponding cytosine.
+Since bisulfite sequencing gives a readout for either the presence or absence of a methyl group in each read, we get an unbiased estimate for the methylation level from the ratio of methylated reads to all reads covering a given site. The estimated cytosine methylation level, along with the number of sequenced reads supporting that estimate, is computed for each methylome, along with c&lt;/p&gt;
+
+&lt;p&gt;Visual examination of the methylation patterns at specific genes and genomic loci is an essential part of exploratory data analysis for investigators using WGBS data. 
+The duplicate-removal procedure is done on a per-library basis, as any reads from different libraries are necessarily from distinct molecules. W&lt;/p&gt;
+
+&lt;h2 id=&quot;mapping原理及相关软件&quot;&gt;mapping原理及相关软件&lt;/h2&gt;
+&lt;p&gt;read mapping program for bisulfite sequencing in DNA methylation studies.&lt;/p&gt;
+&lt;h3 id=&quot;1-bismark比四次找最优map位置在map位置上记录甲基化信息&quot;&gt;1. bismark：比四次找最优map位置，在map位置上记录甲基化信息&lt;/h3&gt;
+&lt;p&gt;https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3102221/&lt;/p&gt;
+
+&lt;p&gt;得到Reads后进行序列比对，从Bisulfite处理到比对过程如下图所示：&lt;/p&gt;
+
+&lt;p&gt;在上图A中，一条DNA片段（genomic fragment）经过Bisulfite处理后未甲基化的C转化成T（sequence after bisulfite treatment），将该条Reads比对到基因组上，首先将该Reads进行C to T和G to A转换，再将基因组的模板链进行C to T和G to A转换，将转换后的Reads与转换后的基因组进行比对，在图A中可以看到，（1）为最好的唯一比对结果。&lt;/p&gt;
+
+&lt;p&gt;那么如何来判断C位点的甲基化情况呢？
+将Reads与模板链还原，如图B所示Reads与模板链的对应关系，如果是C与T对应，则该位点是一个为未甲基化C，如果是C与C对应，则该位点是一个甲基化C。&lt;/p&gt;
+
+&lt;h3 id=&quot;2-methpipe-walt&quot;&gt;2. methpipe: WALT&lt;/h3&gt;
+&lt;p&gt;WALT (Wildcard ALignment Tool)
+https://github.com/smithlabcode/walt
+曾经用： rmapbs program, one of the wildcard based mappers.
+Input reads are filtered by their quality, and adapter sequences in the 3′ end of reads are trimmed before mapping. Next, uniquely mapped reads with mismatches below a certain threshold are kept for further analysis. For pair-end reads, two mates from the same original DNA segment are mapped simultaneously. The rmapbs-pe program checks the appropriate configuration of the mate pairs. If the two mates overlap, the overlapping part of the mate with lower quality is clipped. This procedure prevents double counting. Users may also use alternative mappers (see [14] and [15] for reviews). Our pipeline provides a program that conveniently converts the output of alternative mappers to the format supported by MethPipe.&lt;/p&gt;
+
+&lt;h2 id=&quot;实例&quot;&gt;实例：&lt;/h2&gt;
+&lt;p&gt;PE情况下：read1: C -&amp;gt; T read2: G -&amp;gt; A（实验过程中已完成） 
+下图分别为 H:\allProject\Project_scnt\WGBS_new\3M\0_trim_se\auto 中&lt;/p&gt;
+
+&lt;p&gt;SCNT1_1， SCNT2_1的fastqc报告结果
+可以看到read1 T含量很高， read2 A含量很高&lt;/p&gt;
+
+&lt;p&gt;#流程
+##1. 总览
+DNA methylome analysis using short bisulfite sequencing data 必须入门
+http://www.nature.com/nmeth/journal/v9/n2/full/nmeth.1828.html&lt;/p&gt;
+
+&lt;h2 id=&quot;2-qc&quot;&gt;2. QC&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;trimGalore&lt;/strong&gt;
+官方文档：
+https://github.com/FelixKrueger/TrimGalore/blob/master/Docs/Trim_Galore_User_Guide.md&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;引自methpipe
+&lt;strong&gt;误差来源&lt;/strong&gt;
+Empirical benchmarks for new WGBS experiments
+Technical characteristics of publicly available WGBS methylomes vary considerably.&lt;/p&gt;
+  &lt;ul&gt;
+    &lt;li&gt;Part of this results from the decisions made by investigators concerning parameters such as read length and sequencing depth.&lt;/li&gt;
+    &lt;li&gt;Additional variation comes from poor experimental outcomes:
+reflected in low bisulfite conversion, or read coverage that is biased towards or away from CpG-dense regions. This variation raises the question of how to evaluate the quality of methylomes from WGBS or RRBS experiments. The large and growing collection of methylomes in MethBase provides an empirical benchmark for future investigations.&lt;/li&gt;
+    &lt;li&gt;One potentially important feature that varies perhaps unexpectedly is the relationship between CpG density and coverage depth in WGBS data. Using the methylation data from a subset of human WGBS methylomes, we computed the average coverage at CpG sites and the CpG density in each 1 kb bin through the human autosomes, which surprisingly shows significant correlation in a large number of samples (Figure 4B and Table S1). The correlation may be either positive or negative, even for samples from the same study (Table S1). It remains unclear whether such correlation reflects technical artifacts or any underlying biological phenomena. However, methylation features have several well-known relationships with CpG density, and our confidence in methylation level estimates is a function of depth of coverage. The unexpected correlation between read coverage and CpG density may affect our ability to assess the methylation status of regions with varying CpG density.&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;3-mapping--feature-analysis&quot;&gt;3. mapping &amp;amp; feature analysis&lt;/h2&gt;
+&lt;p&gt;主要就是找差异甲基化，在感兴趣的区域上看甲基化的情况呗～&lt;/p&gt;
+&lt;h3 id=&quot;31-methpipe&quot;&gt;3.1 methPipe&lt;/h3&gt;
+&lt;p&gt;http://smithlabresearch.org/software/methpipe/&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;一些用到的算法大致介绍&lt;/p&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;strong&gt;Identifying Hypo-methylated Regions&lt;/strong&gt;
+ methylation level and coverage at individual cytosines along the genome
+ two-state HMM-based method:
+Introduces one state representing hypo-methylated regions, and another state representing highly methylated background. Since the estimated methylation levels suffer large variance due to randomly sampled molecules (especially at lower coverage), we directly model the observed read counts with a &lt;strong&gt;beta-binomial distribution&lt;/strong&gt;, for which we implemented a rapid and numerically stable parameter estimation method. The HMM is trained using the Baum-Welch algorithm [38], and posterior decoding identifies HMRs. The method is implemented in the hmr program. Median HMR size and the number of HMRs directly result from this computation, and can provide a quick and useful characterization of a mammalian methylome.&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Identifying Hyper-methylated Regions&lt;/strong&gt;
+HyperMRs are also inferred from the methylation level and coverage at individual cytosines, with a &lt;strong&gt;stochastic segmentation model&lt;/strong&gt; similar to the HMR-finding method. Visual examination of methylation patterns of multiple samples motivated us to model the methylation status of cytosines in the Arabidopsis genome with three states: the hypo-methylated state in the background, the HYPER-methylated state in HyperMRs and the HYPO-methylated state scattered within HyperMRs. In addition, the length of genomic regions is modeled with explicit duration HMM (“variable duration” HMM; [39]). Explicit duration distribution generalizes the implicit geometric duration distribution in HMM, and is more flexible. Detailed mathematical formulation is given in supplementary material. The method is implemented in hmr_plant program.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Identifying Partially Methylated Domains&lt;/strong&gt;
+As explained above, PMDs are large-scale methylation features found in immortalized cell lines and cancerous cells. We developed a hierarchical method to identify PMDs. First, the genome is divided into 1 kb non-overlapping bins (an empirically determined value that remains user-adjustable). We count the number of methylated and unmethylated observations (i.e. CpG states in reads) in each bin. Similar to the HMR-finding method, we use a two-state HMM model to segment the genome into PMDs and background regions. This step at low resolution gives the location of PMDs, while the exact location of their boundaries need further refinement. Since the boundary between a PMD and a non-PMD region must reside within the two bins at the end of that PMD and that non-PMD region, the refinement of PMD boundaries reduces to detecting a single change-point along the sequence of sites in those two bins. The single change-point detection problem has been extensively studied, and we used the binary segmentation procedure of Sen et al. [40].&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Identifying Allele-specific Methylated Regions&lt;/strong&gt;
+To identify allele-specific methylated regions, we use the linkage information of the methylation status between adjacent cytosines in a read. The separation of reads into two alleles and the testing of whether a certain region fits the allele-specific model is carried out with the statistical method described by Fang et al. [17]. Additionally, a single-site profile for an allele-specific methylation “score” can be computed along the genome by testing for significance of linkage between methylation status in reads covering adjacent CpGs. The programs for identifying AMRs and computing allelic scores are amrfinder and allelicmeth.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Identifying Differentially Methylated Regions&lt;/strong&gt;
+Comparative studies of methylomes usually involves identifying DMRs between samples from different conditions. MethPipe includes two different methods to identify DMRs between two methylomes, each with its applicable situations. The first method extends that introduced by [10]. Differential methylation scores are first computed at individual CpG sites, taking into account observed frequencies of methylation as well as the amount of data contributing to those frequencies [41]. Next, non-overlapping parts of HMRs (i.e. the contiguous parts of the symmetric difference of the two interval sets) are evaluated to ensure they contain a sufficient number of differentially methylated CpG sites. This strategy is HMR-centric, and makes sure that the absense of an HMR in one methylome is not simply due to lack of data. This is implemented in the program dmr. The second method uses a three-state HMM to segment the methylome into contiguous sets of CpGs that are either (i) not differentially methylated, (ii) have an over-abundance of significantly different CpG sites in one direction, and (iii) have an over-abundance in the other direction (details in supplementary material). The second method is sensitive to DMRs caused by partial methylation variation, and is implemented in the dmr2 program.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Cross-species Comparison of Methylomes&lt;/strong&gt;
+To facilitate cross-species comparison of methylomes of multiple species, we converted the methylation data of mouse and chimpanzee to the corresponding locations in the human genome. The liftOver tool provided by UCSC Genome Browser http://genome.ucsc.edu/cgi-bin/hgLiftOver is used to directly convert the methylation level file at individual cytosines (output from the program methcounts ) to the human genome. Next we rerun the hmr and pmd programs on the converted methylation data file. Since the program amr works on the mapped read file, we directly liftover the list of AMRs with the liftOver program.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;实例&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;数据准备，用bismark的mapping方法，获得的bam 用to-mr转换成methpipe可以处理的格式
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;#!!+===========================================================
+# mapping using BISMARK, extracting using methpipe:
+##============================================================
+## merge old data
+samtools merge 2_bismark_se/SCNT_kdm4d.bam 2_oldBis/SCNT_Kdm4d*.bam
+samtools merge 2_bismark_se/IVF.bam 2_oldBis/IVF*.bam
+## merge new data
+samtools merge 3_bismark_SAM/SCNT.bam  2_bismark_pe/SCNT*.bam 2_bismark_se/SCNT3.fq_bismark_bt2.bam  ##-f to overwrite
+samtools view -b bismark 2_bismark_se/IVF.bam 
+## convert into methpipe format
+to-mr -o 4_methPipe/IVF.mr -m bismark 2_bismark_se/IVF.bam 
+to-mr -o 4_methPipe/SCNT_kdm4d.mr -m bismark 2_bismark_se/SCNT_kdm4d.bam 
+to-mr -o 4_methPipe/SCNT.mr -m bismark 3_bismark_SAM/SCNT.bam
+to-mr -o 4_methPipe/SCNT.mr -m bismark 2_bismark_pe/SCNT.bam
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;bsrate, methcounts
+```
+    &lt;h2 id=&quot;remove-duplicated-reads-map-identical-genomic-regions&quot;&gt;remove duplicated reads:: map identical genomic regions&lt;/h2&gt;
+    &lt;p&gt;cd 4_methPipe&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;methylation-conversion--remove-duplications&quot;&gt;methylation conversion &amp;amp; remove duplications&lt;/h3&gt;
+&lt;p&gt;LC_ALL=C sort -k 1,1 -k 2,2n -k 3,3n -k 6,6 -o IVF.mr.sorted_start IVF.mr
+ LC_ALL=C sort -k 1,1 -k 2,2n -k 3,3n -k 6,6 -o SCNT_kdm4d.mr.sorted_start SCNT_kdm4d.mr
+LC_ALL=C sort -k 1,1 -k 2,2n -k 3,3n -k 6,6 -o SCNT.mr.sorted_start SCNT.mr&lt;/p&gt;
+
+&lt;p&gt;duplicate-remover -S IVF_dremove_stat.txt -o IVF.mr.dremove IVF.mr.sorted_start
+duplicate-remover -S SCNT_Kdm4d_dremove_stat.txt -o SCNT_kdm4d.mr.dremove  SCNT_kdm4d.mr.sorted_start
+duplicate-remover -S SCNT_dremove_stat.txt -o SCNT.mr.dremove SCNT.mr.sorted_start&lt;/p&gt;
+
+&lt;h2 id=&quot;estimate-the-bisulfite-conversion-rate&quot;&gt;estimate the bisulfite conversion rate&lt;/h2&gt;
+&lt;p&gt;bsrate -c  /nethome/Shared/annotation/iGenome/Mus_musculus/UCSC/mm9/Sequence/Bowtie2Index/ -o IVF.bsrate IVF.mr.dremove
+bsrate -c  /nethome/Shared/annotation/iGenome/Mus_musculus/UCSC/mm9/Sequence/Bowtie2Index/ -o SCNT_kdm4d.bsrate SCNT_kdm4d.mr.dremove 
+bsrate -c  /nethome/Shared/annotation/iGenome/Mus_musculus/UCSC/mm9/Sequence/Bowtie2Index/ -o SCNT.bsrate SCNT.mr.dremove&lt;/p&gt;
+
+&lt;h3 id=&quot;calculate-the-methylation-value-of-single-site-of-files-with-dupilicated-reads-removed&quot;&gt;calculate the methylation value of single site of files with dupilicated reads removed&lt;/h3&gt;
+&lt;p&gt;### 
+methcounts -c  /nethome/Shared/annotation/iGenome/Mus_musculus/UCSC/mm9/Sequence/Bowtie2Index/  -o IVF.meth IVF.mr.dremove
+methcounts -c  /nethome/Shared/annotation/iGenome/Mus_musculus/UCSC/mm9/Sequence/Bowtie2Index/  -o SCNT_kdm4d.meth  SCNT_kdm4d.mr.dremove 
+methcounts -c  /nethome/Shared/annotation/iGenome/Mus_musculus/UCSC/mm9/Sequence/Bowtie2Index/  -o SCNT.meth  SCNT.mr.dremove&lt;/p&gt;
+
+&lt;p&gt;#假如只需要CpG信息，不用grep，直接在methcounts 里加参数-n即可，此处用对获得的所有C信息进行grep获得CpG信息&lt;/p&gt;
+&lt;h3 id=&quot;grep-the-cpg-sites&quot;&gt;grep the CpG sites&lt;/h3&gt;
+&lt;p&gt;grep CpG SCNT.meth &amp;gt; SCNT_CpG.meth
+grep CpG IVF.meth &amp;gt;  IVF_CpG.meth
+grep CpG SCNT_kdm4d.meth &amp;gt; SCNT_kdm4d_CpG.meth&lt;/p&gt;
+
+&lt;h3 id=&quot;destranded-the-data&quot;&gt;destranded the data&lt;/h3&gt;
+&lt;p&gt;symmetric-cpgs -o SCNT_CpG.destranded.meth SCNT_CpG.meth
+symmetric-cpgs -o IVF_CpG.destranded.meth IVF_CpG.meth
+symmetric-cpgs -o SCNT_kdm4d_CpG.destranded.meth SCNT_kdm4d_CpG.meth&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; 3. extract 5x CpG for UCSC visualization
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h2 id=&quot;extract-5x-cpg-sites-in-scnt-and-ivf-blastocysts-0-based-destranded-sorted&quot;&gt;extract 5x CpG sites in SCNT and IVF blastocysts (0-based, destranded, sorted)&lt;/h2&gt;
+
+&lt;p&gt;##compare with old data&lt;/p&gt;
+&lt;h1 id=&quot;20605234-ivf_cpgmeth&quot;&gt;20605234	IVF_CpG.meth&lt;/h1&gt;
+&lt;h1 id=&quot;20670958-scnt_cpgmeth&quot;&gt;20670958	SCNT_CpG.meth&lt;/h1&gt;
+
+&lt;h1 id=&quot;20605234-4_methpipecpg_ivf_150203meth&quot;&gt;20605234 4_methPipe/CpG_IVF_150203.meth&lt;/h1&gt;
+&lt;h1 id=&quot;20670958-4_methpipecpg_scnt_150203meth&quot;&gt;20670958 4_methPipe/CpG_SCNT_150203.meth&lt;/h1&gt;
+
+&lt;h1 id=&quot;20524342-4_methpipeivf_cpgdestrandedmeth&quot;&gt;20524342 4_methPipe/IVF_CpG.destranded.meth&lt;/h1&gt;
+&lt;h1 id=&quot;20778281-4_methpipescnt_cpgdestrandedmeth&quot;&gt;20778281 4_methPipe/SCNT_CpG.destranded.meth&lt;/h1&gt;
+&lt;h1 id=&quot;20595095-4_methpipescnt_kdm4d_cpgdestrandedmeth&quot;&gt;20595095 4_methPipe/SCNT_kdm4d_CpG.destranded.meth&lt;/h1&gt;
+
+&lt;h2 id=&quot;old-data-format&quot;&gt;old data format:&lt;/h2&gt;
+&lt;h2 id=&quot;chr--start0----cpg--ratio--coverage&quot;&gt;chr 	start(0) 	+ 	CpG 	ratio 	coverage&lt;/h2&gt;
+&lt;h2 id=&quot;convert-to-coverage-and-methylation-levels更通用&quot;&gt;convert to coverage and methylation levels(更通用)&lt;/h2&gt;
+&lt;h1 id=&quot;chr--start0-end0-ratio100--meth--unmeth&quot;&gt;chr 	start(0)	end(0)	ratio*100 	meth 	unmeth&lt;/h1&gt;
+&lt;p&gt;awk ‘BEGIN{FS=OFS=”\t”; OFMT=”%.2f”} ($6&amp;gt;=5){print $1,$2,$2,$5&lt;em&gt;100,$6&lt;/em&gt;$5,$6-$6&lt;em&gt;$5;}’ CpG_IVF_150203.meth &amp;gt; ./destranded_5x/IVF_15Feb.bed
+awk ‘BEGIN{FS=OFS=”\t”; OFMT=”%.2f”} ($6&amp;gt;=5){print $1,$2,$2,$5&lt;/em&gt;100,$6&lt;em&gt;$5,$6-$6&lt;/em&gt;$5;}’ CpG_SCNT_150203.meth &amp;gt; ./destranded_5x/SCNT_kdm4d_15Feb.bed&lt;/p&gt;
+
+&lt;p&gt;awk ‘BEGIN{FS=OFS=”\t”; OFMT=”%.2f”} ($6&amp;gt;=5){print $1,$2,$2,$5&lt;em&gt;100,$6&lt;/em&gt;$5,$6-$6&lt;em&gt;$5;}’ SCNT_kdm4d_CpG.destranded.meth &amp;gt; ./destranded_5x/SCNT_kdm4d_CpG.bed
+awk ‘BEGIN{FS=OFS=”\t”; OFMT=”%.2f”} ($6&amp;gt;=5){print $1,$2,$2,$5&lt;/em&gt;100,$6&lt;em&gt;$5,$6-$6&lt;/em&gt;$5;}’ IVF_CpG.destranded.meth &amp;gt; ./destranded_5x/IVF_CpG.bed
+awk ‘BEGIN{FS=OFS=”\t”; OFMT=”%.2f”} ($6&amp;gt;=5){print $1,$2,$2,$5&lt;em&gt;100,$6&lt;/em&gt;$5,$6-$6*$5;}’ SCNT_CpG.destranded.meth &amp;gt; ./destranded_5x/SCNT_CpG.bed&lt;/p&gt;
+
+&lt;p&gt;## in 4_methPipe/destranded_5x/
+  12563096 IVF_15Feb.bed&lt;br /&gt;
+  12718231 IVF_CpG.bed
+  12355989 SCNT_kdm4d_15Feb.bed
+  12508668 SCNT_kdm4d_CpG.bed
+  13434019 SCNT_CpG.bed&lt;/p&gt;
+
+&lt;h2 id=&quot;make-bigwig-files-methylation-and-coverage&quot;&gt;make bigWig files (methylation and coverage)&lt;/h2&gt;
+&lt;p&gt;mkdir 5_visual/bdg 5_visual/wig&lt;/p&gt;
+
+&lt;p&gt;cd ./4_methPipe/destranded_5x&lt;/p&gt;
+
+&lt;p&gt;for file in &lt;em&gt;.bed; do
+	newfile=${file%%.&lt;/em&gt;}
+	echo $newfile
+awk ‘BEGIN{FS= “\t”; OFS=”\t”}; {if($5+$6 &amp;gt;= 5) {print $1, $2-1, $2, $4}}’ ${file} &amp;gt; ../../5_visual/bdg/${newfile}_mp_5x.meth.bdg
+awk ‘BEGIN{FS= “\t”; OFS=”\t”}; {if($5+$6 &amp;gt;= 5) {print $1, $2-1, $2, $5+$6}}’ ${file} &amp;gt; ../../5_visual/bdg/${newfile}_mp_5x.cov.bdg
+wigToBigWig ../../5_visual/bdg/${newfile}_mp_5x.meth.bdg ~/trackTool/mm9.chrom.sizes ../../5_visual/wig/${newfile}_mp_5x.meth.bw
+wigToBigWig ../../5_visual/bdg/${newfile}_mp_5x.cov.bdg ~/trackTool/mm9.chrom.sizes ../../5_visual/wig/${newfile}_mp_5x.cov.bw
+done&lt;/p&gt;
+
+&lt;p&gt;2&amp;gt;&amp;amp;1 | tee ../5_rp_Bismark_bedgraph/rp_extractor_SCNT.txt
+然后就上传吧&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; 4. 根据获得的meth文件，汇总甲基化信息 + HMR detection
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h3 id=&quot;generate-statistics--useful-for-comparison&quot;&gt;Generate statistics : useful for comparison&lt;/h3&gt;
+&lt;p&gt;levels -o 4_methPipe/stats/stat_oldIVF_CpG.txt 4_methPipe/CpG_IVF_150203.meth
+levels -o 4_methPipe/stats/stat_oldSCNT_kdm4d_CpG.txt 4_methPipe/CpG_SCNT_150203.meth
+levels -o 4_methPipe/stats/stat_SCNT_kdm4d_CpG.txt 4_methPipe/SCNT_kdm4d_CpG.meth
+levels -o 4_methPipe/stats/stat_IVF_CpG.txt 4_methPipe/IVF_CpG.meth
+levels -o 4_methPipe/stats/stat_SCNT_CpG.txt 4_methPipe/SCNT_CpG.meth&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+报告内容和官方说明：
+&amp;gt;SITES: 1000000
+SITES COVERED: 566157
+FRACTION MUTATED: 0.001257
+FRACTION COVERED: 0.566157
+MAX COVERAGE: 439
+SYMMETRICAL CpG COVERAGE: 11.3228
+SYMMETRICAL CpG COVERAGE (WHEN &amp;gt; 0): 15.3289
+SYMMETRICAL CpG COVERAGE (minus mutations): 11.2842
+SYMMETRICAL CpG COVERAGE (WHEN &amp;gt; 0) (minus mutations): 15.2768
+MEAN COVERAGE: 3.31458
+MEAN COVERAGE (WHEN &amp;gt; 0): 5.85452
+METHYLATION LEVELS (CpG CONTEXT):
+mean_meth 0.700166
+w_mean_meth 0.667227
+frac_meth 0.766211
+METHYLATION LEVELS (CHH CONTEXT):
+mean_meth 0.0275823
+w_mean_meth 0.0184198
+frac_meth 0.0146346
+METHYLATION LEVELS (CXG CONTEXT):
+mean_meth 0.0217537
+w_mean_meth 0.0170535
+frac_meth 0.00843068
+METHYLATION LEVELS (CCG CONTEXT):
+mean_meth 0.0211243
+w_mean_meth 0.0187259
+frac_meth 0.00630109
+total fraction of cytosines covered, the fraction of cytosines that have mutated away from the reference,  coverage statistics for both CpGs and all cytosines.  
+For CpG sites, coverage number reflects taking advantage of their symmetric nature and merging the coverage on both strands. 
+For CpG coverage minus mutations, we remove the reads from CpG sites deemed to be mutated away from the reference. 
+
+---
+
+HMR
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h3 id=&quot;hmrs-hypo-methylated-regions&quot;&gt;HMRs Hypo methylated regions&lt;/h3&gt;
+&lt;p&gt;hmr -partial -o result/methpipe/hmr/CpG_IVF_150203.hmr 4_methPipe/CpG_IVF_150203.meth
+hmr -partial -o result/methpipe/hmr/CpG_SCNT_150203.hmr 4_methPipe/CpG_SCNT_150203.meth&lt;/p&gt;
+
+&lt;p&gt;hmr -partial -o result/methpipe/hmr/SCNT_kdm4d_CpG.hmr 4_methPipe/SCNT_kdm4d_CpG.meth
+hmr -partial -o result/methpipe/hmr/IVF_CpG.hmr 4_methPipe/IVF_CpG.meth
+hmr -partial -o result/methpipe/hmr/SCNT_CpG.hmr 4_methPipe/SCNT_CpG.meth&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;_It also computes average methylation in three different ways, described in Schultz et al. (2012). This program should provide flexibility to compare methylation data with publications that calculate averages different ways and illustrate the variability of the statistic depending on how it is calculated._
+ The hmr program uses a hidden Markov model (HMM) approach using a Beta-Binomial distribution to describe methylation levels at individual sites while accounting for the number of reads informing those levels. hmr automatically learns the average methylation levels inside and outside the HMRs, and also the average size of those HMRs(自动计算HMR内外的平均甲基化水平和HMR的平均长度)
+Requirements on the data:
+We typically like to have about 10x coverage to feel very confident in the HMRs called in mammalian genomes, but the method will work with lower coverage. __The difference is that the boundaries of HMRs will be less accurate at lower coverage, but overall most of the HMRs will probably be in the right places if you have coverage of 5-8x (depending on the methylome).__ Boundaries of these regions are totally ignored by analysis methods based on smoothing or using fixed-width windows.
+
+
+
+然后顺便说明训练HMM参数的好处在于甲基化组大部分出现异常的甲基化水平时，基于模型训练得到的HMR更有可比性。可以根据样本的甲基化水平的平均值和方差来设定，方差也受coverage的影响。
+-p 训练参数输出
+-P 读入训练的参数
+疑问：一个文件对应一个训练参数？那么训练参数可以适用一个实验里的所有meth结果吗？
+
+The output will be in BED format, and the indicated strand (always positive) is not informative. The name column in the output will just assign a unique name to each HMR, and the score column indicates how many CpGs exist inside the HMR. Each time the hmr is run it requires parameters for the HMM to use in identifying the HMRs. __We usually train these HMM parameters on the data being analyzed, since the parameters depend on the average methylation level and variance of methylation level__; the variance observed can also depend on the coverage. However, in some cases it might be desirable to use the parameters trained on one data set to find HMRs in another. __The option -p indicates a file in which the trained parameters are written, and the argument -P indicates a file containing parameters (as produced with the -p option on a previous run) to use__: 
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;$ hmr -p Human_ESC.hmr.params -o Human_ESC.hmr Human_ESC.meth
+$ hmr -P Human_ESC.hmr.params -o Human_NHFF_ESC_params.hmr Human_NHFF.meth&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+In the above example, the parameters were trained on the ESC methylome, stored in the file Human ESC.hmr.params and then used to find HMRs in the NHFF methylome.  This is useful if a particular methylome seems to have very strange methylation levels through much of the genome, and the HMRs would be more comparable with those from some other methylome if the model were not trained on that strange methylome. 
+
+另有PMR和PMD:
+__hmr -partial__
+&amp;gt; Partially methylated regions (PMRs):
+The hmr program also has the option of directly identifying partially methylated regions (PMRs), not to be confused with partially methylated domains (see below). __These are contiguous intervals where the methylation level at individual sites is close to 0.5.__ This should also not be confused with regions that
+have allele-specific methylation (ASM) or regions with alternating high and low methylation levels at nearby sites. Regions with ASM are almost always among the PMRs, but most PMRs are not regions of ASM. The hmr program is run with the same input but a different optional argument to find PMRs: 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;$ hmr -partial -o Human_ESC.pmr Human_ESC.meth&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+__Partial methylation in cancer samples (AKA PMDs)__
+Huge genomic blocks with abnormal hypomethylation have been extensively observed in human cancer methylomes and more recently in extraembryonic tissues like the placenta. These domains are characterized by enrichment in intergenic regions or Lamina associated domains (LAD), which are usually hypermethylated in normal tissues. Partially methylated domains (PMDs) are not homogeneously hypomethylated as in the case of HMRs, and contain focal hypermethylation at specific sites. PMDs are large domains with sizes ranging from 10 kb to over 1 Mb. Hidden Markov Models can also identify these larger domains. The program pmd is provided for their identification, and can be run as follows:
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;$ pmd -o Human_ESC.pmd Human_ESC.meth&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+
+
+ - 5. Differential Methylation
+ DMR detection 
+两种算法：
+1. 适用于DMR regions between a pair or two samll groups of methylomes (methdiff &amp;amp; dmr)
+2. beta-binomial regression: 适用于样本多的数据集？（radmeth）
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h3 id=&quot;dmrs&quot;&gt;DMRs&lt;/h3&gt;
+&lt;p&gt;methdiff -o result/dmr/CpG_IVF_SCNT_150202.methdiff methpipe/CpG_IVF_150203.meth methpipe/CpG_SCNT_150203.meth&lt;/p&gt;
+
+&lt;p&gt;dmr result/dmr/CpG_IVF_SCNT_150202.methdiff result/hmr/CpG_IVF_150203.hmr methpipe/CpG_SCNT_150203.hmr methpipe/DMR_IVF_high_150203.dmr methpipe/DMR_SCNT_high_150203.dmr&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+
+
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h3 id=&quot;computing-the-average-methylation-level-in-a-genomic-interval&quot;&gt;Computing the average methylation level in a genomic interval&lt;/h3&gt;
+&lt;p&gt;LC_ALL=C sort -k 1,1 -k 3,3n -k 2,2n -k 6,6 -o methpipe/CpG_IVF_150203.meth.sorted methpipe/CpG_IVF_150203.meth
+LC_ALL=C sort -k 1,1 -k 3,3n -k 2,2n -k 6,6 -o methpipe/CpG_SCNT_150203.meth.sorted methpipe/CpG_SCNT_150203.meth&lt;/p&gt;
+
+&lt;p&gt;roimethstat -P -o methpipe/DMR_IVF_high_IVFmethlevel_150203.txt methpipe/DMR_IVF_high_150203.dmr methpipe/CpG_IVF_150203.meth.sorted
+roimethstat -P -o methpipe/DMR_IVF_high_SCNTmethlevel_150203.txt methpipe/DMR_IVF_high_150203.dmr methpipe/CpG_SCNT_150203.meth.sorted
+roimethstat -P -o methpipe/DMR_SCNT_high_IVFmethlevel_150203.txt methpipe/DMR_SCNT_high_150203.dmr methpipe/CpG_IVF_150203.meth.sorted
+roimethstat -P -o methpipe/DMR_SCNT_high_SCNTmethlevel_150203.txt methpipe/DMR_SCNT_high_150203.dmr methpipe/CpG_SCNT_150203.meth.sorted&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+
+### 3.2 bismark 
+用法简介
+https://rawgit.com/FelixKrueger/Bismark/master/Docs/Bismark_User_Guide.html#bismark-alignment-and-methylation-call-report
+
+项目实例：~/Project_scnt/WGBS_new
+description: 送去公司测序的样本reads后部分太长质量差需要先经过cut， 再用trimgalore优化剪切reads以达到较好的mapping效果
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;#trim_galore  切除read2 的3’end质量差的base:–three_prime_clip_R1 100 从3’end开始切100bp
+trim_galore SCNT1_2.fq -o SE/0_trim –fastqc -o 1_fastqc/se_trim -q 30 –three_prime_clip_R1 100&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+read2 不使用PE而用SE时，bismark设置参数 --non_directional， 否则mapping不了
+&amp;gt;The sequencing library was constructed in a non strand-specific manner, alignments to all four bisulfite strands will be reported. 
+(The current Illumina protocol for BS-Seq is directional, in which case the strands complementary to the original strands are merely theoretical and should not exist in reality. Specifying directional alignments (which is the default) will only run 2 alignment threads to 
+the original top (OT) or bottom (OB) strands in parallel and report these alignments. This is the recommended option for strand-specific libraries). Default: OFF
+来源： https://github.com/FelixKrueger/Bismark/tree/master/Docs
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;bismark –bowtie2 -N 1 -p 4 –non_directional /nethome/Shared/annotation/genomes/mm9/Bismark_bowtie2index SE/0_trim/SCNT1_2_trimmed.fq -o ./2_bismark/se_trim
+```&lt;/p&gt;
+
+&lt;p&gt;Bismark methylation extractor
+Bismark comes with a supplementary bismark_methylation_extractor script which operates on Bismark result files and extracts the methylation call for every single C analysed.
+The position of every single C will be written out to a new output file, depending on its context (CpG, CHG or CHH), whereby methylated Cs will be labelled as forward reads (+), non-methylated Cs as reverse reads (-). The resulting files can be imported into a genome viewer such as SeqMonk (using the generic text import filter) and the analysis of methylation data can commence.&lt;/p&gt;
+
+&lt;p&gt;Alternatively, the output of the methylation extractor can be transformed into a bedGraph and coverage file using the option –bedGraph (see also –counts). This step can also be accomplished from the methylation extractor output using the stand-alone script bismark2bedGraph (also part of the Bismark package available for download at bioinformatics.babraham.ac.uk). 
+The coverage file can also be imported into SeqMonk directly using Import Data &amp;gt; Bismark (cov). Optionally, the bedGraph counts output can be used to generate a genome-wide cytosine report which reports the number on every single CpG (optionally every single cytosine) in the genome, irrespective of whether it was covered by any reads or not. As this type of report is informative for cytosines on both strands the output may be fairly large (~46mn CpG positions or &amp;gt;1.2bn total cytosine positions in the human genome…). The bedGraph to genome-wide cytosine report conversion can also be run individually using the stand- alone module coverage2cytosine (also part of the Bismark package available for download at bioinformatics.babraham.ac.uk).&lt;/p&gt;
+
+&lt;p&gt;bismark report
+https://github.com/FelixKrueger/Bismark/blob/master/bismark2report&lt;/p&gt;
+
+&lt;p&gt;#意义
+获得了unbiased methylome信息，该怎么用呢？首先当然是看一些综述和算法面讲的，下面为一些摘录和理解&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0081148&quot;&gt;methpipe&lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;These experiments provide information for numerous regions of dynamic methylation, believed to related with promoters, enhancers, insulators and more broadly regions dense in transcription factor binding sites [11]. Comparative analysis of the methylomes of different cell types and conditions reveals functional epigenetic domains with implications in cell differentiation and disease onset [10], [12], [13].
+The &lt;strong&gt;analyses and interpretation&lt;/strong&gt; of bisulfite sequencing data are usually performed in a multi-stage, multi-resolution manner. Extensive efforts have been devoted to mapping reads and &lt;strong&gt;estimating methylation levels at individual cytosine sites&lt;/strong&gt; [14], [15]. Meanwhile, growing interest is shifting towards biologically meaningful higher-level methylation features, such as hypo-methylated regions (HMRs; [3], [9]), large-scale partially methylated domains (PMDs; [7], [13]), and allele-specific methylated regions (AMRs; [16], [17]). Existing methods to identify these are usually project specific, with few general tools available for down-stream analysis tasks.
+&lt;em&gt;Methylation 的计算&lt;/em&gt;
+对methylation level很好的解释：细胞群中胞嘧啶分子甲基化的百分比
+Although individual methyl groups can either be present or absent on a cytosine, current WGBS data is not from single cells, and we therefore refer to a methylation “level” for each cytosine, interpreted as the fraction of molecules in the underlying cell population that have the methyl mark on the corresponding cytosine.
+测序原理判定一个C是否甲基化，所以在reads上一个位点的甲基化水平可以通过甲基化的C数目除以所有C的数量来计算
+Since bisulfite sequencing gives a readout for either the presence or absence of a methyl group in each read, we get an unbiased estimate for &lt;strong&gt;the methylation level from the ratio of methylated reads to all reads covering a given site.&lt;/strong&gt; The estimated cytosine methylation level, along with the number of sequenced reads supporting that estimate, is computed for each methylome, along with confidence intervals as described by Hodges et al. [21].&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;em&gt;HMR: hypo methylated regions&lt;/em&gt;
+These hypo-methylated regions (HMRs) have been associated with CpG islands, promoter regions, and more generally enhancers and insulators [11]. We developed a highly accurate method for identifying HMRs using a stochastic segmentation model that accounts for both changes in methylation levels and variance in read coverage along the genome [9]. An individual HMR could represent an interval of the genome that has been protected from methylation, or has been opened up by the activity of specific DNA binding proteins [3]. Regardless of the causes, these intervals are strongly associated with regulation of gene expression, and fluctuations in their boundaries between methylomes likely indicate context-specific regulatory sites [10]. In healthy somatic cell methylomes, the organization of methylation features exhibit strikingly precise boundaries. The precision with which HMRs can be identified is what separates this kind of epigenetic information from others, such as H3K4me marks or DNase hypersensitivity sites, that usually lack precision in boundaries.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Hyper-methylated regions&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;In contrast to mammals, the Arabidopsis genome is devoid of methylation by default, with increased methylation levels localized to specific regions, such as intragenic regions and retrotranposons [23]. A similar pattern, referred to as “mosaic methylation” [24], has been documented in invertebrates. During early development of mammalian germ cells, most of the genome is unmethylated, with certain regions retaining methylation despite global epigenetic reprogramming [25]. In each of these cases, the key features of interest are hyper-methylated regions (HyperMR: e.g. Figure 1B), rather than hypo-methylated regions (HMR). Comparative analysis of multiple Arabidopsis methylomes suggests that Arabidopsis HyperMRs, especially those located in intragenic regions, have specific locations that are consistently unmethylated across different ecoytpes and cell types (unpublished studies). These HyperMRs change between different samples in a discrete manner, suggesting that discrete HyperMRs represent a fundamental regulatory and/or functional unit of methylation in plants.&lt;/p&gt;
+
+&lt;p&gt;Partially methylated domains.&lt;/p&gt;
+
+&lt;p&gt;One important discovery from early genome-wide investigation of the methylomes of immortalized cell lines (e.g. IMR90) was the presence of large partially methylated domains (PMD), that spans hundreds of kilobases [7]. Hansen et al. [12] and Berman et al. [13] also observed such PMDs characteristic of cancer cell lines and primary cancers (e.g. Figure 1C), and PMDs has recently been reported in placenta methylomes as well [26]. PMDs have largely conserved locations across samples, and overlap with nuclear lamina associated domains (LAD) and late replicating regions [13], suggesting their involvement in topological organization of chromosomes. To characterize PMDs we employ a hierarchical method that locates PMDs at low resolution followed by further refinement of their boundaries with higher resolution.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Allele-specific methylation&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;In diploid organisms, the two alleles may have different methylation levels in certain regions (e.g. Figure 1D). Those allele-specific methylated regions (AMRs) can be either parent-of-origin dependent, or associated with allele-specific sequence variation [16]. The former type of allele-specific methylation is related to gene imprinting [27]. We recently developed a novel computational method to identify AMRs using WGBS data without using genotype to separate reads from different alleles [17]. This method allows a comprehensive investigation of allele-specific methylation on a genome-wide scale. By applying this method to public methylomes in MethBase, we have enabled the study of tissue-specific and organism-specific allele-specific methylation.&lt;/p&gt;
+
+&lt;p&gt;发现问题：Visual exploration of methylation patterns at specific genes and loci
+Visual examination of methylation patterns for specific genes and genomic regions is a valuable research tool, and can be applied to differentially expressed genes, evolutionarily conserved elements, or other regions of interest.&lt;/p&gt;
+
+&lt;p&gt;启发性例子：&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;Figure 3 shows a genome browser view of the methylation levels and identified HMRs for a subset of human WGBS methylomes in MethBase (disease or mutant samples excluded). The 20 kb genomic interval covers the 5′ end of the DNMT3B gene, a de novo methyltransferase whose absense in mice is embryonic lethal due to developmental defects [30]. Displayed below the partial DNMT3B gene model are transcription factor binding sites (TFBS) identified by the ENCODE project [31]. Among the 26 methylomes displayed below, 9 are from ESCs and iPSCs, and 6 from blood cells, with the rest of diverse cellular origin. In each methylome, an HMR overlaps the transcription start site (TSS) of DNMT3B, 
+&lt;strong&gt;but the size of these HMRs and the positioning of their boundaries exhibit interesting variation.&lt;/strong&gt;
+ In the ESC and iPSC methylomes, as well as 5 of the blood methylomes, this HMR extends downstream of the DNMT3B TSS by roughly 3 kb. In the remaining methylomes the downstream boundary is roughly 1.2 kb downstream of the TSS. The extended portion of this HMR clearly overlaps a cluster of TFBS, suggesting a &lt;strong&gt;regulatory module functioning in iPSC, ESC and blood cells.&lt;/strong&gt; At the other end of this &lt;strong&gt;promoter HMR&lt;/strong&gt; the boundaries seem to form discrete categories, suggesting several &lt;strong&gt;distinct regulatory modules with precise boundaries&lt;/strong&gt;. Another HMR appears roughly 10 kb upstream of the DNMT3B TSS exclusively in the iPSC and ESC methylomes. 
+&lt;strong&gt;可以协同其他genome-wide数据用于发现特异调控区域结构&lt;/strong&gt;
+Such these observational features in conjunction with other forms of genome-wide data provide a starting point for dissecting the architecture of particular regulatory regions.&lt;/p&gt;
+&lt;/blockquote&gt;</content><author><name>Hwoihann Wong</name></author><category term="bismark" /><category term="methpipe" /><category term="WGBS" /><summary type="html">年初接触了WGBS数据分析，粗浅总结一下，有待修补:full_moon_with_face:。WGBS数据是精确到每个位点的深度测序，数据量因此也很大，动辄就上百个G，但是分析起来却很有意思。有了各种genomic features就可以探索很多事。</summary></entry><entry><title type="html">linux环境变量学习整理</title><link href="http://0.0.0.0:4000/codings/2015/12/17/Linux-environment-summary.html" rel="alternate" type="text/html" title="linux环境变量学习整理" /><published>2015-12-17T00:00:00+08:00</published><updated>2015-12-17T00:00:00+08:00</updated><id>http://0.0.0.0:4000/codings/2015/12/17/Linux-environment-summary</id><content type="html" xml:base="http://0.0.0.0:4000/codings/2015/12/17/Linux-environment-summary.html">&lt;p&gt;今天上午玩服务器，把师姐的环境变量弄崩了，折腾了一下，不知怎的又恢复了，做一下记录供将来参考。查资料发现是提示符（prompt）出错了&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;p&gt;先留一份备忘&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# .bashrc
+
+# Source global definitions
+if [ -f /etc/bashrc ]; then
+	. /etc/bashrc
+fi
+
+# User specific aliases and functions
+
+export PATH=$PATH:/pub7/program/R-3.1.2/lib64/R/bin
+export PATH=$PATH:./
+export PATH=$PATH:/pub7/wenyh2013/wanghh/programs/bowtie2-2.2.3
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;##环境变量的意义
+环境变量，即全局变量（/etc/bashrc），相对于局部变量(~/.bashrc)，涉及范围更广。
+自己的理解是方便调用。&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;什么是环境变量呢？简要的说，就是指定一个目录，运行软件的时候，相关的程序将会按照该目录寻找相关文件。设置变量对于一般人最实用的功能就是：不用拷贝某些dll文件到系统目录中了，而path这一系统变量就是系统搜索dll文件的一系列路径； 
+在linux系统下，如果你下载并安装了应用程序，很有可能在键入它的名称时出现“command not found”的提示内容。如果每次都到安装目标文件夹内，找到可执行文件来进行操作就太繁琐了。这涉及到环境变量 PATH 的 设置 问题，而 PATH 的 设置 也 是在linux下定制环境变量的一个组成部分。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Shell变量分为本地变量和环境变量。&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;本地变量 －－ 在用户现有运行的脚本中使用
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;1) 定义本地变量 格式： variable-name=value 
+例子：[root@jike1 /root]# LOCALTEST=&quot;test&quot; 
+[root@jike1 /root]# echo \$LOCALTEST test 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+    &lt;p&gt;2) 显示本地变量 格式： set 
+  例子：[root@chinaitlab root]# set&lt;/p&gt;
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;3) 清除本地变量 格式：unset variable-name 
+例如：[root@jike1 /root]# unset LOCALTEST 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+    &lt;p&gt;此时再执行echo $LOCALTEST将看不到变量LOCALTEST的输出。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;环境变量 －－ 在所有的子进程中使用
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;1) 定义环境变量 格式： export variable-name=value （与本地变量的定义相比，多了一个export关键字） 
+例子：[root@chinaitlab /root]# export DOMAIN=&quot;chinaitlab.com&quot; 
+[root@ chinaitlab shell]# vi testenv.sh 
+\#!/bin/bash 
+echo $DOMAIN 
+[root@chinaitlab shell]# chmod +x testenv.sh 
+[root@chinaitlab shell]# ./testenv.sh 
+chinaitlab.com 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;2) 显示环境变量 格式： env （本地变量的显示使用set，环境变量的显示使用env） 
+例子： [root@chinaitlab test]# env 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;3) 清除环境变量 格式：unset variable-name （用法与本地变量相同，都使用unset） 
+例子： [root@chinaitlab shell]# unset DOMAIN 
+此时再执行./testenv.sh将看不到变量DOMAIN的输出。
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;##配置方法&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;如想将一个路径加入到 $PATH 中，可以像下面这样做&lt;/p&gt;
+  &lt;ol&gt;
+    &lt;li&gt;控制台中,不赞成使用这种方法，因为换个shell，你的设置就无效了，因此这种方法仅仅是临时使用，以后要使用的时候又要重新设置，比较麻烦。 这个只针对特定的shell 
+$PATH=”$PATH:/my_new_path” （关闭shell，会还原PATH）&lt;/li&gt;
+    &lt;li&gt;修改/etc/profile文件,如果你的计算机仅仅作为开发使用时推荐使用这种方法，因为所有用户的shell都有权使用这些环境变量，可能会给系统带来安全性问题。 这里是针对所有的用户的,所有的shell; 
+vi /etc/profile 
+在里面加入:
+  export PATH=”$PATH:/my_new_path”&lt;/li&gt;
+    &lt;li&gt;修改.bashrc文件,这种方法更为安全，它可以把使用这些环境变量的权限控制到用户级别,这里是针对某一个特定的用户，如果你需要给某个用户权限使用这些环境变量，你只需要修改其个人用户主目录下的.bashrc文件就可以了。
+ vi /root/.bashrc 
+在里面加入： 
+export PATH=”$PATH:/new_path” 
+后两种方法一般需要重新注销系统才能生效，最后可以通过echo命令测试一下： 
+ echo $PATH 
+输出已经是新路径了。&lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;##相关设置文件&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;用户登录后加载profile和bashrc的流程如下: 
+1)/etc/profile—–&amp;gt;/etc/profile.d/&lt;em&gt;.sh 
+2)$HOME/.bash_profile—&amp;gt;$HOME/.bashrc—&amp;gt;/etc/bashrc 
+说明: 
+bash首先执行/etc/profile脚本,/etc/profile脚本先依次执行/etc/profile.d/&lt;/em&gt;.sh 
+随后bash会执行用户主目录下的.bash_profile脚本,.bash_profile脚本会执行用户主目录下的.bashrc脚本, 
+而.bashrc脚本会执行/etc/bashrc脚本 
+至此,所有的环境变量和初始化设定都已经加载完成. 
+bash随后调用terminfo和inputrc，完成终端属性和键盘映射的设定. 
+其中PATH这个变量特殊说明一下: 
+如果是超级用户登录,在没有执行/etc/profile之前,PATH已经设定了下面的路径: 
+/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin 
+如果是普通用户,PATH在/etc/profile执行之前设定了以下的路径: 
+/usr/local/bin:/bin:/usr/bin 
+这里要注意的是:在用户切换并加载变量,例如su -,这时，如果用户自己切换自己,比如root用户再用su - root切换的话,加载的PATH和上面的不一样. 
+准确的说，是不总是一样.所以，在/etc/profile脚本中，做了如下的配置: 
+if [ &lt;code class=&quot;highlighter-rouge&quot;&gt;id -u&lt;/code&gt; = 0 ]; then 
+pathmunge /sbin 
+pathmunge /usr/sbin 
+pathmunge /usr/local/sbin 
+fi 
+如果是超级用户登录,在/etc/profile.d/krb5.sh脚本中,在PATH变量搜索路径的最前面增加/usr/kerberos/sbin:/usr/kerberos/bin 
+如果是普通用户登录,在/etc/profile.d/krb5.sh脚本中,在PATH变量搜索路径的最前面增加/usr/kerberos/bin 
+在/etc/profile脚本中,会在PATH变量的最后增加/usr/X11R6/bin目录 
+在$HOME/.bash_profile中,会在PATH变量的最后增加$HOME/bin目录 
+以root用户为例,最终的PATH会是这样(没有其它自定义的基础上) 
+/usr/kerberos/sbin:/usr/kerberos/bin:/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/X11R6/bin:/root/bin 
+以alice用户(普通用户)为例 
+/usr/kerberos/bin:/usr/bin:/bin:/usr/X11R6/bin:/home/alice/bin
+~/.bash_profile  用户登录时被读取，其中包含的命令被执行
+~/.bashrc  启动新的shell时被读取，并执行
+~/.bash_logout  shell 登录退出时被读取&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Linux 中环境变量的文件&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;当你进入系统的时候，linux就会为你读入系统的环境变量，这些环境变量存放在什么地方，那就是环境变量的文件中。Linux 中有很多记载环境变量的文件，它们被系统读入是按照一定的顺序的。
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;1./etc/profile&lt;/p&gt;
+
+&lt;p&gt;此文件为系统的环境变量，它为每个用户设置环境信息，当用户第一次登录时，该文件被执行。并从/etc/profile.d 目录的配置文件中搜集shell 的设置。&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;这个文件，是任何用户登陆操作系统以后都会读取的文件（如果用户的shell 是csh 、tcsh 、zsh ，则不会读取此文件），用于获取系统的环境变量，只在登陆的时候读取一次。
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;2./etc/bashrc&lt;/p&gt;
+
+&lt;p&gt;在执行完/etc/profile 内容之后，如果用户的SHELL 运行的是bash ，那么接着就会执行此文件。另外，当每次一个新的bash shell 被打开时, 该文件被读取。&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;每个使用bash 的用户在登陆以后执行完/etc/profile 中内容以后都会执行此文件，在新开一个bash 的时候也会执行此文件。因此，如果你想让每个使用bash 的用户每新开一个bash 和每次登陆都执行某些操作，或者给他们定义一些新的环境变量，就可以在这个里面设置。
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;3.~/.bash_profile ：&lt;/p&gt;
+
+&lt;p&gt;每个用户都可使用该文件输入专用于自己使用的shell 信息。当用户登录时，该文件仅仅执行一次，默认情况下，它设置一些环境变量，执行用户的.bashrc 文件。&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;单个用户此文件的修改只会影响到他以后的每一次登陆系统。因此，可以在这里设置单个用户的特殊的环境变量或者特殊的操作，那么它在每次登陆的时候都会去获取这些新的环境变量或者做某些特殊的操作，但是仅仅在登陆时。
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;4.~/.bashrc ：&lt;/p&gt;
+
+&lt;p&gt;该文件包含专用于单个人的bash shell 的bash 信息，当登录时以及每次打开一个新的shell 时, 该该文件被读取。&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;单个用户此文件的修改会影响到他以后的每一次登陆系统和每一次新开一个bash 。因此，可以在这里设置单个用户的特殊的环境变量或者特殊的操作，那么每次它新登陆系统或者新开一个bash ，都会去获取相应的特殊的环境变量和特殊操作。
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;5.~/.bash_logout ：
+当每次退出系统( 退出bash shell) 时, 执行该文件。&lt;/p&gt;
+
+&lt;p&gt;命令: env 和printenv
+用于打印所有的环境 变量&lt;/p&gt;
+
+&lt;p&gt;set&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; 用于显示与设置当前本地 变量。单独一个set 就显示了当前环境的所有的变量，它肯定包括环境变量和一些非环境变量
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;unset&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; 用于清除变量。不管这个变量是环境变量还是本地变量，它都可以清除。
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;– 下面是清除本地变量&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;[oracle@devdb1 oracle]$ set|grep myname
+myname=ilonng
+[oracle@devdb1 oracle]$ unset myname
+[oracle@devdb1 oracle]$ set|grep myname
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;– 下面是清除环境变量&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;[oracle@devdb1 oracle]$ env|grep myname
+myname=ilonng
+[oracle@devdb1 oracle]$ unset myname
+[oracle@devdb1 oracle]$ env|grep myname
+export
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;用于把变量变成当前shell 和其子shell 的环境变量，存活期是当前的shell 及其子shell，因此重新登陆以后，它所设定的环境变量就消失了。
+当直接执行一个脚本的时候，其实是在一个子shell 环境运行的，即开启了一个子shell 来执行这个脚本，脚本执行完后该子shell 自动退出。
+有没有办法在当前shell 中执行一个脚本呢？使用source 命令就可以让脚本在当前shell 中执行。如：&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;[oracle@dbamonitor NBU]$ cat test.sh    -- 查看脚本内容，显示变量内容
+echo $myname
+[oracle@dbamonitor NBU]$ echo $myname -- 变量存在，内容是ilonng
+ilonng
+[oracle@dbamonitor NBU]$ set |grep myname -- 变量是本地变量
+myname=ilonng
+[oracle@dbamonitor NBU]$ env |grep myname -- 变量不是环境变量
+[oracle@dbamonitor NBU]$ sh test.sh -- 直接执行，新开子shell ，非环境变量的本地变量不具备继承性，在子shell 中不可见
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;如何将环境变量永久化？修改上面介绍的那几个环境变量的配置文件, then
+&lt;script type=&quot;math/tex&quot;&gt;source /.bashrc&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;##PROMPTING
+&lt;strong&gt;可以通过 $PS1 变量来设置提示符。&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;参考（http://shunfengwei.blog.163.com/blog/static/17522511720122299241143/）&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;命令echo $PS1”, 将显示当前的设定。其中可用字符的含义在 man bash 的’PROMPTING’部分有说明。
+如何才能完成理想的设置呢？对于健忘的初学者来讲，默认设定有些不友好，因为提示符只显示当前目录的最后一部分。如果你看到象这样的提示符
+      [wsf@localhost bin]$
+能不能叫 shell 自动告诉你当前目录呢？
+可以通过编辑各自home目录下的’.bash_profile’和’.bashrc’来改变设置。
+在 man bash 中的’PROMPTING’部分，对这些参数(parameter)有详细说明。可以加入一些小玩意，如不同格式的当前时间，命令的历史记录号，甚至不同的颜色。
+一种更适当的设定：
+      PS1=”[\u: \w]\$ “
+      这样，提示符就变成：
+      [wsf: /usr/bin]$
+      你可以通过命令 export 来测试不同的设置（比如，export PS1=”\u: \w\$ “）。如果找到了适合的提示符，就将设置放到您的’.bashrc’‘中。这样，每次打开控制台或终端窗口时，都会生效。
+     更详细可以参考http://blog.csdn.net/xiongmc/article/details/7801331&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;RefLinks
+http://www.cnblogs.com/growup/archive/2011/07/02/2096142.html
+http://blog.csdn.net/xifeijian/article/details/13355031&lt;/p&gt;</content><author><name>Hwoihann Wong</name></author><category term="codings" /><category term="Linux" /><category term="Linux-basics" /><category term="Linux-environment" /><summary type="html">今天上午玩服务器，把师姐的环境变量弄崩了，折腾了一下，不知怎的又恢复了，做一下记录供将来参考。查资料发现是提示符（prompt）出错了</summary></entry></feed>
