@@ -1,15 +1,13 @@
 ---
 layout: post
 title: 'R专题：使用R读取&处理GTF格式的文件'
-category: definition 
+category: Analysis 
 tags: ['genome browser','data format']
 excerpt_separator: "<!--more-->"
 last_modified_at: 2018-03-31T12:50:31-15:50
 ---
 
-
 Q: 何快速有效将新拿到的参考基因组在IGV里可视化？
-
 
 <!--more-->
 
