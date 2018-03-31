@@ -2,7 +2,7 @@
 
 layout: post
 title: 'R专题：使用R读取&处理GTF格式的文件'
-category: definition 
+category: Analysis 
 tags: [R专题, 菜鸟团周推]
 excerpt_separator: "<!--more-->"
 last_modified_at: 2018-03-30T19:20:31-23:20
@@ -23,6 +23,7 @@ __Q1：GTF是个啥？__
 __Q2： 为什么要在R里面倒腾GTF？__
 为了生信小白对此类数据格式的快速入门+R的学习！
 
+<!--more-->
 
 ## 学习资料准备
 #### 1. __R包__： refGenome
