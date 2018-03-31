@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 'R专题：使用R读取&处理GTF格式的文件'
+title: 'genome browser(IGV为例) 上文件的准备'
 category: Analysis 
 tags: ['genome browser','data format']
 excerpt_separator: "<!--more-->"
