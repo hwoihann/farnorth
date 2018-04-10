@@ -15,9 +15,9 @@ Q: 何快速有效将新拿到的参考基因组在IGV里可视化？
 1. 序列的FA文件
 wget ftp://ftp.ensemblgenomes.org/pub/fungi/current/gtf/schizosaccharomyces_pombe/Schizosaccharomyces_pombe.ASM294v2.38.gtf
 
-__额外buff__
-列一下index信息，省得在igv里做：`samtools faidx fasta/schsac.pombe.fa `
-顺道提取一下chromsize，方便bw转换：cat fasta/schsac.pombe.fa.fai | cut -f 1,2 > schsac.pombe.chrom.sizes
+ __额外buff__
+ 列一下index信息，省得在igv里做：`samtools faidx fasta/schsac.pombe.fa `
+ 顺道提取一下chromsize，方便bw转换：cat fasta/schsac.pombe.fa.fai | cut -f 1,2 > schsac.pombe.chrom.sizes
 
 2. 将GTF转化成genePred，再提取出refGene.txt （尚未弄明白这个东西的出处）
  - GTF 文件
