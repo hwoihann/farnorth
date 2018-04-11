@@ -15,15 +15,17 @@ Q: 何快速有效地将新拿到的参考基因组在IGV里可视化？
  - 物种：schizosaccharomyces_pombe
  - 必需：FA文件，纯序列信息，分染色体记录
  - 基因信息：refGene.txt 需要对应FA参考基因组版本，通常在一个目录下就能获得，没有的时候需要用gtfToGenePred将gtf信息转换成对应格式。
+"<!--more-->"
 
-FA文件请自行到ftp://ftp.ensemblgenomes.org/pub/fungi/current/  寻找对应的物种，下面主要讲注释信息格式的转换：
+__FA文件请自行到ftp://ftp.ensemblgenomes.org/pub/fungi/current/  寻找对应的物种，下面主要讲注释信息格式的转换__：
 
 # Data preparation 
 
  1. 序列的GTF文件
-了解[gtf格式](http://genomewiki.ucsc.edu/index.php/Genes_in_gtf_or_gff_format)
+ 了解[gtf格式](http://genomewiki.ucsc.edu/index.php/Genes_in_gtf_or_gff_format)
 
 `wget ftp://ftp.ensemblgenomes.org/pub/fungi/current/gtf/schizosaccharomyces_pombe/Schizosaccharomyces_pombe.ASM294v2.38.gtf`
+
 _#注：版本号不同可能会没有这个文件，回到上层目录即可下载_
 
 
@@ -138,7 +140,7 @@ awk 'BEGIN{FS="\t"};{print $12"\t"$1"\t"$2"\t"$3"\t"$4"\t"$5"\t"$6"\t"$7"\t"$8"\
 ```
 
 
-#_额外buff_
+# _额外buff_
  1. 可以使用samtools faidx列一下index信息获得fai文件，省得在igv里做：`samtools faidx fasta/schsac.pombe.fa `
  2. 顺道从fai提取chromsize，方便bw文件格式转换：`cat fasta/schsac.pombe.fa.fai | cut -f 1,2 > schsac.pombe.chrom.sizes`
 
