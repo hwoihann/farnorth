@@ -8,7 +8,9 @@ excerpt_separator: "<!--more-->"
 
 ---
 
-
+<p align="right">原文：<a href="http://www.opiniomics.org/a-guide-for-the-lonely-bioinformatician/" target="_blank"> A guide for the lonely bioinformatician</a></p>
+<p align="right"> 作者：<a href="https://scholar.google.co.uk/citations?user=Rs_mBdYAAAAJ" target="_blank">Mick Watson</a></p>
+<p align="right"> 翻译：王hh</p>
 
 
 就在前几周我在餐厅里喝咖啡时，听到一些PI在讨论有关申请补助金的事儿。PI头头发话：“不用担心，我们已经申请补助金去招一个生物信息学领域的人了”——唔，这当然是一个好主意，我也很赞成。但是，在场讨论的PI里一个都没有生物信息数据分析的经验，他们甚至不知道Linux是个啥玩意儿。
@@ -49,9 +51,4 @@ excerpt_separator: "<!--more-->"
 不妨经常问自己这几个问题：你在课题组的地位和其他人一样受到同等的尊重吗？你享受到和他们一样在技能提升过程中获得的乐趣了吗？你的职业生涯按部就班地成长吗？这一切的前提就是明白自己在干什么，要干什么。
 
 假如在学术机构中，一定要发文章。中间作者是ok的，但是一作才能让别人对你刮目相看，不再视你为从属者。比如一个小目标：一年两篇，或许是一篇综述，或许是关于软件评估使用的文章，又或许是在做课题时经常遇到的问题的解决方案。一开始这些可能有些枯燥，做习惯了就顺手了。
-
-
-原文：[A guide for the lonely bioinformatician](http://www.opiniomics.org/a-guide-for-the-lonely-bioinformatician/)
-作者：Mick Watson
-翻译：王hh
 
