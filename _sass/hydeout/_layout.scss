@@ -83,6 +83,7 @@ body {
 #sidebar {
   header ~ *, header ~ nav, p.lead {
     display: none;
+    &:hover { color: #fff; }
   }
 }
 
@@ -122,6 +123,8 @@ body {
   // Show secondary nav content + lead
   header ~ *, p.lead {
     display: block;
+    color: #a5fe47;
+     &:hover { color: #fff; }
   }
 
   header {
@@ -171,6 +174,7 @@ body {
 
     p.lead, header ~ * {
       display: block;
+       color: #a5fe47;
     }
 
     header ~ nav {
@@ -215,7 +219,8 @@ body {
   color: $sidebar-font-color;
 
   svg {
-    fill: rgba(255, 255, 255, 0.85);
+    // fill: rgba(255, 255, 255, 0.85);
+    fill: #a5fe47;
   }
 
   &:hover, &:focus, &.active {
@@ -223,6 +228,7 @@ body {
   }
 
   &:hover, &:focus {
+    color: #fff; 
     text-decoration: underline;
     &.icon {
       text-decoration: none;
